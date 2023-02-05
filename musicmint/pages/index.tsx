@@ -8,6 +8,8 @@ export default function Home({data, error}) {
 
   return (
     <>
+      <h1>MUSIC MINT</h1>
+      <div> This is test data, please ignore the relevance</div>
       <h2>-------- DATA BELOW --------</h2>
       {error && <p>{JSON.stringify(error)}</p>}
       <div>
