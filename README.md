@@ -3,7 +3,7 @@
 Based on the python version you have installed, run the commands using python or python3 and pip or pip3, whichever works for you. 
 
 ## Backend
-1) cd backend
+1) git checkout backend-branch
 
 2) python3 -m venv venv
 
