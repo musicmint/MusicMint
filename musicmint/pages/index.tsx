@@ -33,7 +33,7 @@ export async function getStaticProps() {
   let data = []
   
   try {
-    const response = await fetch(`http://localhost:8000/api/smth`)
+    const response = await fetch(`${process.env.BASE_URL}/smth`)
     data = await response.json();
     console.log("data is ")
     console.log(data)
