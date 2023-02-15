@@ -44,7 +44,7 @@ export async function getStaticProps() {
   let data = []
   
   try {
-    const response = await fetch(`${process.env.BASE_URL}/smth`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/smth`)
     data = await response.json();
     console.log("data is ")
     console.log(data)
