@@ -1,0 +1,19 @@
+.marketplaceWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: azure;
+    align-items: center;
+}
+
+.marketplaceTitle {
+    font-size: 2vw;
+    color: green;
+}
+
+.marketplaceDescription {
+    margin-top: 5%;
+    font-size: 1.3vw;
+    color: #000;
+}
