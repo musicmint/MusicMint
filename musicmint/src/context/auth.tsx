@@ -38,7 +38,7 @@ export const AuthProvider = ({children}) => {
             setAuthTokens(data)
             setUser(jwt_decode(data.access))
             if (typeof window !== 'undefined') localStorage.setItem('authTokens', JSON.stringify(data))
-            router.push('/progress')
+            router.push('/')
         } else {
             alert('Something went wrong!')
         }

@@ -1,13 +1,23 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useContext } from 'react'
+import AuthContext from '../src/context/auth'
 import styles from '../styles/Home.module.css'
 
 export default function Home({data, error}) {
-  console.log('data :>> ', data)
-  console.log('error :>> ', error)
+  // console.log('data :>> ', data)
+  // console.log('error :>> ', error)
+  let {user, logoutUser, authTokens} = useContext(AuthContext)
+
 
   return (
     <>
+      {user ? (
+           <p  onClick={logoutUser}>Logout</p>
+      ): (
+          <Link href="/auth" >Login</Link>
+      )}
       <h1>MUSIC MINT</h1>
       <div> This is test data, please ignore the relevance</div>
       <h2>-------- DATA BELOW --------</h2>
@@ -24,6 +34,7 @@ export default function Home({data, error}) {
           </div>
         )}
       </div>
+
     </>
   )
 }
