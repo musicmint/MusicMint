@@ -43,7 +43,7 @@ export default function Home({data, error}) {
         <Link href="/auth">Login</Link>
       )}
 
-      <NavBar/>
+      {/*<NavBar/>*/}
       <div className={styles.container}>
         <nav className={styles.nav}>
           <ul>
