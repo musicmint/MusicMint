@@ -1,0 +1,127 @@
+
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(34, 49, 31, 0.8);
+    border-bottom: 2px solid #3c482e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav ul li {
+    margin: 0 1rem;
+  }
+  
+  .nav ul li a {
+    text-decoration: none;
+    color: #c8d6c3;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .nav ul li a:hover {
+    background-color: #3c482e;
+  }
+  
+  .container {
+    min-height: 200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #a6de9a, #086515);
+    color: #164604;
+  }
+  
+  .main {
+    padding: 5rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  
+  .title {
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #c8d6c3;
+  }
+  
+  .secondarySection {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 80%;
+    padding-bottom: 3rem; /* add padding to create space below each section */
+    display: flex;
+    align-items: center;
+  }
+  
+  .secondaryTitle {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #c8d6c3;
+    text-align: left;
+    display: inline-block;
+  }
+  
+  .secondaryDescription {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #c8d6c3;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .scroll-section {
+    overflow-y: scroll;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    max-height: 60vh;
+    width: 80%;
+    background-color: rgba(34, 49, 31, 0.8);
+    border: 2px solid #3c482e;
+    padding: 1rem;
+    color: #c8d6c3;
+  }
+  
+  .grid-item {
+    color: #c8d6c3;
+    background-color: rgba(34, 49, 31, 0.8);
+    border: 2px solid #3c482e;
+    padding: 1rem;  
+    margin: 1rem;
+  }
+  
+  .grid-item:hover {
+    background-color: #3c482e;
+  }
+  /* [AI-generated, ChatGpt]*/
+  

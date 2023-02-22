@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useContext } from 'react'
 import AuthContext from '../src/context/auth'
 import styles from '../styles/marketplace.module.css'
+import NavBar from '../components/Auth/navbar'
 
 // [AI-generated, Chatgpt]
 // Define an array of example users to print out on page
@@ -42,6 +43,7 @@ export default function Home({data, error}) {
         <Link href="/auth">Login</Link>
       )}
 
+      <NavBar/>
       <div className={styles.container}>
         <nav className={styles.nav}>
           <ul>
