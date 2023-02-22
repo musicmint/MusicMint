@@ -61,6 +61,11 @@ export default function Home({data, error}) {
             </li>
           </ul>
         </nav>
+        {user ? (
+            <p onClick={logoutUser}>Logout</p>
+        ) : (
+            <Link href="/auth">Login</Link>
+        )}
 
         <Head>
           <title>MUSIC MINT MARKETPLACE</title>
@@ -105,18 +110,18 @@ export default function Home({data, error}) {
 
 
       {error && <p>{JSON.stringify(error)}</p>}
-      <div>
-        {data.map((element: any) => 
-          <div key={element.id}>
-            <div>Subject ---- {element.chosenSubject}</div>
-            <div>Year ---- {element.chosenYear}</div>
-            <div>Version ---- {element.chosenVersion}</div>
-            <div>Problem Number ---- {element.chosenProblemNumber}</div>
-            <div>Difficulty ---- {element.chosenDifficulty}</div>
-            <div>Topics ---- {element.chosenTopics}</div>
-          </div>
-        )}
-      </div>
+      {/*<div>*/}
+      {/*  {data.map((element: any) => */}
+      {/*    <div key={element.id}>*/}
+      {/*      <div>Subject ---- {element.chosenSubject}</div>*/}
+      {/*      <div>Year ---- {element.chosenYear}</div>*/}
+      {/*      <div>Version ---- {element.chosenVersion}</div>*/}
+      {/*      <div>Problem Number ---- {element.chosenProblemNumber}</div>*/}
+      {/*      <div>Difficulty ---- {element.chosenDifficulty}</div>*/}
+      {/*      <div>Topics ---- {element.chosenTopics}</div>*/}
+      {/*    </div>*/}
+      {/*  )}*/}
+      {/*</div>*/}
 
     </>
   )
