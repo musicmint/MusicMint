@@ -1,28 +1,44 @@
 import React, {useContext} from 'react'
-import '../../styles/navbar.module.css'
+import styles from '../../styles/marketplace.module.css'
+import Link from 'next/link'
+import AuthContext from '../../src/context/auth'
 
 const NavBar = () => {
+
+  let {user, logoutUser, authTokens} = useContext(AuthContext)
     return (
-      <div className= "main-wrapper">
-        <nav className="styles">
+        <nav className={styles.nav}>
           <ul>
             <li>
-              <a href="#Logo">Logo</a>
+              <div className = 'leftside'>
+                <Link href="/">Logo</Link>
+              </div>
+              <div className='rightside'>
+                <Link href="/artistpage">For Artists</Link>
+                <Link href="/marketplace">Marketplace</Link>
+                {user ? (
+                  <p onClick={logoutUser}>Logout</p>
+                ) : (
+                <Link href="/auth">Login</Link>
+                )}
+              </div>
+            {/* </li> */}
+            {/* <li>
+              <Link href="/artistpage">For Artists</Link>
             </li>
             <li>
-              <a href="#For Artists">For Artists</a>
-            </li>
-            <li>
-              <a href="#Marketplace">Marketplace</a>
+              <Link href="/marketplace">Marketplace</Link>
             </li>
             <li>
               <a href="#Search For Artists">Search For Artists</a>
+            </li> */}
+
+            {/* <li>         */}
+
             </li>
           </ul>
         </nav>
-      </div>
     )
-
 }
 
 export default NavBar

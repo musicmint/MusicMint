@@ -35,17 +35,11 @@ export default function Home({data, error}) {
 
 
   return (
-
     <>
-      {user ? (
-        <p onClick={logoutUser}>Logout</p>
-      ) : (
-        <Link href="/auth">Login</Link>
-      )}
-
       {/*<NavBar/>*/}
       <div className={styles.container}>
-        <nav className={styles.nav}>
+        <NavBar/>
+        {/* <nav className={styles.nav}>
           <ul>
             <li>
               <a href="#Logo">Logo</a>
@@ -59,13 +53,17 @@ export default function Home({data, error}) {
             <li>
               <a href="#Search For Artists">Search For Artists</a>
             </li>
+            <li>        
+              {user ? (
+                <p onClick={logoutUser}>Logout</p>
+              ) : (
+              <Link href="/auth">Login</Link>
+              )}
+            </li>
           </ul>
-        </nav>
-        {user ? (
-            <p onClick={logoutUser}>Logout</p>
-        ) : (
-            <Link href="/auth">Login</Link>
-        )}
+        </nav> */}
+
+
 
         <Head>
           <title>MUSIC MINT MARKETPLACE</title>
