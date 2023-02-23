@@ -8,35 +8,24 @@ const NavBar = () => {
   let {user, logoutUser, authTokens} = useContext(AuthContext)
     return (
         <nav className={styles.nav}>
-          <ul>
+
+          <div className = 'leftside'>
             <li>
-              <div className = 'leftside'>
-                <Link href="/">Logo</Link>
-              </div>
-              <div className='rightside'>
-                <Link href="/artistpage">For Artists</Link>
-                <Link href="/marketplace">Marketplace</Link>
-                {user ? (
-                  <p onClick={logoutUser}>Logout</p>
-                ) : (
-                <Link href="/auth">Login</Link>
-                )}
-              </div>
-            {/* </li> */}
-            {/* <li>
+              <Link href="/">Logo</Link>
+            </li>
+          </div>
+
+          <div className='rightside'>
+            <li>
               <Link href="/artistpage">For Artists</Link>
-            </li>
-            <li>
               <Link href="/marketplace">Marketplace</Link>
+              {user ? (
+                <p onClick={logoutUser}>Logout</p>
+              ) : (
+              <Link href="/auth">Login</Link>
+              )}
             </li>
-            <li>
-              <a href="#Search For Artists">Search For Artists</a>
-            </li> */}
-
-            {/* <li>         */}
-
-            </li>
-          </ul>
+          </div>
         </nav>
     )
 }
