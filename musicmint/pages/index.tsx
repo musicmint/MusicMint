@@ -39,38 +39,15 @@ export default function Home({data, error}) {
       {/*<NavBar/>*/}
       <div className={styles.container}>
         <NavBar/>
-        {/* <nav className={styles.nav}>
-          <ul>
-            <li>
-              <a href="#Logo">Logo</a>
-            </li>
-            <li>
-              <a href="#For Artists">For Artists</a>
-            </li>
-            <li>
-              <a href="#Marketplace">Marketplace</a>
-            </li>
-            <li>
-              <a href="#Search For Artists">Search For Artists</a>
-            </li>
-            <li>        
-              {user ? (
-                <p onClick={logoutUser}>Logout</p>
-              ) : (
-              <Link href="/auth">Login</Link>
-              )}
-            </li>
-          </ul>
-        </nav> */}
-
-
-
         <Head>
           <title>MUSIC MINT MARKETPLACE</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
         <main className={styles.main}>
+          {/* <div className='title'>
+            <p>MUSIC MINT MARKETPLACE</p>
+          </div> */}
           <h1 className={styles.title}>MUSIC MINT MARKETPLACE</h1>
 
           <div className="secondarySection" style={{ marginTop: '6rem' }}>
@@ -87,7 +64,13 @@ export default function Home({data, error}) {
               to build a community that supports musicians and creators.
             </p>
 
-            <h2 className={styles.secondaryTitle}>Support their journey: Cash out when they get famous</h2>
+            <div className={styles.artistexamples}>
+              <p>Support their journey.</p>
+              <p>Cash out when they get famous.</p>
+            </div>
+
+            
+            
             <p className={styles.description}>
               We believe that artists should be rewarded for their hard work and creativity. That's why we offer a
               cash-out feature that enables artists to benefit from their success. When an artist's work gains popularity,

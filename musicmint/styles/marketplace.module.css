@@ -1,15 +1,16 @@
 /* [AI-generated, ChatGpt]*/
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
+
 
 
 .nav {
-  font-family: 'Lexend', sans-serif;
+  font-family: 'Space Mono', 'Lexend', sans-serif;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(34, 49, 31, 0.5);
+    background-color: rgba(34, 49, 31, 0.35);
     /* border-bottom: 2px solid #3c482e; */
     display: flex;
     justify-content: space-between;
@@ -20,32 +21,32 @@
     padding-bottom: .5%;
   }
   
-  /* .nav li {
-    margin: 0 1rem;
-    
-  } */
-
   .nav .leftside{
     display: flex;
   }
 
+  .nav .leftside li {
+    align-items: center;
+  }
+
+
   .nav .rightside {
     display:flex;
-
-    /* justify-content: right; */
   }
   
   .nav li a {
+    align-items: center;
     text-decoration: none;
-    color: #c8d6c3;
-    font-size: 1.2rem;
-    font-weight: 300;
+    color: #C9EFC7;
+    font-size: .9rem;
+    font-weight: BOLD;
     padding: 1rem;
     border-radius: 0.5rem;
   }
   
   .nav li a:hover {
-    background-color: #3c482e;
+    color: #d5ffd3;
+    font-size: 1rem;
   }
   
   .container {
@@ -67,6 +68,8 @@
     align-items: center;
     width: 80%;
   }
+
+
   
   .grid {
     display: grid;
@@ -93,9 +96,12 @@
     padding-bottom: 3rem; /* add padding to create space below each section */
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   
   .secondaryTitle {
+    font-family: 'Lexend', sans-serif;
+    justify-items: center;
     font-size: 3rem;
     font-weight: bold;
     margin-top: 3rem;
@@ -105,6 +111,17 @@
     display: inline-block;
   }
   
+  .artistexamples {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    justify-content: center;
+    color:#c8d6c3;
+  }
+
   .secondaryDescription {
     font-size: 1.5rem;
     line-height: 2rem;

@@ -2,6 +2,8 @@ import React, {useContext} from 'react'
 import styles from '../../styles/marketplace.module.css'
 import Link from 'next/link'
 import AuthContext from '../../src/context/auth'
+import Image from 'next/image'
+import logo from '../../music-mint-marketplace.png'
 
 const NavBar = () => {
 
@@ -11,18 +13,21 @@ const NavBar = () => {
 
           <div className = 'leftside'>
             <li>
-              <Link href="/">Logo</Link>
+              <Link href="/">
+                <Image src={logo} alt="logo" width={263.16} height={25.79}/>
+              </Link>
+              {/* <Link href="/">Logo</Link> */}
             </li>
           </div>
 
           <div className='rightside'>
             <li>
-              <Link href="/artistpage">For Artists</Link>
-              <Link href="/marketplace">Marketplace</Link>
+              <Link href="/artistpage">FOR ARTISTS</Link>
+              <Link href="/marketplace">MARKETPLACE</Link>
               {user ? (
-                <p onClick={logoutUser}>Logout</p>
+                <p onClick={logoutUser}>LOGOUT</p>
               ) : (
-              <Link href="/auth">Login</Link>
+              <Link href="/auth">LOGIN</Link>
               )}
             </li>
           </div>
