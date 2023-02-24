@@ -153,5 +153,35 @@
   .grid-item:hover {
     background-color: #3c482e;
   }
-  /* [AI-generated, ChatGpt]*/
+
+
+  .runner-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .runner {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    animation: runner 20s linear infinite;
+    width: 100%;
+  }
+  
+  .runner:first-child {
+    left: 0;
+    animation-delay: 10s;
+  }
+  
+  @keyframes runner {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+   /* [AI-generated, ChatGpt]*/
   

@@ -5,6 +5,7 @@ import { useContext } from 'react'
 import AuthContext from '../src/context/auth'
 import styles from '../styles/marketplace.module.css'
 import NavBar from '../components/Auth/navbar'
+import ExampleBadge from '../components/Auth/examplebadge'
 
 // [AI-generated, Chatgpt]
 // Define an array of example users to print out on page
@@ -70,12 +71,22 @@ export default function Home({data, error}) {
             </div>
 
             
+
+            <div className="runner-container">
+              <div className={styles.runner}>
+                <ExampleBadge/>
+              </div>
+              <div className={styles.runner}>
+                <ExampleBadge/>
+              </div>
+            </div>
+
             
-            <p className={styles.description}>
+            {/* <p className={styles.description}>
               We believe that artists should be rewarded for their hard work and creativity. That's why we offer a
               cash-out feature that enables artists to benefit from their success. When an artist's work gains popularity,
               they can cash out their earnings and use the funds to continue their creative journey.
-            </p>
+            </p> */}
 
             <h2 className={styles.secondaryTitle}>Start Creating</h2>
             <p className={styles.description}>
