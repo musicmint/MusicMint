@@ -7,27 +7,6 @@ import styles from '../styles/marketplace.module.css'
 import NavBar from '../components/Auth/navbar'
 import ExampleBadge from '../components/Auth/examplebadge'
 
-// [AI-generated, Chatgpt]
-// Define an array of example users to print out on page
-const exampleUsers = [
-  {
-    id: 1,
-    name: 'John Smith',
-    bio: 'I am a musician and producer from Los Angeles. I specialize in electronic music and have released several albums over the years.',
-    nftName: 'Sunset Groove',
-    nftDescription: 'A one-of-a-kind track that will take you on a journey through the sounds of the ocean and the sunset.',
-    nftImage: '/nft1.jpg',
-  },
-  {
-    id: 2,
-    name: 'Emily Johnson',
-    bio: 'I am a visual artist and photographer based in New York City. I love to capture the beauty of nature and urban landscapes.',
-    nftName: 'Cityscape',
-    nftDescription: 'A stunning photograph of the New York City skyline at night, taken from a rooftop in Brooklyn.',
-    nftImage: '/nft2.jpg',
-  },
-  // Add more users as needed
-]
 
 export default function Home({data, error}) {
   // console.log('data :>> ', data)
