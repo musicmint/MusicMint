@@ -1,166 +1,186 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
 
-.container {
-  min-height: 200vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(45deg, #a6de9a, #086515);
-  color: #164604;
-}
+ .container {
+   min-height: 200vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(45deg, #a6de9a, #086515);
+   color: #164604;
+ }
 
-.main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-}
+ .main {
+   padding: 5rem 0;
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 80%;
+ }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 2rem;
-  justify-items: center;
-  align-items: center;
-  margin-top: 3rem;
-}
+ .grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   grid-gap: 2rem;
+   justify-items: center;
+   align-items: center;
+   margin-top: 3rem;
+ }
 
-.title {
-  font-size: 5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  color: #c8d6c3;
-}
+ .title {
+   font-size: 5rem;
+   font-weight: bold;
+   text-align: center;
+   margin-top: 3rem;
+   margin-bottom: 1rem;
+   color: #c8d6c3;
+ }
 
-.secondarySection {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  width: 80%;
-  padding-bottom: 3rem; /* add padding to create space below each section */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+ .secondarySection {
+   margin-top: 3rem;
+   margin-bottom: 3rem;
+   width: 80%;
+   padding-bottom: 3rem; /* add padding to create space below each section */
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
 
-.secondaryTitle {
-  font-family: 'Lexend', sans-serif;
-  justify-items: center;
-  font-size: 3rem;
-  font-weight: bold;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  color: #c8d6c3;
-  text-align: left;
-  display: inline-block;
-}
+ .secondaryTitle {
+   font-family: 'Lexend', sans-serif;
+   justify-items: center;
+   font-size: 3rem;
+   font-weight: bold;
+   margin-top: 3rem;
+   margin-bottom: 1rem;
+   color: #c8d6c3;
+   text-align: left;
+   display: inline-block;
+ }
 
-.artistexamples {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Lexend', sans-serif;
-  font-size: 3rem;
-  font-weight: bold;
-  justify-content: center;
-  color: #c8d6c3;
-}
+ .artistexamples {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-family: 'Lexend', sans-serif;
+   font-size: 3rem;
+   font-weight: bold;
+   justify-content: center;
+   color: #c8d6c3;
+ }
 
-.secondaryTitle:before {
-  content: "BIO: ";
-}
+ .secondaryTitle:before {
+   content: "BIO: ";
+ }
 
-.secondaryDescription {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  color: #c8d6c3;
-  max-width: 800px;
-  margin: 0 auto;
-}
+ .secondaryDescription {
+   font-size: 1.5rem;
+   line-height: 2rem;
+   color: #c8d6c3;
+   max-width: 800px;
+   margin: 0 auto;
+ }
 
-.AuthWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  }
+ .AuthWrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   }
 
-  .artistWrapper {
+   .artistWrapper {
+     display: flex;
+     justify-content: center;
+     background-color: #fff;
+   }
+
+   .artistProfile {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-top: 3rem;
+     position: relative;
+   }
+
+   .artistProfileImage {
+     border-radius: 50%;
+     width: 500px;
+       height: 300px;
+     margin-bottom: 1rem;
+     position: absolute;
+     top: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     z-index: 0;
+
+   }
+
+   .artistProfileName {
+     font-size: 5rem;
+     margin-top: 3rem;
+     margin-bottom: 1rem;
+     font-weight: bold;
+     text-align: center;
+     color: #c8d6c3;
+     position: relative;
+     z-index: 1;
+   }
+
+   .artistProfileBio {
+     font-size: 1.2rem;
+     text-align: center;
+     margin-bottom: 2rem;
+     color: #c8d6c3;
+     position: relative;
+     z-index: 1;
+   }
+
+   .collectibles {
+   margin-top: 13rem;
+   }
+
+   .collectiblesTitle {
+   font-size: 2.5rem;
+   margin-bottom: 1.5rem;
+   color: #c8d6c3;
+   text-align: center;
+   }
+
+   .collectiblesList {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   }
+
+   .collectibleImage {
+   width: 120px;
+   height: 120px;
+   border-radius: 10px;
+   margin: 1rem;
+   }
+
+   .authPageDivider {
+    width: 100%;
+    height: 30px;
+    background-color: #000;
     display: flex;
-    justify-content: center;
-    background-color: #fff;
-  }
-  
-  .artistProfile {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
-    position: relative;
+    flex-direction: column;
+    color: #c8d6c3;
+    text-align: center;
+    margin: 0; 
+    font-size: 2.0rem;
   }
-  
-  .artistProfileImage {
-    border-radius: 50%;
-    width: 500px;
-      height: 300px;
-    margin-bottom: 1rem;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 0;
 
+  @media only screen and (max-width: 1000px) {
+    .authPageDivider {
+      margin-top: 2rem;
+    }
   }
   
-  .artistProfileName {
-    font-size: 5rem;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    text-align: center;
-    color: #c8d6c3;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .artistProfileBio {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #c8d6c3;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .collectibles {
-  margin-top: 13rem;
-  }
-  
-  .collectiblesTitle {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #c8d6c3;
-  text-align: center;
-  }
-  
-  .collectiblesList {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  }
-  
-  .collectibleImage {
-  width: 120px;
-  height: 120px;
-  border-radius: 10px;
-  margin: 1rem;
-  }

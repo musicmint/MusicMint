@@ -183,5 +183,67 @@
     }
   }
   
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #a6de9a, #086515);
+    color: #164604;
+    }
+    
+    .formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+    }
+    
+    .label {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #c9efc7;
+    }
+    
+    .input {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    }
+    
+    .button {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    background-color: #c9efc7;
+    color: #164604;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    }
+    
+    .button:hover {
+    background-color: #d5ffd3;
+    }
+    
+    .registerLink {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    color: #c9efc7;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    }
+    
+    .registerLink:hover {
+    color: #d5ffd3;
+    }
    /* [AI-generated, ChatGpt]*/
   

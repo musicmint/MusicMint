@@ -19,9 +19,12 @@ export default function ArtistPage({data, error}) {
             <p className={styles.artistProfileBio}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus augue id nisi semper, sit amet hendrerit tortor ultricies.
             </p>
+            
           </div>
 
+
           <div className={styles.collectibles}>
+          <div className={styles.authPageDivider}>New Collection</div>
             <h2 className={styles.collectiblesTitle}>Collectibles</h2>
             <div className={styles.collectiblesList}>
               <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 1" />
