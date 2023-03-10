@@ -7,7 +7,7 @@ export default function ArtistPage({data, error}) {
 
   return (
     <>
-      <div className={styles.artistWrapper}> 
+      <div className={styles.artistWrapper}>
         <NavBar/>
       </div>
 
