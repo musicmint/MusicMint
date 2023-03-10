@@ -14,8 +14,8 @@
   '\::\;            \:\;·'         \:::\'          '\:::\:' '              \::\:;'‚              '\:::::\';  '
     '´¨               ¨'             \:'             `*´'‚                 \;:'      ‘            `*ª'´‘
 
-*/                                                                        °                     '
-
+                                                                      °                     '
+*/
 pragma solidity ^0.8.4;
 
 //Basically agreed upon standard defining what functions nft contracts should have

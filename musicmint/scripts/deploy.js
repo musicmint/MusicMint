@@ -1,6 +1,8 @@
 // Any time we run this, we're putting our smart contracts on the blockchain
 // We route this to frontend, as our frontend needs to create these instances
 // ethers object injected into hardhat env.
+const { ethers, artifacts } = require("hardhat");
+
 async function main() {
   const [deployer] = await ethers.getSigners();
 
