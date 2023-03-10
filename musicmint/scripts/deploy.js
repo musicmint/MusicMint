@@ -25,7 +25,7 @@ async function main() {
 
 function saveFrontendFiles(contract, name) {
   const fs = require("fs");
-  const contractsDir = __dirname + "/../../frontend/contractsData";
+  const contractsDir = "/Users/mashasedunova/WebstormProjects/MMM/musicmint/pages/contractsData";//__dirname + "/../../pages/contractsData";
 
   if (!fs.existsSync(contractsDir)) {
     fs.mkdirSync(contractsDir);
