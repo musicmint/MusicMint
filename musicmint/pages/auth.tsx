@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react'
 import AuthContext from '../src/context/auth'
 import Login from '../components/Auth/login'
 import Registraion from '../components/Auth/registration'
+import NavBar from '../components/Auth/navbar'
 
 
 const AuthPage = () => {
@@ -13,6 +14,7 @@ const AuthPage = () => {
 
     return (
         <>
+        <NavBar/>
         {onLogin ? <Login switchTab={switchTab}></Login> : <Registraion switchTab={switchTab}></Registraion>}
         </>
     )

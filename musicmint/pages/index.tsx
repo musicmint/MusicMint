@@ -6,9 +6,44 @@ import AuthContext from '../src/context/auth'
 import styles from '../styles/marketplace.module.css'
 import NavBar from '../components/Auth/navbar'
 import ExampleBadge from '../components/Auth/examplebadge'
+import CDSpinner from '../components/Auth/cdspinner'
+import CircleImage from '../circle.png'
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin"; // Note the path change
+
+gsap.registerPlugin(ScrollToPlugin);
+
+if (typeof window !== "undefined") {
+const button = document.querySelector("#aboutButton");
+if (button){
+button.addEventListener("click", () => {
+  gsap.to(window, {duration: 10, scrollTo: {y: "#aboutSection"}});
+})}};
 
 
-export default function Home() {
+// [AI-generated, Chatgpt]
+// Define an array of example users to print out on page
+const exampleUsers = [
+  {
+    id: 1,
+    name: 'John Smith',
+    bio: 'I am a musician and producer from Los Angeles. I specialize in electronic music and have released several albums over the years.',
+    nftName: 'Sunset Groove',
+    nftDescription: 'A one-of-a-kind track that will take you on a journey through the sounds of the ocean and the sunset.',
+    nftImage: '/nft1.jpg',
+  },
+  {
+    id: 2,
+    name: 'Emily Johnson',
+    bio: 'I am a visual artist and photographer based in New York City. I love to capture the beauty of nature and urban landscapes.',
+    nftName: 'Cityscape',
+    nftDescription: 'A stunning photograph of the New York City skyline at night, taken from a rooftop in Brooklyn.',
+    nftImage: '/nft2.jpg',
+  },
+  // Add more users as needed
+]
+
+export default function Home({data, error}) {
   // console.log('data :>> ', data)
   // console.log('error :>> ', error)
   let {user, logoutUser, authTokens} = useContext(AuthContext)
@@ -16,21 +51,40 @@ export default function Home() {
 
   return (
     <>
-      {/*<NavBar/>*/}
       <div className={styles.container}>
         <NavBar/>
-        <Head>
-          <title>MUSIC MINT MARKETPLACE</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+ 
+        <section id="titleSection" >
+          <div className={styles.halfWidth}>
+            <h1 className={styles.title}>MUSIC MINT MARKETPLACE</h1>
+            <button id="aboutButton"><a href="#aboutSection">ABOUT US</a></button>
+          </div>
+          <div className={styles.circle}>
+            <Image src={CircleImage} alt="logo" width={450} height={450}/>
+          </div>
+        </section>
 
-        <main className={styles.main}>
-          {/* <div className='title'>
-            <p>MUSIC MINT MARKETPLACE</p>
-          </div> */}
+        <section id="aboutSection" className={styles.smth}>
+          <div className={styles.section2Left}>
+            <Image src={CircleImage} alt="logo" width={450} height={450}/>
+          </div>
+          <div className={styles.section2Right}>
+            <h2 className={styles.secondaryTitle}>WHO ARE WE?</h2>
+            <p className={styles.description}>
+              We are a community-driven NFT marketplace that is focused on supporting musicians and creators. Our platform
+              enables artists to sell their unique creations as NFTs, while providing fans with a new way to engage with
+              their favorite artists.
+            </p>
+          </div>
+         
+        </section>
+        {/* <main className={styles.main}>
+     
+
           <h1 className={styles.title}>MUSIC MINT MARKETPLACE</h1>
+  */}
 
-          <div className="secondarySection" style={{ marginTop: '6rem' }}>
+          {/* <div className="secondarySection" style={{ marginTop: '18rem' }}>
             <h2 className={styles.secondaryTitle}>Who are we</h2>
             <p className={styles.description}>
               We are a community-driven NFT marketplace that is focused on supporting musicians and creators. Our platform
@@ -47,18 +101,18 @@ export default function Home() {
             <div className={styles.artistexamples}>
               <p>Support their journey.</p>
               <p>Cash out when they get famous.</p>
-            </div>
+            </div> */}
 
             
 
-            <div className="runner-container">
+            {/* <div className="runner-container">
               <div className={styles.runner}>
                 <ExampleBadge/>
               </div>
               <div className={styles.runner}>
                 <ExampleBadge/>
               </div>
-            </div>
+            </div> */}
 
             
             {/* <p className={styles.description}>
@@ -67,16 +121,23 @@ export default function Home() {
               they can cash out their earnings and use the funds to continue their creative journey.
             </p> */}
 
-            <h2 className={styles.secondaryTitle}>Start Creating</h2>
+            {/* <h2 className={styles.secondaryTitle}>Start Creating</h2>
             <p className={styles.description}>
               Are you a musician or creator looking for a new way to connect with your fans? Join our platform and start
               creating and selling your NFTs today.
-            </p>
-          </div>
-        </main>
+            </p> */}
+          {/* </div> */}
+        {/* </main> */}
       </div>
 
 
+<<<<<<< HEAD
+=======
+      
+
+
+      {error && <p>{JSON.stringify(error)}</p>}
+>>>>>>> 3e1fe50 (frontend changes)
       {/*<div>*/}
       {/*  {data.map((element: any) => */}
       {/*    <div key={element.id}>*/}
@@ -93,4 +154,27 @@ export default function Home() {
     </>
   )
   // [AI-generated, Chatgpt]
+}
+
+export async function getStaticProps() {
+  let error = null
+  let data = []
+  
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/smth`)
+    data = await response.json();
+    console.log("data is ")
+    console.log(data)
+  }
+  catch (err) {
+    console.log("error :>> ", err)
+    error = err.message ? err.message : "Something went wrong"
+  }
+
+  return {
+    props: {
+      data: data,
+      error: error,
+    }
+  }
 }
