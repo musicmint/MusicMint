@@ -92,6 +92,13 @@
   height: 100vh;
   }
 
+  .WalletWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
   .artistWrapper {
     display: flex;
     justify-content: center;

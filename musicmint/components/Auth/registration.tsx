@@ -2,11 +2,17 @@ import React, {useContext} from 'react'
 import AuthContext from '../../src/context/auth'
 import styles from '../../styles/AuthPage.styles/auth.module.css'
 
+import Wallet from '../../components/Auth/connectWallet'
+
 const Registraion = (props) => {
     let { registerUser } = useContext(AuthContext)
     return (
         <div className={styles.AuthWrapper}>
             <div>Registration Page</div>
+            <div>
+                <div>Connect Wallet:</div>
+            <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
+            </div>
             <form onSubmit={registerUser}>
                 <input type="text" name="username" placeholder="Enter Username" />
                 <input type="email" name="email" placeholder="Enter Email" />

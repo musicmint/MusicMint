@@ -20,7 +20,7 @@ export default function ArtistPage({data, error, nft, marketplace}) {
   console.log('error :>> ', error)
 
     const [image, setImage] = useState('')
-    const [price, setPrice] = useState(null)
+    const [price, setPrice] = useState(0)
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
 
