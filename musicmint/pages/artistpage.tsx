@@ -1,12 +1,9 @@
 import styles from '../styles/AuthPage.styles/auth.module.css';
 import NavBar from '../components/navbar';
-import NavBar from '../components/Auth/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 import { useState } from 'react'
 import { ethers } from 'ethers'
-
-export default function ArtistPage() {
 const client = ipfsHttpClient({
     host: 'ipfs.infura.io',
     port: 5001,
@@ -115,7 +112,7 @@ export default function ArtistPage({data, error, nft, marketplace}) {
                               borderRadius: "20px",
                               border: "2px solid #1DB954"
                             }}/>
-              <Form.Control onChange={(e) => setPrice(e.target.value)} size="lg" required type="number"
+              <Form.Control onChange={(e) => setPrice(parseFloat(e.target.value))} size="lg" required type="number"
                             placeholder="Price in ETH"
                             style={{
                               borderRadius: "20px",
