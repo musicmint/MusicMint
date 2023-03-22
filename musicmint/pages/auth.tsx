@@ -4,13 +4,11 @@ import Login from '../components/Auth/login'
 import Registraion from '../components/Auth/registration'
 import NavBar from '../components/Auth/navbar'
 import { ethers } from "ethers"
-import { Spinner } from 'react-bootstrap'
 
 import MarketplaceAbi from "./contractsData/Marketplace.json"
 import MarketplaceAddress from './contractsData/Marketplace-address.json'
 import NFTAbi from './contractsData/NFT.json'
 import NFTAddress from './contractsData/NFT-address.json'
-import {Button} from "react-bootstrap";
 import Link from 'next/link'
 
 const AuthPage = () => {

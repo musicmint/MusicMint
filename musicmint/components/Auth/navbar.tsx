@@ -4,9 +4,8 @@ import Link from 'next/link'
 import AuthContext from '../../src/context/auth'
 import Image from 'next/image'
 import logo from '../../music-mint-marketplace.png'
-import {Button} from "react-bootstrap";
 
-const NavBar = (props) => {
+const NavBar = () => {
 
   let {user, logoutUser, authTokens} = useContext(AuthContext)
     return (
@@ -25,7 +24,6 @@ const NavBar = (props) => {
             <li>
               <Link href="/artistpage">FOR ARTISTS</Link>
               <Link href="/marketplace">MARKETPLACE</Link>
-
               {user ? (
                 <p onClick={logoutUser}>LOGOUT</p>
               ) : (
@@ -33,7 +31,6 @@ const NavBar = (props) => {
               )}
             </li>
           </div>
-
         </nav>
     )
 }

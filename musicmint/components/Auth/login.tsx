@@ -5,11 +5,15 @@ import styles from '../../styles/AuthPage.styles/auth.module.css'
 import Wallet from '../../components/Auth/connectWallet'
 
 const Login = (props) => {
-    const { loginUser } = useContext(AuthContext);
-
+    let { loginUser } = useContext(AuthContext)
+    let {user, logoutUser, authTokens} = useContext(AuthContext)
     return (
         <div className={styles.container}>
             <div className={styles.label}>Login Page</div>
+            <div>
+                <div>Connect Wallet:</div>
+                <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
+            </div>
             <form onSubmit={() => loginUser}>
                 <div className={styles.formGroup}>
                     <label htmlFor="username" className={styles.label}>

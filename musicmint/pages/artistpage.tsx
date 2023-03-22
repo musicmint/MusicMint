@@ -3,7 +3,7 @@ import NavBar from '../components/Auth/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 import { useState } from 'react'
-import { ethers } from "ethers"
+import { ethers } from 'ethers'
 
 const client = ipfsHttpClient({
     host: 'ipfs.infura.io',
