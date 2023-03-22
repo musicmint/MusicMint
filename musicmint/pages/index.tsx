@@ -1,3 +1,8 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,12 +11,57 @@ import AuthContext from '../src/context/auth'
 import styles from '../styles/marketplace.module.css'
 import NavBar from '../components/Auth/navbar'
 import ExampleBadge from '../components/Auth/examplebadge'
+import { useState } from 'react'
+import { ethers } from "ethers"
+import { Spinner } from 'react-bootstrap'
+
+import MarketplaceAbi from "./contractsData/Marketplace.json"
+import MarketplaceAddress from './contractsData/Marketplace-address.json'
+import NFTAbi from './contractsData/NFT.json'
+import NFTAddress from './contractsData/NFT-address.json'
 
 
 export default function Home({data, error}) {
   // console.log('data :>> ', data)
   // console.log('error :>> ', error)
   let {user, logoutUser, authTokens} = useContext(AuthContext)
+
+  //let's set up everything needed for blockchain upon boot up
+  const [loading, setLoading] = useState(true)
+  const [account, setAccount] = useState(null)
+  const [nft, setNFT] = useState({})
+  const [marketplace, setMarketplace] = useState({})
+
+  // MetaMask Login/Connect
+  const web3Handler = async () => {
+    const accounts = await (window as any).ethereum.request({ method: 'eth_requestAccounts' });
+    setAccount(accounts[0])
+
+    // Get provider from Metamask
+    const provider = new ethers.providers.Web3Provider((window as any).ethereum)
+
+    // Set signer
+    const signer = provider.getSigner() as ethers.providers.JsonRpcSigner;
+
+    (window as any).ethereum.on('chainChanged', (chainId) => {
+      window.location.reload();
+    })
+
+    (window as any).ethereum.on('accountsChanged', async function (accounts) {
+      setAccount(accounts[0])
+      await web3Handler()
+    })
+    loadContracts(signer)
+  }
+  const loadContracts = async (signer) => {
+
+    // Get deployed copies of contracts
+    const marketplace = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer)
+    setMarketplace(marketplace)
+    const nft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer)
+    setNFT(nft)
+    setLoading(false)
+  }
 
 
   return (
@@ -49,7 +99,7 @@ export default function Home({data, error}) {
               <p>Cash out when they get famous.</p>
             </div>
 
-            
+
 
             <div className="runner-container">
               <div className={styles.runner}>
@@ -60,7 +110,7 @@ export default function Home({data, error}) {
               </div>
             </div>
 
-            
+
             {/* <p className={styles.description}>
               We believe that artists should be rewarded for their hard work and creativity. That's why we offer a
               cash-out feature that enables artists to benefit from their success. When an artist's work gains popularity,
@@ -73,11 +123,21 @@ export default function Home({data, error}) {
               creating and selling your NFTs today.
             </p>
           </div>
+          <div>
+            {loading ? (
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
+                  <Spinner animation="border" style={{ display: 'flex' }} />
+                  <p className='mx-3 my-0'>Awaiting Metamask Connection...</p>
+                </div>
+            ) : (
+
+            )}
+          </div>
         </main>
       </div>
 
 
-      
+
 
 
       {error && <p>{JSON.stringify(error)}</p>}
@@ -102,7 +162,7 @@ export default function Home({data, error}) {
 export async function getStaticProps() {
   let error = null
   let data = []
-  
+
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/smth`)
     data = await response.json();
@@ -121,3 +181,4 @@ export async function getStaticProps() {
     }
   }
 }
+
