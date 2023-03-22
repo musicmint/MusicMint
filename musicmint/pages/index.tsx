@@ -42,7 +42,6 @@ export default function Home({data, error}) {
 
     // Set signer
     const signer = provider.getSigner() as ethers.providers.JsonRpcSigner;
-
     (window as any).ethereum.on('chainChanged', (chainId) => {
       window.location.reload();
     })
@@ -53,6 +52,7 @@ export default function Home({data, error}) {
     })
     loadContracts(signer)
   }
+
   const loadContracts = async (signer) => {
 
     // Get deployed copies of contracts
@@ -65,10 +65,12 @@ export default function Home({data, error}) {
 
 
   return (
+
     <>
+
       {/*<NavBar/>*/}
       <div className={styles.container}>
-        <NavBar/>
+        <NavBar web3Handler={web3Handler} account={account}/>
         <Head>
           <title>MUSIC MINT MARKETPLACE</title>
           <link rel="icon" href="/favicon.ico" />
