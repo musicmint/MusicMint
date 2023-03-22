@@ -72,7 +72,7 @@ const AuthPage = () => {
     return (
         <>
         <NavBar/>
-        {onLogin ? <Login switchTab={switchTab}></Login> : <Registraion switchTab={switchTab}></Registraion>}
+        {/*{onLogin ? <Login switchTab={switchTab}></Login> : <Registraion switchTab={switchTab}></Registraion>}*/}
         {onLogin ? <Login  web3Handler={web3Handler} account={account} switchTab={switchTab}></Login> : <Registraion  web3Handler={web3Handler} account={account} switchTab={switchTab}></Registraion>}
      {/* <Wallet web3Handler={web3Handler} account={account}></Wallet> */}
         </>

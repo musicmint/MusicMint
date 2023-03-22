@@ -30,3 +30,7 @@ const Wallet = ({ web3Handler, account }) => {
 }
 
 export default Wallet
+
+
+
+
