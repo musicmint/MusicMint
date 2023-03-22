@@ -31,7 +31,6 @@ const Login = (props) => {
                 <div>Connect Wallet:</div>
                 <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
             </div>
-            <div>
             <div className={styles.header}>MusicMint</div>
                 <div className={styles.formGroup}>
                     <input type="email" id="email" name="email" className={styles.input} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your E-mail"/>
