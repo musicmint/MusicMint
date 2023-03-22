@@ -30,8 +30,9 @@
   }
 
 
-  .nav .rightside {
+  /* .nav .rightside {
     display:flex;
+    
   }
   
   .nav li a {
@@ -48,8 +49,27 @@
     color: #d5ffd3;
     font-size: 1rem;
   }
-  
-  
+   */
+
+   .navbarLinks {
+    display: flex;
+    flex-direction: row;
+   }
+   
+  .navbarLinks > *{
+    align-items: center;
+    text-decoration: none;
+    color: #C9EFC7;
+    font-size: .9rem;
+    font-weight: BOLD;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .navbarLinks > *:hover {
+    color: #d5ffd3;
+    font-size: 1rem;
+  }
   
   #titleSection {
     justify-content: center;

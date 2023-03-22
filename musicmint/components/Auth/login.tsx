@@ -1,28 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import AuthContext from '../../src/context/auth';
 import styles from '../../styles/marketplace.module.css';
 
 const Login = (props) => {
     const { loginUser } = useContext(AuthContext);
+    let [email, setEmail] = useState<any>(null)
+    let [password, setPassword] = useState<any>(null)
 
     return (
         <div className={styles.container}>
-            <div className={styles.label}>Login Page</div>
-            <form onSubmit={() => loginUser}>
+            <div className={styles.label}>MusicMint</div>
+            <div>
                 <div className={styles.formGroup}>
-                    <label htmlFor="username" className={styles.label}>
-                        Username
+                    <label htmlFor="email" className={styles.label}>
+                        Email
                     </label>
-                    <input type="text" id="username" name="username" className={styles.input} />
+                    <input type="email" id="email" name="email" className={styles.input} onChange={(e) => setEmail(e.target.value)}/>
                 </div>
                 <div className={styles.formGroup}>
                     <label htmlFor="password" className={styles.label}>
                         Password
                     </label>
-                    <input type="password" id="password" name="password" className={styles.input} />
+                    <input type="password" id="password" name="password" className={styles.input} onChange={(e) => setPassword(e.target.value)}/>
                 </div>
-                <button type="submit" className={styles.button}>Log in</button>
-            </form>
+                <button type="submit" className={styles.button} onClick={() => loginUser(email, password)}>Log in</button>
+            </div>
             
             <div className={styles.button} onClick={props.switchTab}>
                 Register
