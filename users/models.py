@@ -33,6 +33,7 @@ class CustomUserManager(BaseUserManager):
 
 class User(AbstractUser):
     id=None
+    username=None
     email = models.EmailField(unique=True) 
     full_name = models.TextField(default="")
     nickname = models.TextField(blank=True)
