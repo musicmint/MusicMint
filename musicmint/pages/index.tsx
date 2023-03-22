@@ -42,7 +42,7 @@ const exampleUsers = [
   // Add more users as needed
 ]
 
-export default function Home() {
+export default function Home({data, error}) {
   // console.log('data :>> ', data)
   // console.log('error :>> ', error)
   let {user, logoutUser, authTokens} = useContext(AuthContext)
@@ -76,6 +76,7 @@ export default function Home() {
               Our platform enables artists to sell their unique creations as NFTs, while providing fans with a new way to engage with
               their favorite artists.
             </p>
+            <button className={styles.getStarted}>ARE YOU AN ARTIST? GET STARTED</button>
           </div>
         </section>
 
@@ -136,6 +137,10 @@ export default function Home() {
       </div>
 
 
+      
+
+
+      {error && <p>{JSON.stringify(error)}</p>}
       {/*<div>*/}
       {/*  {data.map((element: any) => */}
       {/*    <div key={element.id}>*/}
@@ -152,4 +157,27 @@ export default function Home() {
     </>
   )
   // [AI-generated, Chatgpt]
+}
+
+export async function getStaticProps() {
+  let error = null
+  let data = []
+  
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/smth`)
+    data = await response.json();
+    console.log("data is ")
+    console.log(data)
+  }
+  catch (err) {
+    console.log("error :>> ", err)
+    error = err.message ? err.message : "Something went wrong"
+  }
+
+  return {
+    props: {
+      data: data,
+      error: error,
+    }
+  }
 }
