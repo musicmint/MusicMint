@@ -280,7 +280,7 @@
     
   .header {
       font-family: 'Space Mono', 'Lexend', sans-serif;
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: bold;
       margin-bottom: 2rem;
       color: #c9efc7;
@@ -312,6 +312,10 @@
     margin-bottom: 1rem;
   }
   
+  .input::placeholder {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+  }
+
   .button {
     width: 100%;
     font-family: 'Space Mono', 'Lexend', sans-serif;
