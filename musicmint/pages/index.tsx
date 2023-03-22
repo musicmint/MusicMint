@@ -53,11 +53,11 @@ export default function Home({data, error}) {
     <>
       <div className={styles.container}>
         <NavBar/>
- 
         <section id="titleSection" >
           <div className={styles.halfWidth}>
             <h1 className={styles.title}>MUSIC MINT MARKETPLACE</h1>
-            <button id="aboutButton"><a href="#aboutSection">ABOUT US</a></button>
+            <button id="aboutButton" className={styles.abtButton}>
+              <a href="#aboutSection">ABOUT US</a></button>
           </div>
           <div className={styles.circle}>
             <Image src={CircleImage} alt="logo" width={450} height={450}/>
@@ -70,13 +70,19 @@ export default function Home({data, error}) {
           </div>
           <div className={styles.section2Right}>
             <h2 className={styles.secondaryTitle}>WHO ARE WE?</h2>
-            <p className={styles.description}>
-              We are a community-driven NFT marketplace that is focused on supporting musicians and creators. Our platform
-              enables artists to sell their unique creations as NFTs, while providing fans with a new way to engage with
+            <p className={styles.descriptionIntro}>
+              We are a community-driven NFT marketplace that is focused on supporting musicians and creators. 
+            </p>
+            <p className={styles.descriptionElab}>
+              Our platform enables artists to sell their unique creations as NFTs, while providing fans with a new way to engage with
               their favorite artists.
             </p>
           </div>
-         
+        </section>
+
+        <section id="badgesSection" className={styles.badges}>
+          <p>Support their journey.</p>
+          <p>Cash out when they get famous.</p>
         </section>
         {/* <main className={styles.main}>
      
@@ -131,13 +137,10 @@ export default function Home({data, error}) {
       </div>
 
 
-<<<<<<< HEAD
-=======
       
 
 
       {error && <p>{JSON.stringify(error)}</p>}
->>>>>>> 3e1fe50 (frontend changes)
       {/*<div>*/}
       {/*  {data.map((element: any) => */}
       {/*    <div key={element.id}>*/}

@@ -24,11 +24,11 @@ const NavBar = () => {
             <li>
               <Link href="/artistpage">FOR ARTISTS</Link>
               <Link href="/marketplace">MARKETPLACE</Link>
-              {user ? (
+              {/* {user ? (
                 <p onClick={logoutUser}>LOGOUT</p>
-              ) : (
+              ) : ( */}
               <Link href="/auth">LOGIN</Link>
-              )}
+              {/* )} */}
             </li>
           </div>
         </nav>
