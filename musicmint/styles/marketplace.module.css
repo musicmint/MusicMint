@@ -20,7 +20,7 @@
     padding-top: .5%;
     padding-bottom: .5%;
   }
-
+  
   .nav .leftside{
     display: flex;
   }
@@ -30,10 +30,11 @@
   }
 
 
-  .nav .rightside {
+  /* .nav .rightside {
     display:flex;
+    
   }
-
+  
   .nav li a {
     align-items: center;
     text-decoration: none;
@@ -43,23 +44,33 @@
     padding: 1rem;
     border-radius: 0.5rem;
   }
-
+  
   .nav li a:hover {
     color: #d5ffd3;
     font-size: 1rem;
   }
+   */
 
-  /* .container {
-    height: 100%;
-    margin: 0;
+   .navbarLinks {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+   }
+   
+  .navbarLinks > *{
     align-items: center;
-    background: linear-gradient(45deg, #a6de9a, #086515);
-    color: #164604;
-  } */
+    text-decoration: none;
+    color: #C9EFC7;
+    font-size: .9rem;
+    font-weight: BOLD;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
 
+  .navbarLinks > *:hover {
+    color: #d5ffd3;
+    font-size: 1rem;
+  }
+  
   #titleSection {
     justify-content: center;
     height: 100vh;
@@ -81,14 +92,37 @@
   }
 
   .title {
+    font-family:  'Lexend', sans-serif;
     justify-content: center;
     font-size: 5rem;
     font-weight: bold;
     text-align: center;
     margin-top: 3rem;
     margin-bottom: 1rem;
-    color: #c8d6c3;
+    color: #C9EFC7;
   }
+
+  .abtButton {
+    font-family: 'Space Mono', 'Lexend', sans-serif; 
+    background: linear-gradient(to bottom right, #29BA87, #6AD459);
+    border-radius: 28px;
+    color: white;
+    font-size: 18px;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .abtButton:hover {
+    background: linear-gradient(to bottom right, #6AD459, #29BA87);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+  }
+  
 
   .circle {
     display: flex;
@@ -112,7 +146,19 @@
     align-items: center;
   }
 
+  .section2Right {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    
+  }
 
+  .badges{
+    display: flex;
+    height: 100vh;
+  }
+
+  
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -121,9 +167,9 @@
     align-items: center;
     margin-top: 3rem;
   }
-
-
-
+  
+  
+  
   .secondarySection {
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -133,7 +179,7 @@
     align-items: center;
     justify-content: space-between;
   }
-
+  
   .secondaryTitle {
     font-family: 'Lexend', sans-serif;
     justify-items: center;
@@ -141,12 +187,12 @@
     font-weight: bold;
     margin-top: 3rem;
     margin-bottom: 1rem;
-    color: #c8d6c3;
+    color: #C9EFC7;
     text-align: left;
     display: inline-block;
     padding-left: 2rem;
   }
-
+  
   .artistexamples {
     display: flex;
     flex-direction: column;
@@ -165,7 +211,7 @@
     max-width: 800px;
     margin: 0 auto;
   }
-
+  
   .scroll-section {
     overflow-y: scroll;
     margin-top: 3rem;
@@ -177,15 +223,15 @@
     padding: 1rem;
     color: #c8d6c3;
   }
-
+  
   .grid-item {
     color: #c8d6c3;
     background-color: rgba(34, 49, 31, 0.8);
     border: 2px solid #3c482e;
-    padding: 1rem;
+    padding: 1rem;  
     margin: 1rem;
   }
-
+  
   .grid-item:hover {
     background-color: #3c482e;
   }
@@ -196,7 +242,7 @@
     overflow: hidden;
     width: 100%;
   }
-
+  
   .runner {
     display: inline-block;
     white-space: nowrap;
@@ -204,12 +250,12 @@
     animation: runner 20s linear infinite;
     width: 100%;
   }
-
+  
   .runner:first-child {
     left: 0;
     animation-delay: 10s;
   }
-
+  
   @keyframes runner {
     from {
       transform: translateX(100%);
@@ -218,24 +264,26 @@
       transform: translateX(-100%);
     }
   }
-
+  
   .container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background-color: #6bc85d; */
     background: linear-gradient(45deg, #a6de9a, #086515);
+    /* background: linear-gradient(to bottom, #6AD459, #29BA87); */
     color: #164604;
     }
-
+    
     .formGroup {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
     width: 100%;
     }
-
+    
     .label {
     font-family: 'Space Mono', 'Lexend', sans-serif;
     font-size: 1.1rem;
@@ -243,7 +291,7 @@
     margin-bottom: 0.5rem;
     color: #c9efc7;
     }
-
+    
     .input {
     border: none;
     border-radius: 0.5rem;
@@ -251,7 +299,7 @@
     font-size: 1rem;
     margin-bottom: 1rem;
     }
-
+    
     .button {
     font-family: 'Space Mono', 'Lexend', sans-serif;
     background-color: #c9efc7;
@@ -264,11 +312,11 @@
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     }
-
+    
     .button:hover {
     background-color: #d5ffd3;
     }
-
+    
     .registerLink {
     font-family: 'Space Mono', 'Lexend', sans-serif;
     color: #c9efc7;
@@ -277,7 +325,7 @@
     cursor: pointer;
     transition: color 0.3s ease-in-out;
     }
-
+    
     .registerLink:hover {
     color: #d5ffd3;
     }

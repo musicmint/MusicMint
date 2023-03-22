@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import '../../styles/examplebadge.module.css'
 import Link from 'next/link'
-import AuthContext from '../../src/context/auth'
+import AuthContext from '../src/context/auth'
 import Image from 'next/image'
 import anneliese from '../../anneliese.png'
 

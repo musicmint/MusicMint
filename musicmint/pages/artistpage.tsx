@@ -1,10 +1,12 @@
 import styles from '../styles/AuthPage.styles/auth.module.css';
+import NavBar from '../components/navbar';
 import NavBar from '../components/Auth/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 import { useState } from 'react'
 import { ethers } from 'ethers'
 
+export default function ArtistPage() {
 const client = ipfsHttpClient({
     host: 'ipfs.infura.io',
     port: 5001,
@@ -151,27 +153,4 @@ export default function ArtistPage({data, error, nft, marketplace}) {
       </div>
     </>
   )
-}
-
-export async function getStaticProps() {
-  let error = null
-  let data = []
-
-  try {
-    const response = await fetch(`${process.env.BASE_URL}/smth`)
-    data = await response.json();
-    console.log("data is ")
-    console.log(data)
-  }
-  catch (err) {
-    console.log("error :>> ", err)
-    error = err.message ? err.message : "Something went wrong"
-  }
-
-  return {
-    props: {
-      data: data,
-      error: error,
-    }
-  }
 }

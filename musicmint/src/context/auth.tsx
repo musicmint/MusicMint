@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
             await setAuthTokens(await data)
             if (await authTokens) await getUserInfo()
 
-            await router.push('/progress')
+            await router.push('/marketplace')
         } else {
             console.log("Incorrect Credentials")
             console.log(response.status)

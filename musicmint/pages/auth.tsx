@@ -1,8 +1,9 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import AuthContext from '../src/context/auth'
 import Login from '../components/Auth/login'
 import Registraion from '../components/Auth/registration'
-import NavBar from '../components/Auth/navbar'
+import NavBar from '../components/navbar'
+import router from 'next/router'
 import { ethers } from "ethers"
 
 import MarketplaceAbi from "./contractsData/Marketplace.json"
@@ -13,6 +14,7 @@ import Link from 'next/link'
 
 const AuthPage = () => {
     let [onLogin, setOnLogin] = useState(true)
+    let { isAuthorized } = useContext(AuthContext)
 
       //let's set up everything needed for blockchain upon boot up
   const { user, logoutUser } = useContext(AuthContext)
@@ -24,6 +26,13 @@ const AuthPage = () => {
     const switchTab = () => {
         setOnLogin(!onLogin)
     }
+
+
+    useEffect(() => {
+        if (isAuthorized) {
+            router.push('/profile')
+        }
+    }, [])
 
 
 // MetaMask Login/Connect
@@ -71,5 +80,3 @@ const AuthPage = () => {
 }
 
 export default AuthPage
-
-
