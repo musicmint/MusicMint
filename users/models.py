@@ -31,20 +31,15 @@ class CustomUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-# class User(AbstractUser):
-#     username = None 
-#     id=None
-#     email = models.EmailField(unique=True) 
-#     full_name = models.TextField(default="")
-#     nickname = models.TextField(blank=True)
-#     objects = CustomUserManager() 
-
-#     USERNAME_FIELD = 'email'
-#     REQUIRED_FIELDS = []
-
-#     class Meta:
-#         db_table = 'auth_user'
-
 class User(AbstractUser):
+    id=None
+    email = models.EmailField(unique=True) 
+    full_name = models.TextField(default="")
+    nickname = models.TextField(blank=True)
+    objects = CustomUserManager() 
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
     class Meta:
         db_table = 'auth_user'
