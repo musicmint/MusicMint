@@ -30,7 +30,7 @@
   }
 
 
-  .nav .rightside {
+  /* .nav .rightside {
     display:flex;
     
   }
@@ -49,13 +49,14 @@
     color: #d5ffd3;
     font-size: 1rem;
   }
-  
+   */
 
+   
    .navbarLinks {
     display: flex;
     flex-direction: row;
    }
-   
+
   .navbarLinks > *{
     align-items: center;
     text-decoration: none;
@@ -121,7 +122,6 @@
   .abtButton:hover {
     background: linear-gradient(to bottom right, #6AD459, #29BA87);
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-    font-size: 20px;
   }
   
 
@@ -154,72 +154,9 @@
     
   }
 
-  .descriptionIntro{
-    font-family: 'Lexend', sans-serif;
-    justify-items: center;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: #C9EFC7;
-    text-align: center;
-    display: inline-block;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .descriptionElab {
-    font-family: 'Lexend', sans-serif;
-    justify-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: #C9EFC7;
-    text-align: center;
-    display: inline-block;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .getStarted {
-    font-family: 'Space Mono', 'Lexend', sans-serif; 
-    background: linear-gradient(to bottom right, #29BA87, #6AD459);
-    border-radius: 28px;
-    color: white;
-    font-size: 18px;
-    padding: 15px 1px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    transition-duration: 0.4s;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 1.5rem;
-    margin-right: 2rem;
-    margin-left: 1rem;
-  }
-
-  .getStarted:hover {
-    background: linear-gradient(to bottom right, #6AD459, #29BA87);
-    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-    font-size: 20px;
-  }
-
   .badges{
     display: flex;
     height: 100vh;
-    flex-direction: column;
-    padding: 6rem 0;
-    font-family: 'Lexend', sans-serif;
-    justify-items: center;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: #C9EFC7;
-    text-align: center;
   }
 
   
@@ -249,12 +186,12 @@
     justify-items: center;
     font-size: 3rem;
     font-weight: bold;
-    margin-top: 1rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     color: #C9EFC7;
-    text-align: center;
+    text-align: left;
     display: inline-block;
-    /* padding-left: 2rem; */
+    padding-left: 2rem;
   }
   
   .artistexamples {
@@ -339,59 +276,90 @@
     background: linear-gradient(45deg, #a6de9a, #086515);
     /* background: linear-gradient(to bottom, #6AD459, #29BA87); */
     color: #164604;
-    }
+  }
     
+  .header {
+      font-family: 'Space Mono', 'Lexend', sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      color: #c9efc7;
+  }
+
     .formGroup {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
-    width: 100%;
-    }
-    
-    .label {
+    margin-bottom: 0.3rem;
+    width: clamp(10rem, 30%, 20rem);
+  }
+  
+  .label {
     font-family: 'Space Mono', 'Lexend', sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #c9efc7;
-    }
-    
-    .input {
+  }
+  
+  .input {
+    all: unset;
+    background-color: #3B3B3B;
+    color: #fff;
     border: none;
     border-radius: 0.5rem;
     padding: 0.75rem;
     font-size: 1rem;
     margin-bottom: 1rem;
-    }
-    
-    .button {
+  }
+  
+  .button {
+    width: 100%;
     font-family: 'Space Mono', 'Lexend', sans-serif;
     background-color: #c9efc7;
     color: #164604;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     border: none;
     border-radius: 0.5rem;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-    }
-    
-    .button:hover {
+  }
+  
+  .button:hover {
     background-color: #d5ffd3;
-    }
-    
-    .registerLink {
+  }
+  
+  .noCredentials {
     font-family: 'Space Mono', 'Lexend', sans-serif;
+    margin-top: 1rem;
+    width: clamp(10rem, 30%, 20rem);
+    font-size: 0.9rem;
     color: #c9efc7;
-    font-size: 1.1rem;
-    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .noCredentials div{
     cursor: pointer;
-    transition: color 0.3s ease-in-out;
-    }
-    
-    .registerLink:hover {
-    color: #d5ffd3;
-    }
+
+  }
+
+  .registerLink {
+  font-family: 'Space Mono', 'Lexend', sans-serif;
+  color: #c9efc7;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  }
+  
+  .registerLink:hover {
+  color: #d5ffd3;
+  }
    /* [AI-generated, ChatGpt]*/
   

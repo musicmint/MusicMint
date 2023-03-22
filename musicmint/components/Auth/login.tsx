@@ -9,26 +9,20 @@ const Login = (props) => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.label}>MusicMint</div>
-            <div>
+            <div className={styles.header}>MusicMint</div>
                 <div className={styles.formGroup}>
-                    <label htmlFor="email" className={styles.label}>
-                        Email
-                    </label>
-                    <input type="email" id="email" name="email" className={styles.input} onChange={(e) => setEmail(e.target.value)}/>
+                    <input type="email" id="email" name="email" className={styles.input} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your E-mail"/>
                 </div>
                 <div className={styles.formGroup}>
-                    <label htmlFor="password" className={styles.label}>
-                        Password
-                    </label>
-                    <input type="password" id="password" name="password" className={styles.input} onChange={(e) => setPassword(e.target.value)}/>
+                    <input type="password" id="password" name="password" className={styles.input} onChange={(e) => setPassword(e.target.value)}  placeholder="Enter your password"/>
                 </div>
-                <button type="submit" className={styles.button} onClick={() => loginUser(email, password)}>Log in</button>
-            </div>
-            
-            <div className={styles.button} onClick={props.switchTab}>
-                Register
-            </div>
+                <div className={styles.formGroup}>
+                    <div className={styles.button} onClick={() => loginUser(email, password)}>Log in</div>
+                </div>
+                <div className={styles.noCredentials}>
+                    <div>Forgot password?</div>
+                    <div onClick={props.switchTab}>Register</div>
+                </div>
         </div>
     );
 };
