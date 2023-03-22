@@ -11,7 +11,7 @@ const initialContext =
     authTokens: { access: "", refresh: "" },
     loginUser: async (email: any, password: any) => { },
     logoutUser: () => { },
-    registerUser: async (full_name: any, email: any, password: any, isArtist: any) => { },
+    registerUser: async (full_name: any, email: any, password: any) => { },
     updateUser: async (updatedInfo: any) => { },
     isAuthorized: false as boolean,
     getUserInfo: (): any => { },
