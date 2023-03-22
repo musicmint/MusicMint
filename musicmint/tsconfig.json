@@ -17,6 +17,6 @@
     "noImplicitAny": false,
     "useUnknownInCatchVariables": false,
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "path/to/contractsData/*.json"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
