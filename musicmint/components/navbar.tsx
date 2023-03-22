@@ -1,9 +1,9 @@
 import React, {useContext} from 'react'
-import styles from '../../styles/marketplace.module.css'
+import styles from '../styles/marketplace.module.css'
 import Link from 'next/link'
-import AuthContext from '../../src/context/auth'
+import AuthContext from '../src/context/auth'
 import Image from 'next/image'
-import logo from '../../music-mint-marketplace.png'
+import logo from '../music-mint-marketplace.png'
 
 const NavBar = () => {
 

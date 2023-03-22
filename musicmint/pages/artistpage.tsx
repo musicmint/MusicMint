@@ -1,9 +1,7 @@
 import styles from '../styles/AuthPage.styles/auth.module.css';
-import NavBar from '../components/Auth/navbar';
+import NavBar from '../components/navbar';
 
-export default function ArtistPage({data, error}) {
-  console.log('data :>> ', data)
-  console.log('error :>> ', error)
+export default function ArtistPage() {
 
   return (
     <>
@@ -38,27 +36,4 @@ export default function ArtistPage({data, error}) {
       </div>
     </>
   )
-}
-
-export async function getStaticProps() {
-  let error = null
-  let data = []
-
-  try {
-    const response = await fetch(`${process.env.BASE_URL}/smth`)
-    data = await response.json();
-    console.log("data is ")
-    console.log(data)
-  }
-  catch (err) {
-    console.log("error :>> ", err)
-    error = err.message ? err.message : "Something went wrong"
-  }
-
-  return {
-    props: {
-      data: data,
-      error: error,
-    }
-  }
 }
