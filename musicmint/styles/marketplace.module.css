@@ -49,26 +49,68 @@
     font-size: 1rem;
   }
   
-  .container {
-    min-height: 200vh;
+  /* .container {
+    height: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: linear-gradient(45deg, #a6de9a, #086515);
     color: #164604;
-  }
+  } */
   
-  .main {
+  #titleSection {
+    justify-content: center;
+    height: 100vh;
     padding: 5rem 0;
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 80%;
   }
 
+  .halfWidth {
+    display: flex;
+    width: 60%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    clear: none;
+    flex-direction: column;
+  }
+
+  .title {
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #c8d6c3;
+  }
+
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-right: 5rem;
+  }
+
+  .smth {
+    display: flex;
+    height: 100vh;
+    padding: 5rem 0;
+  }
+
+  .section2Left {
+    display: flex;
+    width: 40%;
+    padding-left: 5rem;
+    justify-content: center;
+    align-items: center;
+  }
 
   
   .grid {
@@ -80,14 +122,7 @@
     margin-top: 3rem;
   }
   
-  .title {
-    font-size: 5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    color: #c8d6c3;
-  }
+  
   
   .secondarySection {
     margin-top: 3rem;
@@ -109,6 +144,7 @@
     color: #c8d6c3;
     text-align: left;
     display: inline-block;
+    padding-left: 2rem;
   }
   
   .artistexamples {
@@ -183,5 +219,67 @@
     }
   }
   
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #a6de9a, #086515);
+    color: #164604;
+    }
+    
+    .formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+    }
+    
+    .label {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #c9efc7;
+    }
+    
+    .input {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    }
+    
+    .button {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    background-color: #c9efc7;
+    color: #164604;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    }
+    
+    .button:hover {
+    background-color: #d5ffd3;
+    }
+    
+    .registerLink {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    color: #c9efc7;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    }
+    
+    .registerLink:hover {
+    color: #d5ffd3;
+    }
    /* [AI-generated, ChatGpt]*/
   

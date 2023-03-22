@@ -1,13 +1,14 @@
 .user-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
-    height: 250px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 250px;
+  border: 20px solid #000; /* Add a 1px black border */
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box; /* Add this to include the border in the width and height of the component */
+}
   
   .user-image {
     width: 100%;

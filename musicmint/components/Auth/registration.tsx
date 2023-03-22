@@ -11,9 +11,9 @@ const Registraion = (props) => {
             <div>Registration Page</div>
             <div>
                 <div>Connect Wallet:</div>
-            <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
+                <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
             </div>
-            <form onSubmit={registerUser}>
+            <form onSubmit={() => registerUser}>
                 <input type="text" name="username" placeholder="Enter Username" />
                 <input type="email" name="email" placeholder="Enter Email" />
                 <input type="password" name="password" placeholder="Enter Password" />

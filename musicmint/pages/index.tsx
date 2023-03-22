@@ -11,6 +11,12 @@ import AuthContext from '../src/context/auth'
 import styles from '../styles/marketplace.module.css'
 import NavBar from '../components/Auth/navbar'
 import ExampleBadge from '../components/Auth/examplebadge'
+import CDSpinner from '../components/Auth/cdspinner'
+import CircleImage from '../circle.png'
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin"; // Note the path change
+
+gsap.registerPlugin(ScrollToPlugin);
 import { useState } from 'react'
 import { ethers } from "ethers"
 import { Spinner } from 'react-bootstrap'
@@ -20,6 +26,35 @@ import MarketplaceAddress from './contractsData/Marketplace-address.json'
 import NFTAbi from './contractsData/NFT.json'
 import NFTAddress from './contractsData/NFT-address.json'
 
+if (typeof window !== "undefined") {
+const button = document.querySelector("#aboutButton");
+if (button){
+button.addEventListener("click", () => {
+  gsap.to(window, {duration: 10, scrollTo: {y: "#aboutSection"}});
+})}};
+
+
+// [AI-generated, Chatgpt]
+// Define an array of example users to print out on page
+const exampleUsers = [
+  {
+    id: 1,
+    name: 'John Smith',
+    bio: 'I am a musician and producer from Los Angeles. I specialize in electronic music and have released several albums over the years.',
+    nftName: 'Sunset Groove',
+    nftDescription: 'A one-of-a-kind track that will take you on a journey through the sounds of the ocean and the sunset.',
+    nftImage: '/nft1.jpg',
+  },
+  {
+    id: 2,
+    name: 'Emily Johnson',
+    bio: 'I am a visual artist and photographer based in New York City. I love to capture the beauty of nature and urban landscapes.',
+    nftName: 'Cityscape',
+    nftDescription: 'A stunning photograph of the New York City skyline at night, taken from a rooftop in Brooklyn.',
+    nftImage: '/nft2.jpg',
+  },
+  // Add more users as needed
+]
 
 export default function Home({data, error}) {
   // console.log('data :>> ', data)
@@ -69,7 +104,7 @@ export default function Home({data, error}) {
               <p>Cash out when they get famous.</p>
             </div>
 
-
+            
 
             <div className="runner-container">
               <div className={styles.runner}>
@@ -80,7 +115,7 @@ export default function Home({data, error}) {
               </div>
             </div>
 
-
+            
             {/* <p className={styles.description}>
               We believe that artists should be rewarded for their hard work and creativity. That's why we offer a
               cash-out feature that enables artists to benefit from their success. When an artist's work gains popularity,
@@ -122,7 +157,7 @@ export default function Home({data, error}) {
 export async function getStaticProps() {
   let error = null
   let data = []
-
+  
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/smth`)
     data = await response.json();
@@ -141,4 +176,3 @@ export async function getStaticProps() {
     }
   }
 }
-
