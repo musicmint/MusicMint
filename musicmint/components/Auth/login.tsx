@@ -8,7 +8,7 @@ const Login = (props) => {
     return (
         <div className={styles.container}>
             <div className={styles.label}>Login Page</div>
-            <form onSubmit={loginUser}>
+            <form onSubmit={() => loginUser}>
                 <div className={styles.formGroup}>
                     <label htmlFor="username" className={styles.label}>
                         Username

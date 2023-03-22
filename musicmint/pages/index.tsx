@@ -77,9 +77,6 @@ export default function Home() {
       </div>
 
 
-      
-
-
       {/*<div>*/}
       {/*  {data.map((element: any) => */}
       {/*    <div key={element.id}>*/}
