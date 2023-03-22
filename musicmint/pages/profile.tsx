@@ -1,7 +1,7 @@
 import styles from '../styles/AuthPage.styles/auth.module.css';
 import NavBar from '../components/navbar';
 
-export default function Profile() {
+export default function ArtistPage() {
 
   return (
     <>
@@ -13,7 +13,7 @@ export default function Profile() {
         <main className={styles.main}>
           <div className={styles.artistProfile}>
             <img className={styles.artistProfileImage} src="https://dummyimage.com/200x200/000/fff" alt="Artist profile" />
-            <h1 className={styles.artistProfileName}>USER</h1>
+            <h1 className={styles.artistProfileName}>ARTIST NAME</h1>
             <p className={styles.artistProfileBio}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus augue id nisi semper, sit amet hendrerit tortor ultricies.
             </p>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../src/context/auth';
 import styles from '../../styles/marketplace.module.css';
 
@@ -7,6 +7,22 @@ const Login = (props) => {
     let [email, setEmail] = useState<any>(null)
     let [password, setPassword] = useState<any>(null)
 
+    useEffect(() => {
+        function handleKeyDown(event) {
+          if (event.key === "Enter") {
+            console.log(email);
+            console.log(password);
+            
+            loginUser(email, password);
+          }
+        }
+    
+        window.addEventListener("keydown", handleKeyDown);
+        return () => {
+          window.removeEventListener("keydown", handleKeyDown);
+        };
+      }, [email, password]);
+      
     return (
         <div className={styles.container}>
             <div className={styles.header}>MusicMint</div>
