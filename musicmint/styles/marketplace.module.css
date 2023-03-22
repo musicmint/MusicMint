@@ -337,7 +337,7 @@
     background-color: #d5ffd3;
   }
   
-  .noCredentials {
+  .noCredentials, .artistCheckbox {
     font-family: 'Space Mono', 'Lexend', sans-serif;
     margin-top: 1rem;
     width: clamp(10rem, 30%, 20rem);
@@ -350,8 +350,21 @@
 
   .noCredentials div{
     cursor: pointer;
-
   }
+
+.artistCheckbox {
+  height: inherit;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.artistCheckbox input[type="checkbox"] {
+  margin-right: 0.4rem;
+  height: 1rem;
+  aspect-ratio: 1;
+}
 
   .registerLink {
   font-family: 'Space Mono', 'Lexend', sans-serif;

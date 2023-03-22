@@ -1,6 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react'
 import AuthContext from '../../src/context/auth'
 import styles from '../../styles/marketplace.module.css'
+import Link from "next/link"
+import { InputType } from 'zlib'
 
 const Registraion = (props) => {
     let { registerUser } = useContext(AuthContext)
@@ -11,7 +13,7 @@ const Registraion = (props) => {
     useEffect(() => {
         function handleKeyDown(event) {
           if (event.key === "Enter") {
-            registerUser(fullName, email, password);
+            registerUser(fullName, email, password, (document.getElementById("isArtist") as HTMLInputElement).checked);
           }
         }
     
@@ -33,8 +35,12 @@ const Registraion = (props) => {
              <div className={styles.formGroup}>
                  <input type="password" id="password" name="password" className={styles.input} onChange={(e) => setPassword(e.target.value)}  placeholder="Enter your password"/>
              </div>
+                <div className={styles.artistCheckbox}>
+                    <input type="checkbox" id="isArtist"></input>
+                    <div>I am an artist</div>
+                </div>
              <div className={styles.formGroup}>
-                 <div className={styles.button} onClick={() => registerUser(fullName, email, password)}>Register</div>
+                 <div className={styles.button} onClick={() => registerUser(fullName, email, password, (document.getElementById("isArtist") as HTMLInputElement).checked)}>Register</div>
              </div>
              <div className={styles.noCredentials}>
                  <div onClick={props.switchTab}>Have an account? Log in</div>
