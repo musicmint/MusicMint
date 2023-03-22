@@ -13,7 +13,7 @@ const Registraion = (props) => {
     useEffect(() => {
         function handleKeyDown(event) {
           if (event.key === "Enter") {
-            registerUser(fullName, email, password, (document.getElementById("isArtist") as HTMLInputElement).checked);
+            registerUser(fullName, email, password); // , (document.getElementById("isArtist") as HTMLInputElement).checked
           }
         }
     
@@ -40,7 +40,7 @@ const Registraion = (props) => {
                     <div>I am an artist</div>
                 </div>
              <div className={styles.formGroup}>
-                 <div className={styles.button} onClick={() => registerUser(fullName, email, password, (document.getElementById("isArtist") as HTMLInputElement).checked)}>Register</div>
+                 <div className={styles.button} onClick={() => registerUser(fullName, email, password)}>Register</div>
              </div>
              <div className={styles.noCredentials}>
                  <div onClick={props.switchTab}>Have an account? Log in</div>

@@ -74,13 +74,13 @@ export const AuthProvider = ({ children }) => {
         router.push('/auth')
     }
 
-    let registerUser = async (full_name: any, email: any, password: any, isArtist: any) => {
+    let registerUser = async (full_name: any, email: any, password: any) => {
         let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/register/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ 'full_name': full_name, 'email': email, 'password': password, 'isArtist': isArtist })
+            body: JSON.stringify({ 'full_name': full_name, 'email': email, 'password': password })
         })
         let data = await response.json()
 
