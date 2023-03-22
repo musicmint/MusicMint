@@ -7,7 +7,7 @@ const Registraion = (props) => {
     return (
         <div className={styles.AuthWrapper}>
             <div>Registration Page</div>
-            <form onSubmit={registerUser}>
+            <form onSubmit={() => registerUser}>
                 <input type="text" name="username" placeholder="Enter Username" />
                 <input type="email" name="email" placeholder="Enter Email" />
                 <input type="password" name="password" placeholder="Enter Password" />
