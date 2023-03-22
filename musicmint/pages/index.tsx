@@ -42,7 +42,7 @@ const exampleUsers = [
   // Add more users as needed
 ]
 
-export default function Home({data, error}) {
+export default function Home() {
   // console.log('data :>> ', data)
   // console.log('error :>> ', error)
   let {user, logoutUser, authTokens} = useContext(AuthContext)
@@ -137,10 +137,6 @@ export default function Home({data, error}) {
       </div>
 
 
-      
-
-
-      {error && <p>{JSON.stringify(error)}</p>}
       {/*<div>*/}
       {/*  {data.map((element: any) => */}
       {/*    <div key={element.id}>*/}
@@ -157,27 +153,4 @@ export default function Home({data, error}) {
     </>
   )
   // [AI-generated, Chatgpt]
-}
-
-export async function getStaticProps() {
-  let error = null
-  let data = []
-  
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/smth`)
-    data = await response.json();
-    console.log("data is ")
-    console.log(data)
-  }
-  catch (err) {
-    console.log("error :>> ", err)
-    error = err.message ? err.message : "Something went wrong"
-  }
-
-  return {
-    props: {
-      data: data,
-      error: error,
-    }
-  }
 }

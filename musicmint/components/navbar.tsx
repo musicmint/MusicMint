@@ -27,7 +27,7 @@ const NavBar = () => {
           </div>
 
           <div className={styles.navbarLinks}>
-              <Link href="/artistpage">FOR ARTISTS</Link>
+              <Link href="/profile">FOR ARTISTS</Link>
               <Link href="/marketplace">MARKETPLACE</Link>
               {isAuthorized ? (
                 <p onClick={logoutUser}>LOGOUT</p>

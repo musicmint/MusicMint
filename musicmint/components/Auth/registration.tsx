@@ -1,26 +1,57 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import AuthContext from '../../src/context/auth'
-import styles from '../../styles/AuthPage.styles/auth.module.css'
+import styles from '../../styles/marketplace.module.css'
+import Link from "next/link"
+import { InputType } from 'zlib'
 
 import Wallet from '../../components/Auth/connectWallet'
 
 const Registraion = (props) => {
     let { registerUser } = useContext(AuthContext)
+    let [fullName, setFullName] = useState<any>(null)
+    let [email, setEmail] = useState<any>(null)
+    let [password, setPassword] = useState<any>(null)
+
+    useEffect(() => {
+        function handleKeyDown(event) {
+          if (event.key === "Enter") {
+            registerUser(fullName, email, password, (document.getElementById("isArtist") as HTMLInputElement).checked);
+          }
+        }
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => {
+          window.removeEventListener("keydown", handleKeyDown);
+        };
+      }, [fullName, email, password]);
+
     return (
-        <div className={styles.AuthWrapper}>
-            <div>Registration Page</div>
-            <div>
-                <div>Connect Wallet:</div>
-                <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
-            </div>
-            <form onSubmit={() => registerUser}>
-                <input type="text" name="username" placeholder="Enter Username" />
-                <input type="email" name="email" placeholder="Enter Email" />
-                <input type="password" name="password" placeholder="Enter Password" />
-                <input type="submit"/>
-            </form>
-            <div onClick={() => props.switchTab()}>Login</div>
-        </div>
+         <div className={styles.container}>
+         <div className={styles.header}>MusicMint</div>
+             <div>
+                 <div>Connect Wallet:</div>
+                 <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
+             </div>
+             <div className={styles.formGroup}>
+                 <input type="text" id="fullName" name="fullName" className={styles.input} onChange={(e) => setFullName(e.target.value)} placeholder="Enter your full name"/>
+             </div>
+             <div className={styles.formGroup}>
+                 <input type="email" id="email" name="email" className={styles.input} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your E-mail"/>
+             </div>
+             <div className={styles.formGroup}>
+                 <input type="password" id="password" name="password" className={styles.input} onChange={(e) => setPassword(e.target.value)}  placeholder="Enter your password"/>
+             </div>
+                <div className={styles.artistCheckbox}>
+                    <input type="checkbox" id="isArtist"></input>
+                    <div>I am an artist</div>
+                </div>
+             <div className={styles.formGroup}>
+                 <div className={styles.button} onClick={() => registerUser(fullName, email, password, (document.getElementById("isArtist") as HTMLInputElement).checked)}>Register</div>
+             </div>
+             <div className={styles.noCredentials}>
+                 <div onClick={props.switchTab}>Have an account? Log in</div>
+             </div>
+     </div>
     )
 }
 
