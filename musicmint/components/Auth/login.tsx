@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../src/context/auth';
 import styles from '../../styles/marketplace.module.css';
+import Wallet from '../../components/Auth/connectWallet'
 
 const Login = (props) => {
     const { loginUser } = useContext(AuthContext);
@@ -12,19 +13,24 @@ const Login = (props) => {
           if (event.key === "Enter") {
             console.log(email);
             console.log(password);
-            
+
             loginUser(email, password);
           }
         }
-    
+
         window.addEventListener("keydown", handleKeyDown);
         return () => {
           window.removeEventListener("keydown", handleKeyDown);
         };
       }, [email, password]);
-      
+
     return (
         <div className={styles.container}>
+            <div className={styles.label}>MusicMint</div>
+            <div>
+                <div>Connect Wallet:</div>
+                <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
+            </div>
             <div className={styles.header}>MusicMint</div>
                 <div className={styles.formGroup}>
                     <input type="email" id="email" name="email" className={styles.input} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your E-mail"/>

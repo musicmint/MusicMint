@@ -91,6 +91,38 @@
    height: 100vh;
    }
 
+  .WalletWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+  .artistWrapper {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+  }
+  
+  .artistProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    position: relative;
+  }
+  
+  .artistProfileImage {
+    border-radius: 50%;
+    width: 500px;
+      height: 300px;
+    margin-bottom: 1rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;}
    .artistWrapper {
      display: flex;
      justify-content: center;
@@ -174,7 +206,7 @@
     flex-direction: column;
     color: #c8d6c3;
     text-align: center;
-    margin: 0; 
+    margin: 0;
     font-size: 2.0rem;
   }
 
@@ -183,4 +215,3 @@
       margin-top: 2rem;
     }
   }
-  

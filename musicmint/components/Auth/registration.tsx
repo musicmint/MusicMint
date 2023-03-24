@@ -4,6 +4,8 @@ import styles from '../../styles/marketplace.module.css'
 import Link from "next/link"
 import { InputType } from 'zlib'
 
+import Wallet from '../../components/Auth/connectWallet'
+
 const Registraion = (props) => {
     let { registerUser } = useContext(AuthContext)
     let [fullName, setFullName] = useState<any>(null)
@@ -16,16 +18,20 @@ const Registraion = (props) => {
             registerUser(fullName, email, password); // , (document.getElementById("isArtist") as HTMLInputElement).checked
           }
         }
-    
+
         window.addEventListener("keydown", handleKeyDown);
         return () => {
           window.removeEventListener("keydown", handleKeyDown);
         };
       }, [fullName, email, password]);
-      
+
     return (
          <div className={styles.container}>
          <div className={styles.header}>MusicMint</div>
+             <div>
+                 <div>Connect Wallet:</div>
+                 <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
+             </div>
              <div className={styles.formGroup}>
                  <input type="text" id="fullName" name="fullName" className={styles.input} onChange={(e) => setFullName(e.target.value)} placeholder="Enter your full name"/>
              </div>

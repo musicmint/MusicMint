@@ -7,3 +7,7 @@
     BASE_URL = http://localhost:8000/api
 
 4) npm run dev
+5) cd music mint
+
+5) npx hardhat node
+6) new terminal 
