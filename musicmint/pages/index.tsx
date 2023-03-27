@@ -7,17 +7,29 @@ import styles from '../styles/marketplace.module.css'
 import NavBar from '../components/navbar'
 import ExampleBadge from '../components/examplebadge'
 import CircleImage from '../circle.png'
-import { gsap } from "gsap";
+import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin"; // Note the path change
 
-gsap.registerPlugin(ScrollToPlugin);
+// const components = document.querySelectorAll('.component');
+// const tl = gsap.timeline({repeat: -1});
 
-if (typeof window !== "undefined") {
-  const button = document.querySelector("#aboutButton");
-  if (button){
-    button.addEventListener("click", () => {
-      gsap.to(window, {duration: 10, scrollTo: {y: "#aboutSection"}});
-    })}};
+// tl.to(components[0], {x: '-100%', duration: 5, ease: 'linear'})
+//   .to(components[1], {x: '-100%', duration: 5, ease: 'linear'}, '-=4.5')
+//   .to(components[2], {x: '-100%', duration: 5, ease: 'linear'}, '-=4')
+//   .to(components[3], {x: '-100%', duration: 5, ease: 'linear'}, '-=3.5')
+//   .to(components[4], {x: '-100%', duration: 5, ease: 'linear'}, '-=3');
+
+//   tl.play();
+
+// const badgeRef = ExampleBadge.badgeRef.current;
+
+
+// if (typeof window !== "undefined") {
+//   const button = document.querySelector("#aboutButton");
+//   if (button){
+//     button.addEventListener("click", () => {
+//       gsap.to(window, {duration: 10, scrollTo: {y: "#aboutSection"}});
+//     })}};
 
 
 // [AI-generated, Chatgpt]
@@ -83,6 +95,13 @@ export default function Home() {
         <section id="badgesSection" className={styles.badges}>
           <p>Support their journey.</p>
           <p>Cash out when they get famous.</p>
+          <div className={styles.multibadge}>
+            <ExampleBadge/>
+            <ExampleBadge/>
+            <ExampleBadge/>
+            <ExampleBadge/>
+            <ExampleBadge/>
+          </div>
         </section>
         {/* <main className={styles.main}>
      
