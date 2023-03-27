@@ -407,6 +407,7 @@
   
   .button:hover {
     background-color: #d5ffd3;
+    font-size: 0.95rem;
   }
   
   .noCredentials, .artistCheckbox {

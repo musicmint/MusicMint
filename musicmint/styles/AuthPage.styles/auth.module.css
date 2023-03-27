@@ -1,5 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
 
+
+  .connectText{
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    color: #c9efc7;
+  }
+
+  .connectButton {
+    width: 100%;
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    background-color: #c9efc7;
+    color: #164604;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .connectButton:hover {
+    background-color: #d5ffd3;
+    font-size:0.95rem;
+  }
+
+  
  .container {
    min-height: 200vh;
    display: flex;
