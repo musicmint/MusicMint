@@ -2,18 +2,39 @@ import styles from '../styles/AuthPage.styles/auth.module.css';
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
+const { CID } = require('ipfs-http-client')
 import { useState } from 'react'
 import { ethers } from "ethers"
 
-const client = ipfsHttpClient({
-  host: 'ipfs.infura.io',
-  port: 5001,
-  protocol: 'https',
-  apiPath: '/api/v0/',
-  headers: {
-    authorization: "auth:auth"
-  }
-})
+const projectId = '2NTlPAsbm2qHgQi2tpi7cebBnNd';   // <---------- your Infura Project ID
+
+const projectSecret = 'cef0ed12c92e5a9a981a156c2f4f7d84';  // <---------- your Infura Secret
+// (for security concerns, consider saving these values in .env files)
+
+const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
+
+
+// const client = ipfsHttpClient({
+//   host: 'ipfs.infura.io',
+//   port: 5001,
+//   protocol: 'https',
+//   apiPath: '/api/v0/',
+//   headers: {
+//     authorization: auth,
+//   }
+// })
+const ipfsClient = require('ipfs-http-client');
+const client = ipfsClient.create({
+    host: 'ipfs.infura.io',
+    port: 5001,
+    protocol: 'https',
+    headers: {
+        authorization: auth,
+    },
+});
+// client.pin.add('QmeGAVddnBSnKc1DLE7DLV9uuTqo5F7QbaveTjr45JUdQn').then((res) => {
+//     console.log(res);
+// });
 export default function ArtistPage({data, error, nft, marketplace}) {
   const [image, setImage] = useState('')
   const [price, setPrice] = useState(0)
