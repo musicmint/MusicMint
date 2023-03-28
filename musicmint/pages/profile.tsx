@@ -2,7 +2,7 @@ import styles from '../styles/AuthPage.styles/auth.module.css';
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
-const { CID } = require('ipfs-http-client')
+//const { CID } = require('ipfs-http-client')
 import { useState } from 'react'
 import { ethers } from "ethers"
 
@@ -13,18 +13,7 @@ const projectSecret = 'cef0ed12c92e5a9a981a156c2f4f7d84';  // <---------- your I
 
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
 
-
-// const client = ipfsHttpClient({
-//   host: 'ipfs.infura.io',
-//   port: 5001,
-//   protocol: 'https',
-//   apiPath: '/api/v0/',
-//   headers: {
-//     authorization: auth,
-//   }
-// })
-const ipfsClient = require('ipfs-http-client');
-const client = ipfsClient.create({
+const client = ipfsHttpClient({
     host: 'ipfs.infura.io',
     port: 5001,
     protocol: 'https',
@@ -32,9 +21,7 @@ const client = ipfsClient.create({
         authorization: auth,
     },
 });
-// client.pin.add('QmeGAVddnBSnKc1DLE7DLV9uuTqo5F7QbaveTjr45JUdQn').then((res) => {
-//     console.log(res);
-// });
+
 export default function ArtistPage({data, error, nft, marketplace}) {
   const [image, setImage] = useState('')
   const [price, setPrice] = useState(0)
@@ -84,7 +71,7 @@ export default function ArtistPage({data, error, nft, marketplace}) {
   return (
     <>
       <div className={styles.artistWrapper}> 
-        <NavBar/>
+        <NavBar nft={nft} marketplace={marketplace}/>
       </div>
 
       <div className={styles.container}>
@@ -116,7 +103,8 @@ export default function ArtistPage({data, error, nft, marketplace}) {
                   type="file"
                   required
                   name="file"
-                  onChange={uploadToIPFS}
+                  //UNCOMMENT TO ADD TO STORAGE
+                  //onChange={uploadToIPFS}
                   style={{borderRadius: "20px", border: "2px solid #1DB954",}}
               />
               <Form.Control onChange={(e) => setName(e.target.value)} size="lg" required type="text"

@@ -54,7 +54,7 @@ const exampleUsers = [
   // Add more users as needed
 ]
 
-export default function Home() {
+export default function Home(nft, marketplace) {
   // console.log('data :>> ', data)
   // console.log('error :>> ', error)
   let {user, logoutUser, authTokens} = useContext(AuthContext)
@@ -63,7 +63,7 @@ export default function Home() {
   return (
     <>
       <div className={styles.container}>
-        <NavBar/>
+        <NavBar nft={nft} marketplace={marketplace}/>
         <section id="titleSection" >
           <div className={styles.halfWidth}>
             <h1 className={styles.title}>MUSIC MINT MARKETPLACE</h1>

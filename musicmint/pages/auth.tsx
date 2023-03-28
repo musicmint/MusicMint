@@ -36,7 +36,7 @@ const AuthPage = () => {
 
 
 // MetaMask Login/Connect
-    const web3Handler = async () => {
+const web3Handler = async () => {
     const accounts = await (window as any).ethereum.request({ method: 'eth_requestAccounts' });
     setAccount(accounts[0])
 
@@ -66,15 +66,15 @@ const AuthPage = () => {
     setMarketplace(marketplace)
     const nft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer)
     setNFT(nft)
+      console.log("nft set")
+      console.log(nft)
     setLoading(false)
   }
 
     return (
         <>
-        <NavBar/>
-        {/*{onLogin ? <Login switchTab={switchTab}></Login> : <Registraion switchTab={switchTab}></Registraion>}*/}
-        {onLogin ? <Login  web3Handler={web3Handler} account={account} switchTab={switchTab}></Login> : <Registraion  web3Handler={web3Handler} account={account} switchTab={switchTab}></Registraion>}
-     {/* <Wallet web3Handler={web3Handler} account={account}></Wallet> */}
+        <NavBar nft={nft} marketplace={marketplace}/>
+        {onLogin ? <Login  marketplace={marketplace} nft={nft} web3Handler={web3Handler} account={account} switchTab={switchTab}></Login> : <Registraion  marketplace={marketplace} nft={nft} web3Handler={web3Handler} account={account} switchTab={switchTab}></Registraion>}
         </>
     )
 }

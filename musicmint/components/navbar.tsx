@@ -5,7 +5,7 @@ import AuthContext from '../src/context/auth'
 import Image from 'next/image'
 import logo from '../music-mint-marketplace.png'
 
-const NavBar = () => {
+const NavBar = ({ nft, marketplace }) => {
   let { user, logoutUser, getUserInfo, isAuthorized } = useContext(AuthContext)
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const NavBar = () => {
           </div>
 
           <div className={styles.navbarLinks}>
-              <Link href="/profile">FOR ARTISTS</Link>
+              <Link href={`/profile?nft=${nft}&marketplace=${marketplace}`}>FOR ARTISTS</Link>
               <Link href="/marketplace">MARKETPLACE</Link>
               {isAuthorized ? (
                 <p onClick={logoutUser}>LOGOUT</p>
