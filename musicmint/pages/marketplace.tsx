@@ -60,8 +60,10 @@ export default function Home(nft, marketplace) {
       </main>
   )
   return (
+    <>
+      <NavBar nft={nft} marketplace={marketplace}/>
       <div className="flex justify-center">
-        <NavBar nft={nft} marketplace={marketplace}/>
+      
         {/*FOR REAL IT SHOULD BE >0*/}
         {items.length == 0 ?
             <div className="px-5 container">
@@ -94,5 +96,6 @@ export default function Home(nft, marketplace) {
                 </main>
             )}
       </div>
+      </>
   );
 }

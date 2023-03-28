@@ -1,24 +1,13 @@
-/* [AI-generated, ChatGpt]*/
-
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
-
-
-
-
-
-  
-
-
-  
-  /* .container {
+.container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    /* background-color: #6bc85d; */
     background: linear-gradient(45deg, #a6de9a, #086515);
-
+    /* background: linear-gradient(to bottom, #6AD459, #29BA87); */
     color: #164604;
   }
     
@@ -122,6 +111,6 @@
   
   .registerLink:hover {
   color: #d5ffd3;
-  } */
+  }
    /* [AI-generated, ChatGpt]*/
   
