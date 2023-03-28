@@ -11,6 +11,8 @@ const Wallet = ({ web3Handler, account }) => {
     return (
 
         <div className={styles.WalletWrapper}>
+            <div className={styles.connectText}>
+                    <p>Connect Wallet:</p></div>
             {account ? (
                 <Link
                     href={`https://etherscan.io/address/${account}`}
@@ -23,7 +25,7 @@ const Wallet = ({ web3Handler, account }) => {
 
                 </Link>
             ) : (
-                <Button onClick={web3Handler} variant="outline-light">Connect Wallet</Button>
+                <Button onClick={web3Handler} className={styles.connectButton}>Connect Wallet</Button>
             )}
         </div>
     )
