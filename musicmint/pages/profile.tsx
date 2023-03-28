@@ -131,25 +131,25 @@ export default function ArtistPage({data, error, nft, marketplace}) {
                     borderRadius: "10px",
                     overflow: "hidden"
                   }} className="d-grid px-0">
-                <Button
-                    className="btn btn-primary btn-lg rounded-pill px-5"
-                    style={{
-                      background: "#1DB954",
-                      border: "none",
-                      borderRadius: "10px",
-                      color: "white",
-                      fontFamily: "Helvetica",
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                      padding: "12px 36px",
-                      textAlign: "center",
-                      textDecoration: "none",
-                      display: "inline-block",
-                      margin: "4px 2px",
-                      cursor: "pointer"
-                    }} onClick={createNFT} variant="primary" size="lg">
-                  Create & List NFT!
-                </Button>
+                {/*<Button*/}
+                {/*    className="btn btn-primary btn-lg rounded-pill px-5"*/}
+                {/*    style={{*/}
+                {/*      background: "#1DB954",*/}
+                {/*      border: "none",*/}
+                {/*      borderRadius: "10px",*/}
+                {/*      color: "white",*/}
+                {/*      fontFamily: "Helvetica",*/}
+                {/*      fontSize: "18px",*/}
+                {/*      fontWeight: "bold",*/}
+                {/*      padding: "12px 36px",*/}
+                {/*      textAlign: "center",*/}
+                {/*      textDecoration: "none",*/}
+                {/*      display: "inline-block",*/}
+                {/*      margin: "4px 2px",*/}
+                {/*      cursor: "pointer"*/}
+                {/*    }} onClick={createNFT} variant="primary" size="lg">*/}
+                {/*  Create & List NFT!*/}
+                {/*</Button>*/}
               </div>
             </Row>
           </div>
