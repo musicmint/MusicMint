@@ -5,7 +5,7 @@ import AuthContext from '../src/context/auth'
 import Image from 'next/image'
 import logo from '../music-mint-marketplace.png'
 
-const NavBar = ({ nft, marketplace }) => {
+const NavBar = (props, { nft, marketplace }) => {
   let { user, logoutUser, getUserInfo, isAuthorized } = useContext(AuthContext)
 
   useEffect(() => {

@@ -6,7 +6,27 @@
 
 
 
-  
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: black;
+
+  }
+
+  .search{
+    margin-top: 1%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: aqua;
+  }
+
+  .marketNav {
+    background-color: black !important;
+  }
 
 
   

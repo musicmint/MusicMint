@@ -3,6 +3,7 @@ import NavBar from '../components/navbar'
 import {useEffect, useState} from "react";
 import { ethers } from "ethers"
 import { Row, Col, Card, Button } from 'react-bootstrap'
+import SearchBar from '../components/searchBar'
 
 interface Item {
   totalPrice: ethers.BigNumber;
@@ -60,10 +61,17 @@ export default function Home(nft, marketplace) {
       </main>
   )
   return (
-    <>
-      <NavBar nft={nft} marketplace={marketplace}/>
-      <div className="flex justify-center">
+    <div className ={styles.container}>
+      {/* className={styles.nav}  */}
+      <NavBar className={styles.marketNav} nft={nft} marketplace={marketplace} />
+     
+      <div className={styles.search}>
+        <SearchBar nft={nft} marketplace={marketplace}/>
+      </div>
       
+      
+      <div className="flex justify-center">
+        
         {/*FOR REAL IT SHOULD BE >0*/}
         {items.length == 0 ?
             <div className="px-5 container">
@@ -96,6 +104,7 @@ export default function Home(nft, marketplace) {
                 </main>
             )}
       </div>
-      </>
+  
+    </div>
   );
 }
