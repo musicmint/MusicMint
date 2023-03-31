@@ -33,12 +33,14 @@
     text-align: center;
     margin-top: 3rem;
     margin-bottom: 1rem;
-    color: #C9EFC7;
+    color: #b6eeff;
+    /* color: #C9EFC7; */
   }
 
   .abtButton {
     font-family: 'Space Mono', 'Lexend', sans-serif; 
-    background: linear-gradient(to bottom right, #29BA87, #6AD459);
+    /* background: linear-gradient(to bottom right, #29BA87, #6AD459); */
+    background: linear-gradient(to bottom right, #42d6ff, #0166cc);
     border-radius: 28px;
     color: white;
     font-size: 18px;

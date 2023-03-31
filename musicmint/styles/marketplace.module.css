@@ -30,14 +30,17 @@
   .greenCube {
     display: flex;
     /* flex-direction: row; */
-    width: 95%;
+    width: 88%;
     height: 15rem;
     justify-content: space-between;
     /* justify-content: center; */
     align-items: center;
-    margin-left: 2rem;
+    margin-left: 4.7rem;
     margin-top: 4rem;
-    background: linear-gradient(to bottom, #29BA87, #6AD459);
+    /* background: linear-gradient(to bottom, #335df5, #0026AB); */
+    background: linear-gradient(to bottom, #42d6ff, #0166cc);
+    /* 2A57FA
+    background: linear-gradient(to bottom, #29BA87, #6AD459); */
   }
 
   .cubeTxt {
@@ -48,6 +51,7 @@
     font-family: 'Lexend', sans-serif; 
     padding-left: 4rem;
     margin-top: 3.5rem;
+    color: white;
     /* justify-content: left; */
   }
 
@@ -74,7 +78,7 @@
     background-color: rgba(209, 209, 209, 0.35);
     /* background: linear-gradient(to bottom right, #29BA87, #6AD459); */
     border-radius: 40px;
-    color: black;
+    color: white;
     font-size: 11px;
     font-weight: bold;
     padding: 8px 10px;
@@ -97,7 +101,7 @@
   .vandyArtists{
     display:flex;
     flex-direction: column;
-    height: 15rem;
+    height: 17rem;
     /* background-color: rgba(209, 209, 209, 0.35); */
     width: 95%;
     justify-content: space-between;
@@ -114,8 +118,15 @@
     font-family: 'Lexend', sans-serif; 
     padding-left: 4rem;
     /* margin-top: 0.2rem; */
-    color: #C9EFC7;
+    /* color: #C9EFC7; */
+    color: #b6eeff;
+    /* color: #c7e2ef; */
     /* text-align: left; */
+  }
+
+  .artistBadges{
+    display: flex;
+    flex-direction: row;
   }
   
 

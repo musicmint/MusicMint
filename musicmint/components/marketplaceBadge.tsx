@@ -1,3 +1,5 @@
+/* Created by Anneliese Breidsprecher */
+
 import React, {useContext, useEffect} from 'react'
 import styles from '../styles/mBadge.module.css'
 import Link from 'next/link'
@@ -6,13 +8,13 @@ import Image from 'next/image'
 import logo from '../music-mint-marketplace.png'
 
 
-const marketBadge = (props, { nft, marketplace }) => {
+// ADD PROPS FOR SPECIFIC ARTISTS!!!!!
+const marketBadge = (props) => {
     return (
-        <div className = {styles.searchBar}>
-            <form>
-                <input type="text" placeholder="Find your favorite artist" className = {styles.search} ></input>
-                
-            </form>
+        <div className = {styles.mBadge}>
+            <div className = {styles.nameSection}>
+                <p className = {styles.name}>Artist Name</p>
+            </div>
         </div>
     )
 }

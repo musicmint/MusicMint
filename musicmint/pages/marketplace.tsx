@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import { ethers } from "ethers"
 import { Row, Col, Card, Button } from 'react-bootstrap'
 import SearchBar from '../components/searchBar'
+import MarketBadge from '../components/marketplaceBadge'
 
 interface Item {
   totalPrice: ethers.BigNumber;
@@ -84,6 +85,12 @@ export default function Home(nft, marketplace) {
       {/* featured artists */}
       <div className={styles.vandyArtists}>
         <p className={styles.vandyTxt}>Vanderbilt Artists</p>
+        <div className={styles.artistBadges}>
+          <MarketBadge/>
+          <MarketBadge/>
+          <MarketBadge/>
+          <MarketBadge/>
+        </div>
       </div>
       
       <div className="flex justify-center">

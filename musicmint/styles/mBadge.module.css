@@ -1,6 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
 
 
-.cubeTxt{
+.mBadge{
     display: flex;
+    width: 260px;
+    height: 260px;
+    background-color: #42d6ff;
+    border-radius: 15px;
+    margin-left: 2.5rem;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+.nameSection{
+    display: flex;
+    flex-direction: row;
+    width: 230px;
+    height: 30px;
+    background-color: rgba(46, 46, 46, 0.6);
+    border-radius: 50px;
+    justify-content: left;
+    align-items: center;
+    margin-top: 220px;
+}
+
+.name{
+    margin-left: 10px;
+    color: white;
+    font-family: 'Lexend', sans-serif; 
+    font-size: 15px;
 }
