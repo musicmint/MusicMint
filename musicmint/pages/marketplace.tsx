@@ -1,3 +1,5 @@
+// Created by Anneliese Breidsprecher & Masha Sedunova
+
 import styles from '../styles/marketplace.module.css'
 import NavBar from '../components/navbar'
 import {useEffect, useState} from "react";
@@ -74,8 +76,8 @@ export default function Home(nft, marketplace) {
       <div className={styles.greenCube}>
         <div className={styles.cubeTxt}>
           <p className={styles.artistTxt}>Trade your favorite artist's collectibles.</p>
-          <p className={styles.descTxt}>A marketplace for people to buy and sell unique,
-            single-edition digital artwork from the artists they love.</p>
+          <p className={styles.descTxt}>A marketplace for you to buy and sell unique,
+            single-edition digital artwork from the artists you love.</p>
           <div className={styles.buttonSection}>
             <Button className={styles.exploreButton}>Start Exploring</Button>
           </div>
@@ -91,6 +93,16 @@ export default function Home(nft, marketplace) {
           <MarketBadge/>
           <MarketBadge/>
         </div>
+      </div>
+
+      {/* all artists with collectibles */}
+      <div className={styles.allArtists}>
+        <p>artists</p>
+      </div>
+
+      {/* collectibles/badges section*/}
+      <div className = {styles.collectibles}>
+         <p>badges/collectibles</p>
       </div>
       
       <div className="flex justify-center">

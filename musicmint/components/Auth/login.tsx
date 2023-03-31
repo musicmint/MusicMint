@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../src/context/auth';
 import styles from '../../styles/loginAndReg.module.css'
-// import styles from '../../styles/marketplace.module.css';
 import Wallet from '../../components/Auth/connectWallet'
 
 const Login = (props) => {

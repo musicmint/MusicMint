@@ -7,9 +7,9 @@
   .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: black;
-
+    justify-content: center;
   }
 
   .search{
@@ -29,13 +29,12 @@
 
   .greenCube {
     display: flex;
-    /* flex-direction: row; */
     width: 88%;
     height: 15rem;
     justify-content: space-between;
     /* justify-content: center; */
     align-items: center;
-    margin-left: 4.7rem;
+    margin-left: 4.6rem;
     margin-top: 4rem;
     /* background: linear-gradient(to bottom, #335df5, #0026AB); */
     background: linear-gradient(to bottom, #42d6ff, #0166cc);
@@ -116,7 +115,7 @@
     height: 13rem;
     /* width: 40rem; */
     font-family: 'Lexend', sans-serif; 
-    padding-left: 4rem;
+    padding-left: 3rem;
     /* margin-top: 0.2rem; */
     /* color: #C9EFC7; */
     color: #b6eeff;
@@ -127,8 +126,34 @@
   .artistBadges{
     display: flex;
     flex-direction: row;
+    margin-top: 0.5rem;
   }
   
+  .allArtists{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    width: 88%;
+    background-color: aliceblue;
+    margin-top:5rem;
+    margin-bottom: 5rem;
+    margin-left: 4.6rem;
+  }
+
+  .collectibles{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    width: 88%;
+    background-color: aliceblue;
+    /* margin-top:5rem; */
+    margin-bottom: 5rem;
+    margin-left: 4.6rem;
+  }
 
   
   /* .container {
