@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import AuthContext from '../../src/context/auth';
-import styles from '../../styles/loginAndReg.module.css'
+import AuthContext from '../../src/context/auth'
+import styles from '../../styles/AuthPage.styles/loginAndReg.module.css'
 import Wallet from '../../components/Auth/connectWallet'
 
 const Login = (props) => {

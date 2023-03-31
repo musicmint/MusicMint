@@ -17,7 +17,7 @@ interface Item {
   image: string;
 }
 
-export default function Home(nft, marketplace) {
+export default function Home(nft, marketplace, clsssyear, artistname) {
 
   const [loading, setLoading] = useState(true)
   const [items, setItems] = useState<Item[]>([]);
@@ -88,10 +88,10 @@ export default function Home(nft, marketplace) {
       <div className={styles.vandyArtists}>
         <p className={styles.vandyTxt}>Vanderbilt Artists</p>
         <div className={styles.artistBadges}>
-          <MarketBadge/>
-          <MarketBadge/>
-          <MarketBadge/>
-          <MarketBadge/>
+          <MarketBadge classyear={'2023'} artistname={'Noah Silver'}/>
+          <MarketBadge classyear={'2023'} artistname={'Jace June'}/>
+          <MarketBadge classyear={' '} artistname={'Edgehill'}/>
+          <MarketBadge classyear={' '} artistname={'Gold Revere'}/>
         </div>
       </div>
 

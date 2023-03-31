@@ -5,7 +5,7 @@ import styles from '../styles/mBadge.module.css'
 
 
 // ADD PROPS FOR SPECIFIC ARTISTS!!!!!
-const marketBadge = (props) => {
+const marketBadge = ({ classyear, artistname }) => {
     return (
         <div className = {styles.mBadge}>
             <div className = {styles.classSection}>
@@ -13,12 +13,12 @@ const marketBadge = (props) => {
                 <div className = {styles.photo}></div>
                 <div className={styles.classWrapper}>
                     <div className = {styles.class}>
-                        <p className = {styles.classTxt}>Class of ___</p>
+                        <p className = {styles.classTxt}>Class of {classyear}</p>
                     </div>
                 </div>
             </div>
             <div className = {styles.nameSection}>
-                <p className = {styles.name}>Artist Name</p>
+                <p className = {styles.name}>{artistname}</p>
             </div>
         </div>
     )
