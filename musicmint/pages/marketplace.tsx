@@ -69,12 +69,21 @@ export default function Home(nft, marketplace) {
         <SearchBar nft={nft} marketplace={marketplace}/>
       </div>
       
+      {/* green cube */}
       <div className={styles.greenCube}>
         <div className={styles.cubeTxt}>
-          <p className={styles.artistTxt}>Trade your favorite artists' collectibles</p>
+          <p className={styles.artistTxt}>Trade your favorite artist's collectibles.</p>
+          <p className={styles.descTxt}>A marketplace for people to buy and sell unique,
+            single-edition digital artwork from the artists they love.</p>
+          <div className={styles.buttonSection}>
+            <Button className={styles.exploreButton}>Start Exploring</Button>
+          </div>
         </div>
-       
+      </div>
 
+      {/* featured artists */}
+      <div className={styles.vandyArtists}>
+        <p className={styles.vandyTxt}>Vanderbilt Artists</p>
       </div>
       
       <div className="flex justify-center">
