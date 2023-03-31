@@ -1,9 +1,11 @@
-import styles from '../styles/AuthPage.styles/auth.module.css';
+import styles from '../styles/AuthPage.styles/auth.module.css'; 
+
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 import { useState } from 'react'
 import { ethers } from "ethers"
+import ExampleBadge from '../components/examplebadge';
 
 const client = ipfsHttpClient({
   host: 'ipfs.infura.io',
@@ -62,14 +64,15 @@ export default function ArtistPage({data, error, nft, marketplace}) {
 
   return (
     <>
-      <div className={styles.artistWrapper}> 
+      { <div className={styles.artistWrapper}> 
         <NavBar/>
-      </div>
+      </div> }
 
       <div className={styles.container}>
-        <main className={styles.main}>
+        
+        <div className={styles.main}>
           <div className={styles.artistProfile}>
-            <img className={styles.artistProfileImage} src="https://dummyimage.com/200x200/000/fff" alt="Artist profile" />
+            <img className={styles.artistProfileImage} src="https://media.tenor.com/ji5Mpqf8APoAAAAC/kikis-delivery-service-grass.gif" alt="Artist profile" />
             <h1 className={styles.artistProfileName}>ARTIST NAME</h1>
             <p className={styles.artistProfileBio}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus augue id nisi semper, sit amet hendrerit tortor ultricies.
@@ -79,7 +82,7 @@ export default function ArtistPage({data, error, nft, marketplace}) {
 
 
           <div className={styles.collectibles}>
-          <div className={styles.authPageDivider}>New Collection</div>
+          <div className={styles.authPageDivider}>New Collection  New Collection  New Collection  New Collection  New Collection New Collection  New Collection  New Collection  New Collection  New Collection</div>
             <h2 className={styles.collectiblesTitle}>Collectibles</h2>
             <div className={styles.collectiblesList}>
               <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 1" />
@@ -87,6 +90,32 @@ export default function ArtistPage({data, error, nft, marketplace}) {
               <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 3" />
               <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 4" />
               <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 5" />
+              
+              <div className={styles.authPageDivider}>Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace</div>
+
+              <section id="aboutSection" className={styles.smth}>
+          <div className={styles.section2Left}>
+          </div>
+          <div className={styles.section2Right}>
+          <p className={styles.descriptionElab}>
+             Month ##, 20XX
+            </p>
+            <h2 className={styles.secondaryTitle}>Early Release Collectible</h2>
+            <p className={styles.descriptionElab}>
+             Owned by The Uncrustables. 
+            </p>
+            <p className={styles.descriptionIntro}>
+              Our song is inspired by lemon bars.
+            </p>
+      
+          </div>
+
+        </section>
+        <div className={styles.authPageDivider}>Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection</div>
+
+
+
+
             </div>
           </div>
           <div className="content mx-auto">
@@ -144,7 +173,7 @@ export default function ArtistPage({data, error, nft, marketplace}) {
               </div>
             </Row>
           </div>
-        </main>
+        </div>
       </div>
     </>
   )

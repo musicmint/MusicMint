@@ -13,11 +13,11 @@ import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin"; // Note the path chan
 gsap.registerPlugin(ScrollToPlugin);
 
 if (typeof window !== "undefined") {
-  const button = document.querySelector("#aboutButton");
-  if (button){
-    button.addEventListener("click", () => {
-      gsap.to(window, {duration: 10, scrollTo: {y: "#aboutSection"}});
-    })}};
+const button = document.querySelector("#aboutButton");
+if (button){
+button.addEventListener("click", () => {
+  gsap.to(window, {duration: 10, scrollTo: {y: "#aboutSection"}});
+})}};
 
 
 // [AI-generated, Chatgpt]
@@ -70,7 +70,7 @@ export default function Home() {
           <div className={styles.section2Right}>
             <h2 className={styles.secondaryTitle}>WHO ARE WE?</h2>
             <p className={styles.descriptionIntro}>
-              We are a community-driven NFT marketplace that is focused on supporting musicians and creators.
+              We are a community-driven NFT marketplace that is focused on supporting musicians and creators. 
             </p>
             <p className={styles.descriptionElab}>
               Our platform enables artists to sell their unique creations as NFTs, while providing fans with a new way to engage with
