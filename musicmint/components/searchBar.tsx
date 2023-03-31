@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react'
-import styles from '../styles/searchBar.module.css'
+import styles from '../styles/componentStyles/searchBar.module.css'
 import Link from 'next/link'
 import AuthContext from '../src/context/auth'
 import Image from 'next/image'

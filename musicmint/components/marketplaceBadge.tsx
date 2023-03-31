@@ -1,7 +1,7 @@
 /* Created by Anneliese Breidsprecher */
 
 import React, {useContext, useEffect} from 'react'
-import styles from '../styles/mBadge.module.css'
+import styles from '../styles/componentStyles/mBadge.module.css'
 
 
 // ADD PROPS FOR SPECIFIC ARTISTS!!!!!

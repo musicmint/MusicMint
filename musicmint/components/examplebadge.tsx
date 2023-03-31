@@ -1,6 +1,6 @@
 import React, {useContext, useRef} from 'react'
 // import {useRef} from 'react'
-import styles from '../styles/examplebadge.module.css'
+import styles from '../styles/componentStyles/examplebadge.module.css'
 import Link from 'next/link'
 import AuthContext from '../src/context/auth'
 import Image from 'next/image'

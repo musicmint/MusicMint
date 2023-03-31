@@ -1,6 +1,6 @@
 // Created by Anneliese Breidsprecher & Masha Sedunova
 
-import styles from '../styles/marketplace.module.css'
+import styles from '../styles/pageStyles/marketplace.module.css'
 import NavBar from '../components/navbar'
 import {useEffect, useState} from "react";
 import { ethers } from "ethers"
