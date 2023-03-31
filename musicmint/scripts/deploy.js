@@ -25,7 +25,7 @@ async function main() {
 
 function saveFrontendFiles(contract, name) {
   const fs = require("fs");
-  const contractsDir = "/Users/anneliesebreidsprecher/Documents/VanderbiltClasses/2023SpringSemester/MusicMint/musicmint/pages/contractsData";//__dirname + "/../../pages/contractsData";
+  const contractsDir = "/Users/sarahmyers/MusicMint/musicmint/pages/contractsData";//__dirname + "/../../pages/contractsData";
 
   if (!fs.existsSync(contractsDir)) {
     fs.mkdirSync(contractsDir);

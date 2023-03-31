@@ -1,4 +1,4 @@
-import styles from '../styles/AuthPage.styles/auth.module.css'; 
+import styles from '../styles/pageStyles/artistpage.module.css'; 
 
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
@@ -6,7 +6,7 @@ import { create as ipfsHttpClient } from 'ipfs-http-client'
 //const { CID } = require('ipfs-http-client')
 import { useState } from 'react'
 import { ethers } from "ethers"
-import ExampleBadge from '../components/examplebadge';
+import ExampleBadge from '../components/examplebadge'
 
 const projectId = '2NTlPAsbm2qHgQi2tpi7cebBnNd';   // <---------- your Infura Project ID
 
@@ -93,37 +93,16 @@ export default function ArtistPage({data, error, nft, marketplace}) {
           <div className={styles.authPageDivider}>New Collection  New Collection  New Collection  New Collection  New Collection New Collection  New Collection  New Collection  New Collection  New Collection</div>
             <h2 className={styles.collectiblesTitle}>Collectibles</h2>
             <div className={styles.collectiblesList}>
-              <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 1" />
-              <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 2" />
-              <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 3" />
-              <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 4" />
-              <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 5" />
-              
-              <div className={styles.authPageDivider}>Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace Our Marketplace</div>
-
-              <section id="aboutSection" className={styles.smth}>
-          <div className={styles.section2Left}>
+            <div className={styles.artistBadges}>
+          <ExampleBadge/>
+          <ExampleBadge/>
+          <ExampleBadge/>
+          <ExampleBadge/>
           </div>
-          <div className={styles.section2Right}>
-          <p className={styles.descriptionElab}>
-             Month ##, 20XX
-            </p>
-            <h2 className={styles.secondaryTitle}>Early Release Collectible</h2>
-            <p className={styles.descriptionElab}>
-             Owned by The Uncrustables. 
-            </p>
-            <p className={styles.descriptionIntro}>
-              Our song is inspired by lemon bars.
-            </p>
-      
-          </div>
-
-        </section>
-        <div className={styles.authPageDivider}>Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection Top Collection</div>
-
-
-
-
+          
+        </div>
+       
+       
             </div>
           </div>
           <div className="content mx-auto">
@@ -183,7 +162,6 @@ export default function ArtistPage({data, error, nft, marketplace}) {
             </Row>
           </div>
         </div>
-      </div>
     </>
   )
 }
