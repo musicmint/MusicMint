@@ -69,6 +69,13 @@ export default function Home(nft, marketplace) {
         <SearchBar nft={nft} marketplace={marketplace}/>
       </div>
       
+      <div className={styles.greenCube}>
+        <div className={styles.cubeTxt}>
+          <p className={styles.artistTxt}>Trade your favorite artists' collectibles</p>
+        </div>
+       
+
+      </div>
       
       <div className="flex justify-center">
         

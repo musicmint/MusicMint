@@ -4,8 +4,6 @@
 
 
 
-
-
   .container {
     display: flex;
     flex-direction: column;
@@ -26,6 +24,31 @@
 
   .marketNav {
     background-color: black !important;
+  }
+
+  .greenCube {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 11.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    margin-top: 4rem;
+    background: linear-gradient(to bottom, #29BA87, #6AD459);
+  }
+
+  .cubeTxt {
+    display: flex;
+    justify-content: left;
+  }
+
+  .artistTxt{
+    display: flex;
+    font-family: 'Lexend', sans-serif; 
+    width: 50%;
+    justify-content: left;
+    text-align: left;
   }
 
 
