@@ -3,19 +3,27 @@ import styles from '../styles/AuthPage.styles/auth.module.css';
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
+//const { CID } = require('ipfs-http-client')
 import { useState } from 'react'
 import { ethers } from "ethers"
 import ExampleBadge from '../components/examplebadge';
 
+const projectId = '2NTlPAsbm2qHgQi2tpi7cebBnNd';   // <---------- your Infura Project ID
+
+const projectSecret = 'cef0ed12c92e5a9a981a156c2f4f7d84';  // <---------- your Infura Secret
+// (for security concerns, consider saving these values in .env files)
+
+const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
+
 const client = ipfsHttpClient({
-  host: 'ipfs.infura.io',
-  port: 5001,
-  protocol: 'https',
-  apiPath: '/api/v0/',
-  headers: {
-    authorization: "auth:auth"
-  }
-})
+    host: 'ipfs.infura.io',
+    port: 5001,
+    protocol: 'https',
+    headers: {
+        authorization: auth,
+    },
+});
+
 export default function ArtistPage({data, error, nft, marketplace}) {
   const [image, setImage] = useState('')
   const [price, setPrice] = useState(0)
@@ -64,9 +72,9 @@ export default function ArtistPage({data, error, nft, marketplace}) {
 
   return (
     <>
-      { <div className={styles.artistWrapper}> 
-        <NavBar/>
-      </div> }
+      <div className={styles.artistWrapper}> 
+        <NavBar nft={nft} marketplace={marketplace}/>
+      </div>
 
       <div className={styles.container}>
         
@@ -124,7 +132,8 @@ export default function ArtistPage({data, error, nft, marketplace}) {
                   type="file"
                   required
                   name="file"
-                  onChange={uploadToIPFS}
+                  //UNCOMMENT TO ADD TO STORAGE
+                  //onChange={uploadToIPFS}
                   style={{borderRadius: "20px", border: "2px solid #1DB954",}}
               />
               <Form.Control onChange={(e) => setName(e.target.value)} size="lg" required type="text"
@@ -151,25 +160,25 @@ export default function ArtistPage({data, error, nft, marketplace}) {
                     borderRadius: "10px",
                     overflow: "hidden"
                   }} className="d-grid px-0">
-                <Button
-                    className="btn btn-primary btn-lg rounded-pill px-5"
-                    style={{
-                      background: "#1DB954",
-                      border: "none",
-                      borderRadius: "10px",
-                      color: "white",
-                      fontFamily: "Helvetica",
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                      padding: "12px 36px",
-                      textAlign: "center",
-                      textDecoration: "none",
-                      display: "inline-block",
-                      margin: "4px 2px",
-                      cursor: "pointer"
-                    }} onClick={createNFT} variant="primary" size="lg">
-                  Create & List NFT!
-                </Button>
+                {/*<Button*/}
+                {/*    className="btn btn-primary btn-lg rounded-pill px-5"*/}
+                {/*    style={{*/}
+                {/*      background: "#1DB954",*/}
+                {/*      border: "none",*/}
+                {/*      borderRadius: "10px",*/}
+                {/*      color: "white",*/}
+                {/*      fontFamily: "Helvetica",*/}
+                {/*      fontSize: "18px",*/}
+                {/*      fontWeight: "bold",*/}
+                {/*      padding: "12px 36px",*/}
+                {/*      textAlign: "center",*/}
+                {/*      textDecoration: "none",*/}
+                {/*      display: "inline-block",*/}
+                {/*      margin: "4px 2px",*/}
+                {/*      cursor: "pointer"*/}
+                {/*    }} onClick={createNFT} variant="primary" size="lg">*/}
+                {/*  Create & List NFT!*/}
+                {/*</Button>*/}
               </div>
             </Row>
           </div>

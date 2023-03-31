@@ -52,3 +52,7 @@ typechain-types
 cache
 artifacts
 
+/pages/contractsData/Marketplace.json
+/pages/contractsData/Marketplace-address.json
+/pages/contractsData/NFT.json
+/pages/contractsData/NFT-address.json

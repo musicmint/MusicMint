@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import AuthContext from '../../src/context/auth'
-import styles from '../../styles/marketplace.module.css'
+import styles from '../../styles/loginAndReg.module.css'
 import Link from "next/link"
 import { InputType } from 'zlib'
 
@@ -29,8 +29,8 @@ const Registraion = (props) => {
          <div className={styles.container}>
          <div className={styles.header}>MusicMint</div>
              <div>
-                 <div>Connect Wallet:</div>
-                 <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
+                 
+                 
              </div>
              <div className={styles.formGroup}>
                  <input type="text" id="fullName" name="fullName" className={styles.input} onChange={(e) => setFullName(e.target.value)} placeholder="Enter your full name"/>
@@ -51,6 +51,7 @@ const Registraion = (props) => {
              <div className={styles.noCredentials}>
                  <div onClick={props.switchTab}>Have an account? Log in</div>
              </div>
+             <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
      </div>
     )
 }

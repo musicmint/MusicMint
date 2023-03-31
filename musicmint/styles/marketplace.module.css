@@ -4,342 +4,167 @@
 
 
 
-.nav {
-  font-family: 'Space Mono', 'Lexend', sans-serif;
-    position: fixed;
-    top: 0;
-    left: 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+    background-color: black;
+    justify-content: center;
+  }
+
+  .search{
+    margin-top: 1%;
     width: 100%;
-    background-color: rgba(34, 49, 31, 0.35);
-    /* border-bottom: 2px solid #3c482e; */
     display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    /* position: fixed; */
+    /* background-color: aqua; */
+  }
+
+  .marketNav {
+    background-color: black !important;
+  }
+
+  .greenCube {
+    display: flex;
+    width: 88%;
+    height: 15rem;
     justify-content: space-between;
+    /* justify-content: center; */
     align-items: center;
-    list-style: none;
-    margin: 0;
-    padding-top: .5%;
-    padding-bottom: .5%;
+    margin-left: 4.6rem;
+    margin-top: 4rem;
+    /* background: linear-gradient(to bottom, #335df5, #0026AB); */
+    background: linear-gradient(to bottom, #42d6ff, #0166cc);
+    /* 2A57FA
+    background: linear-gradient(to bottom, #29BA87, #6AD459); */
   }
-  
-  .nav .leftside{
+
+  .cubeTxt {
     display: flex;
+    flex-direction: column;
+    height: 13rem;
+    width: 40rem;
+    font-family: 'Lexend', sans-serif; 
+    padding-left: 4rem;
+    margin-top: 3.5rem;
+    color: white;
+    /* justify-content: left; */
   }
 
-  .nav .leftside li {
-    align-items: center;
-  }
-
-
-  .nav .rightside {
-    display:flex;
+  .artistTxt{
+    display: flex;
+    font-size: 34px;
+    font-weight: bold;
     
+    /* justify-content: left; */
+    /* text-align: left; */
   }
-  
-  .nav li a {
-    align-items: center;
-    text-decoration: none;
-    color: #C9EFC7;
-    font-size: .9rem;
-    font-weight: BOLD;
-    padding: 1rem;
-    border-radius: 0.5rem;
-  }
-  
-  .nav li a:hover {
-    color: #d5ffd3;
-    font-size: 1rem;
-  }
-  
 
-   
-   .navbarLinks {
+  .descTxt{
+    font-size: 13px;
+    width: 30rem;
+  }
+
+  .buttonSection{
+    margin-top: 10px;
+  }
+
+  .exploreButton{
+    font-family: 'Lexend', sans-serif; 
+    background-color: rgba(209, 209, 209, 0.35);
+    /* background: linear-gradient(to bottom right, #29BA87, #6AD459); */
+    border-radius: 40px;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    transition-duration: 0.4s;
+    border: 1px solid white;
+    cursor: pointer;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .exploreButton:hover {
+    background-color: rgba(209, 209, 209, 0.60);
+    /* background: linear-gradient(to bottom, #6AD459, #29BA87); */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+  }
+
+  .vandyArtists{
+    display:flex;
+    flex-direction: column;
+    height: 17rem;
+    /* background-color: rgba(209, 209, 209, 0.35); */
+    width: 95%;
+    justify-content: space-between;
+    align-items: left;
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+
+  .vandyTxt{
+    display: flex;
+    flex-direction: column;
+    height: 13rem;
+    /* width: 40rem; */
+    font-family: 'Lexend', sans-serif; 
+    padding-left: 3rem;
+    /* margin-top: 0.2rem; */
+    /* color: #C9EFC7; */
+    color: #b6eeff;
+    /* color: #c7e2ef; */
+    /* text-align: left; */
+  }
+
+  .artistBadges{
     display: flex;
     flex-direction: row;
-   }
-
-  .navbarLinks > *{
-    align-items: center;
-    text-decoration: none;
-    color: #C9EFC7;
-    font-size: .9rem;
-    font-weight: BOLD;
-    padding: 1rem;
-    border-radius: 0.5rem;
-  }
-
-  .navbarLinks > *:hover {
-    color: #d5ffd3;
-    font-size: 1rem;
+    margin-top: 0.5rem;
   }
   
-  #titleSection {
-    justify-content: center;
-    height: 100vh;
-    padding: 5rem 0;
+  .allArtists{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .halfWidth {
-    display: flex;
-    width: 60%;
-    height: 100vh;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    float: left;
-    clear: none;
-    flex-direction: column;
+    height: 20rem;
+    width: 88%;
+    background-color: aliceblue;
+    margin-top:5rem;
+    margin-bottom: 5rem;
+    margin-left: 4.6rem;
   }
 
-  .title {
-    font-family:  'Lexend', sans-serif;
-    justify-content: center;
-    font-size: 5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    color: #C9EFC7;
-  }
-
-  .abtButton {
-    font-family: 'Space Mono', 'Lexend', sans-serif; 
-    background: linear-gradient(to bottom right, #29BA87, #6AD459);
-    border-radius: 28px;
-    color: white;
-    font-size: 18px;
-    padding: 15px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    transition-duration: 0.4s;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .abtButton:hover {
-    background: linear-gradient(to bottom right, #6AD459, #29BA87);
-    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-    font-size: 20px;
-  }
-  
-
-  .circle {
+  .collectibles{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding-right: 5rem;
+    height: 20rem;
+    width: 88%;
+    background-color: aliceblue;
+    /* margin-top:5rem; */
+    margin-bottom: 5rem;
+    margin-left: 4.6rem;
   }
 
-  .smth {
-    display: flex;
-    height: 100vh;
-    padding: 5rem 0;
-  }
-
-  .section2Left {
-    display: flex;
-    width: 40%;
-    padding-left: 5rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .section2Right {
-    display: flex;
-    flex-direction: column;
-    padding-left: 2rem;
-    
-  }
-
-  .descriptionIntro{
-    font-family: 'Lexend', sans-serif;
-    justify-items: center;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: #C9EFC7;
-    text-align: center;
-    display: inline-block;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .descriptionElab {
-    font-family: 'Lexend', sans-serif;
-    justify-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: #C9EFC7;
-    text-align: center;
-    display: inline-block;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .getStarted {
-    font-family: 'Space Mono', 'Lexend', sans-serif; 
-    background: linear-gradient(to bottom right, #29BA87, #6AD459);
-    border-radius: 28px;
-    color: white;
-    font-size: 18px;
-    padding: 15px 1px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    transition-duration: 0.4s;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 1.5rem;
-    margin-right: 2rem;
-    margin-left: 1rem;
-  }
-
-  .getStarted:hover {
-    background: linear-gradient(to bottom right, #6AD459, #29BA87);
-    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-    font-size: 20px;
-  }
-
-  .badges{
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    padding: 6rem 0;
-    font-family: 'Lexend', sans-serif;
-    justify-items: center;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: #C9EFC7;
-    text-align: center;
-  }
-
-
   
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 2rem;
-    justify-items: center;
-    align-items: center;
-    margin-top: 3rem;
-  }
-  
-  
-  
-  .secondarySection {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    width: 80%;
-    padding-bottom: 3rem; /* add padding to create space below each section */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .secondaryTitle {
-    font-family: 'Lexend', sans-serif;
-    justify-items: center;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    color: #C9EFC7;
-    text-align: center;
-    display: inline-block;
-    padding-left: 2rem;
-  }
-  
-  .artistexamples {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Lexend', sans-serif;
-    font-size: 3rem;
-    font-weight: bold;
-    justify-content: center;
-    color:#c8d6c3;
-  }
-
-  .secondaryDescription {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    color: #c8d6c3;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .scroll-section {
-    overflow-y: scroll;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    max-height: 60vh;
-    width: 80%;
-    background-color: rgba(34, 49, 31, 0.8);
-    border: 2px solid #3c482e;
-    padding: 1rem;
-    color: #c8d6c3;
-  }
-  
-  .grid-item {
-    color: #c8d6c3;
-    background-color: rgba(34, 49, 31, 0.8);
-    border: 2px solid #3c482e;
-    padding: 1rem;  
-    margin: 1rem;
-  }
-  
-  .grid-item:hover {
-    background-color: #3c482e;
-  }
-
-
-  .runner-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  .runner {
-    display: inline-block;
-    white-space: nowrap;
-    position: absolute;
-    animation: runner 20s linear infinite;
-    width: 100%;
-  }
-  
-  .runner:first-child {
-    left: 0;
-    animation-delay: 10s;
-  }
-  
-  @keyframes runner {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  
-  .container {
+  /* .container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: #6bc85d; */
+
     background: linear-gradient(45deg, #a6de9a, #086515);
-    /* background: linear-gradient(to bottom, #6AD459, #29BA87); */
+
     color: #164604;
   }
     
@@ -400,6 +225,7 @@
   
   .button:hover {
     background-color: #d5ffd3;
+    font-size: 0.95rem;
   }
   
   .noCredentials, .artistCheckbox {
@@ -442,6 +268,6 @@
   
   .registerLink:hover {
   color: #d5ffd3;
-  }
+  } */
    /* [AI-generated, ChatGpt]*/
   

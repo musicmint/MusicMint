@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #6bc85d; */
+    background: linear-gradient(45deg, #a6de9a, #086515);
+    /* background: linear-gradient(to bottom, #6AD459, #29BA87); */
+    color: #164604;
+  }
+    
+  .header {
+      font-family: 'Space Mono', 'Lexend', sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      color: #c9efc7;
+  }
+
+    .formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.3rem;
+    width: clamp(10rem, 30%, 20rem);
+  }
+  
+  .label {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #c9efc7;
+  }
+  
+  .input {
+    all: unset;
+    background-color: #3B3B3B;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .input::placeholder {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+  }
+
+  .button {
+    width: 100%;
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    background-color: #c9efc7;
+    color: #164604;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .button:hover {
+    background-color: #d5ffd3;
+    font-size: 0.95rem;
+  }
+  
+  .noCredentials, .artistCheckbox {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    margin-top: 1rem;
+    width: clamp(10rem, 30%, 20rem);
+    font-size: 0.9rem;
+    color: #c9efc7;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .noCredentials div{
+    cursor: pointer;
+  }
+
+.artistCheckbox {
+  height: inherit;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.artistCheckbox input[type="checkbox"] {
+  margin-right: 0.4rem;
+  height: 1rem;
+  aspect-ratio: 1;
+}
+
+  .registerLink {
+  font-family: 'Space Mono', 'Lexend', sans-serif;
+  color: #c9efc7;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  }
+  
+  .registerLink:hover {
+  color: #d5ffd3;
+  }
+   /* [AI-generated, ChatGpt]*/
+  

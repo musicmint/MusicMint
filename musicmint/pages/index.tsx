@@ -3,46 +3,37 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useContext } from 'react'
 import AuthContext from '../src/context/auth'
-import styles from '../styles/marketplace.module.css'
+import styles from '../styles/index.module.css'
 import NavBar from '../components/navbar'
 import ExampleBadge from '../components/examplebadge'
 import CircleImage from '../circle.png'
-import { gsap } from "gsap";
+import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin"; // Note the path change
 
-gsap.registerPlugin(ScrollToPlugin);
+// const components = document.querySelectorAll('.component');
+// const tl = gsap.timeline({repeat: -1});
 
-if (typeof window !== "undefined") {
-const button = document.querySelector("#aboutButton");
-if (button){
-button.addEventListener("click", () => {
-  gsap.to(window, {duration: 10, scrollTo: {y: "#aboutSection"}});
-})}};
+// tl.to(components[0], {x: '-100%', duration: 5, ease: 'linear'})
+//   .to(components[1], {x: '-100%', duration: 5, ease: 'linear'}, '-=4.5')
+//   .to(components[2], {x: '-100%', duration: 5, ease: 'linear'}, '-=4')
+//   .to(components[3], {x: '-100%', duration: 5, ease: 'linear'}, '-=3.5')
+//   .to(components[4], {x: '-100%', duration: 5, ease: 'linear'}, '-=3');
+
+//   tl.play();
+
+// const badgeRef = ExampleBadge.badgeRef.current;
 
 
-// [AI-generated, Chatgpt]
-// Define an array of example users to print out on page
-const exampleUsers = [
-  {
-    id: 1,
-    name: 'John Smith',
-    bio: 'I am a musician and producer from Los Angeles. I specialize in electronic music and have released several albums over the years.',
-    nftName: 'Sunset Groove',
-    nftDescription: 'A one-of-a-kind track that will take you on a journey through the sounds of the ocean and the sunset.',
-    nftImage: '/nft1.jpg',
-  },
-  {
-    id: 2,
-    name: 'Emily Johnson',
-    bio: 'I am a visual artist and photographer based in New York City. I love to capture the beauty of nature and urban landscapes.',
-    nftName: 'Cityscape',
-    nftDescription: 'A stunning photograph of the New York City skyline at night, taken from a rooftop in Brooklyn.',
-    nftImage: '/nft2.jpg',
-  },
-  // Add more users as needed
-]
+// if (typeof window !== "undefined") {
+//   const button = document.querySelector("#aboutButton");
+//   if (button){
+//     button.addEventListener("click", () => {
+//       gsap.to(window, {duration: 10, scrollTo: {y: "#aboutSection"}});
+//     })}};
 
-export default function Home() {
+
+
+export default function Home(nft, marketplace) {
   // console.log('data :>> ', data)
   // console.log('error :>> ', error)
   let {user, logoutUser, authTokens} = useContext(AuthContext)
@@ -51,19 +42,19 @@ export default function Home() {
   return (
     <>
       <div className={styles.container}>
-        <NavBar/>
+        <NavBar nft={nft} marketplace={marketplace}/>
         <section id="titleSection" >
           <div className={styles.halfWidth}>
             <h1 className={styles.title}>MUSIC MINT MARKETPLACE</h1>
             <button id="aboutButton" className={styles.abtButton}>
-              <a href="#aboutSection">ABOUT US</a></button>
+              <a href="#about">ABOUT US</a></button>
           </div>
           <div className={styles.circle}>
             <Image src={CircleImage} alt="logo" width={450} height={450}/>
           </div>
         </section>
 
-        <section id="aboutSection" className={styles.smth}>
+        <section id="about" className={styles.abt}>
           <div className={styles.section2Left}>
             <Image src={CircleImage} alt="logo" width={450} height={450}/>
           </div>
@@ -83,6 +74,13 @@ export default function Home() {
         <section id="badgesSection" className={styles.badges}>
           <p>Support their journey.</p>
           <p>Cash out when they get famous.</p>
+          <div className={styles.multibadge}>
+            <ExampleBadge/>
+            <ExampleBadge/>
+            <ExampleBadge/>
+            <ExampleBadge/>
+            <ExampleBadge/>
+          </div>
         </section>
         {/* <main className={styles.main}>
      
