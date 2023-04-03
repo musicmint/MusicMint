@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../src/context/auth';
 import styles from '../../styles/marketplace.module.css';
 import Wallet from '../../components/Auth/connectWallet'
+import ConnectSpotify from '../../components/Auth/connectSpotify';
 
 const Login = (props) => {
     const { loginUser } = useContext(AuthContext);
@@ -45,6 +46,7 @@ const Login = (props) => {
                     <div>Forgot password?</div>
                     <div onClick={props.switchTab}>Register</div>
                 </div>
+                <ConnectSpotify/>
         </div>
     );
 };
