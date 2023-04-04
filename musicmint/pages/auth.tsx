@@ -10,7 +10,6 @@ import MarketplaceAbi from "./contractsData/Marketplace.json"
 import MarketplaceAddress from './contractsData/Marketplace-address.json'
 import NFTAbi from './contractsData/NFT.json'
 import NFTAddress from './contractsData/NFT-address.json'
-import Link from 'next/link'
 
 const AuthPage = () => {
     let [onLogin, setOnLogin] = useState(true)
