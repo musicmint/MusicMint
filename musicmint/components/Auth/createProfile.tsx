@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../src/context/auth'
 import styles from '../../styles/AuthPage.styles/loginAndReg.module.css'
 import Wallet from '../../components/Auth/connectWallet'
+import Image from 'next/image'
+import logo from '../../music-mint-marketplace.png'
 
 const Login = (props) => {
     const { loginUser } = useContext(AuthContext);
@@ -26,25 +28,7 @@ const Login = (props) => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.label}>MusicMint</div>
-            
-            <div className={styles.header}>MusicMint</div>
-                <div className={styles.formGroup}>
-                    <input type="email" id="email" name="email" className={styles.input} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your E-mail"/>
-                </div>
-                <div className={styles.formGroup}>
-                    <input type="password" id="password" name="password" className={styles.input} onChange={(e) => setPassword(e.target.value)}  placeholder="Enter your password"/>
-                </div>
-                <div className={styles.formGroup}>
-                    <div className={styles.button} onClick={() => loginUser(email, password)}>Log in</div>
-                </div>
-                <div className={styles.noCredentials}>
-                    <div>Forgot password?</div>
-                    <div onClick={props.switchTab}>Register</div>
-                </div>
-                <div>
-                    <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
-                </div>
+            <Image src={logo} alt="logo" width={400} height={40}/>
         </div>
     );
 };

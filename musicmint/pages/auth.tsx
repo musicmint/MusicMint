@@ -10,9 +10,12 @@ import MarketplaceAbi from "./contractsData/Marketplace.json"
 import MarketplaceAddress from './contractsData/Marketplace-address.json'
 import NFTAbi from './contractsData/NFT.json'
 import NFTAddress from './contractsData/NFT-address.json'
+import Link from 'next/link'
+import CreateProfile from '../components/Auth/createProfile'
 
 const AuthPage = () => {
     let [onLogin, setOnLogin] = useState(true)
+    let [openTab, setOpenTab] = useState(0);
     let { isAuthorized } = useContext(AuthContext)
 
       //let's set up everything needed for blockchain upon boot up
@@ -23,8 +26,18 @@ const AuthPage = () => {
   const [marketplace, setMarketplace] = useState({})
 
     const switchTab = () => {
-        setOnLogin(!onLogin)
+        setOnLogin(!onLogin);
+        setOpenTab(0);
     }
+
+    const handleRegisterClick = () => {
+      setOpenTab(1); // set openTab to create profile when clicking on register
+    };
+  
+
+    // const handleTabChange = (tabName : string) => {
+    //     setOnRegister(!onRegister)
+    // }
 
 
     useEffect(() => {
@@ -74,7 +87,29 @@ const web3Handler = async () => {
     return (
         <>
         <NavBar nft={nft} marketplace={marketplace}/>
-        {onLogin ? <Login  marketplace={marketplace} nft={nft} web3Handler={web3Handler} account={account} switchTab={switchTab}></Login> : <Registraion  marketplace={marketplace} nft={nft} web3Handler={web3Handler} account={account} switchTab={switchTab}></Registraion>}
+        {onLogin ? ( 
+          <Login  
+            marketplace={marketplace} 
+            nft={nft} 
+            web3Handler={web3Handler} 
+            account={account} 
+            switchTab={switchTab}/> 
+        ) : openTab === 0 ? (
+          <Registraion  
+            marketplace={marketplace} 
+            nft={nft} 
+            web3Handler={web3Handler} 
+            account={account} 
+            switchTab={switchTab}/>
+        ) : (
+          <CreateProfile 
+          marketplace={marketplace} 
+          nft={nft} 
+          web3Handler={web3Handler} 
+          account={account} 
+          switchTab={switchTab}/>
+        )
+        }
         </>
     )
 }

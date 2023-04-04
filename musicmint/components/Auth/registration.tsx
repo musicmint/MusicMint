@@ -3,6 +3,8 @@ import AuthContext from '../../src/context/auth'
 import styles from '../../styles/AuthPage.styles/loginAndReg.module.css'
 import Link from "next/link"
 import { InputType } from 'zlib'
+import Image from 'next/image'
+import logo from '../../music-mint-marketplace.png'
 
 import Wallet from '../../components/Auth/connectWallet'
 
@@ -27,7 +29,7 @@ const Registraion = (props) => {
 
     return (
          <div className={styles.container}>
-         <div className={styles.header}>MusicMint</div>
+         <div className={styles.header}><Image src={logo} alt="logo" width={400} height={40}/></div>
              <div>
                  
                  
@@ -49,7 +51,7 @@ const Registraion = (props) => {
                  <div className={styles.button} onClick={() => registerUser(fullName, email, password)}>Register</div>
              </div>
              <div className={styles.noCredentials}>
-                 <div onClick={props.switchTab}>Have an account? Log in</div>
+                 <div onClick={props.switchTab}>Already have an account? Log in</div>
              </div>
              <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
      </div>

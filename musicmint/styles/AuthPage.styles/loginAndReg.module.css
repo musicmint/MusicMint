@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     /* background-color: #6bc85d; */
-    background: linear-gradient(45deg, #a6de9a, #086515);
+    background: black;
     /* background: linear-gradient(to bottom, #6AD459, #29BA87); */
     color: #164604;
   }
@@ -15,85 +15,110 @@
       font-family: 'Space Mono', 'Lexend', sans-serif;
       font-size: 2rem;
       font-weight: bold;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       color: #c9efc7;
   }
-  
+
 
     .formGroup {
     display: flex;
     flex-direction: column;
     margin-bottom: 0.3rem;
-    width: clamp(10rem, 30%, 20rem);
+    width: clamp(10rem, 30%, 40rem);
+    
   }
-  
+/*   
   .label {
     font-family: 'Space Mono', 'Lexend', sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: #c9efc7;
-  }
+    color: #b6eeff;
+  } */
   
   .input {
     all: unset;
-    background-color: #3B3B3B;
-    color: #fff;
+    background-color: rgba(255, 255, 255);
+    /* background-color: #3B3B3B; */
+    color: rgb(0, 0, 0);
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 30px;
     padding: 0.75rem;
     font-size: 1rem;
     margin-bottom: 1rem;
+    font-family: 'Lexend', sans-serif;
   }
   
   .input::placeholder {
-    font-family: 'Space Mono', 'Lexend', sans-serif;
+    font-family: 'Lexend', sans-serif;
+    /* color:#b6eeff; */
   }
 
   .button {
-    width: 100%;
-    font-family: 'Space Mono', 'Lexend', sans-serif;
-    background-color: #c9efc7;
-    color: #164604;
-    font-size: 0.9rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
+    font-family: 'Lexend', sans-serif; 
+    /* background: linear-gradient(to bottom right, #29BA87, #6AD459); */
+    background: linear-gradient(to bottom right, #42d6ff, #0166cc);
+    
+    border-radius: 28px;
+    color: white;
+    font-size: 1rem;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s;
     border: none;
-    border-radius: 0.5rem;
-    padding: 0.75rem 1.5rem;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
   }
   
   .button:hover {
-    background-color: #d5ffd3;
-    font-size: 0.95rem;
+    background: linear-gradient(to bottom right, #0166cc, #42d6ff);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    font-size: 1.05rem; 
   }
   
-  .noCredentials, .artistCheckbox {
+  .noCredentials{
     font-family: 'Space Mono', 'Lexend', sans-serif;
     margin-top: 1rem;
-    width: clamp(10rem, 30%, 20rem);
+    width: clamp(10rem, 50%, 40rem);
     font-size: 0.9rem;
-    color: #c9efc7;
+    color: #b6eeff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .artistCheckbox {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    /* margin-top: rem; */
+    width: clamp(10rem, 50%, 40rem);
+    font-size: 0.9rem;
+    color: #b6eeff;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
   }
 
   .noCredentials div{
     cursor: pointer;
+    align-items: center;
   }
 
-.artistCheckbox {
+/* .artistCheckbox {
   height: inherit;
   margin-top: 0;
   margin-bottom: 1rem;
   justify-content: flex-start;
   align-items: center;
-}
+} */
 
 .artistCheckbox input[type="checkbox"] {
   margin-right: 0.4rem;
@@ -101,7 +126,7 @@
   aspect-ratio: 1;
 }
 
-  .registerLink {
+  /* .registerLink {
   font-family: 'Space Mono', 'Lexend', sans-serif;
   color: #c9efc7;
   font-size: 1.1rem;
@@ -112,6 +137,6 @@
   
   .registerLink:hover {
   color: #d5ffd3;
-  }
+  } */
    /* [AI-generated, ChatGpt]*/
   
