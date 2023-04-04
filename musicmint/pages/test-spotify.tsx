@@ -1,7 +1,7 @@
 //const accessToken = 'BQBHyMSnEf9uleJcx5rvOs2d1SqXZzNjLAlhCxk31LAjytdPDiZxbiZm4HtvRznTxPiepGft1ZZ1Zad_WDY_4SLuj882X7tPfaxt9EzCXvHk-Y2MHoI36BL0Bg5L04qZFi9USIqFOA0H-0WTBB2o5YMYEpiw1hUm16eufvLk977fE0yfJSpw8AfwpTgxi1RlM9WwWV5BG_nUs2HGoVpu'; // Replace with your access token
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import styles from '../styles/marketplace.module.css';
+import styles from '../styles/pageStyles/marketplace.module.css';
 import NavBar from '../components/navbar';
 
 const TestSpotify = () => {
