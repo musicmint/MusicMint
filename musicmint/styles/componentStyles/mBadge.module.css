@@ -1,0 +1,85 @@
+/* Created by Anneliese Breidsprecher */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
+
+
+.mBadge{
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: 260px;
+    background-color: #42d6ff;
+    border-radius: 15px;
+    margin-left: 2.5rem;
+    /* margin-top: 5px; */
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.nameSection{
+    display: flex;
+    flex-direction: row;
+    width: 230px;
+    height: 30px;
+    background-color: rgba(46, 46, 46, 0.6);
+    border-radius: 50px;
+    justify-content: left;
+    align-items: center;
+    margin-top: 175px;
+}
+
+.name{
+    margin-left: 10px;
+    color: white;
+    font-family: 'Lexend', sans-serif; 
+    font-size: 15px;
+}
+
+.classSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5px;
+    width: 100%;
+}
+
+
+.photo{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    background-color: azure; 
+    /* margin-left: 10px; */
+    /* ^^ will change */
+}
+
+.classWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.class {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 30px;
+    background-color: rgba(46, 46, 46, 0.6);
+    border-radius: 50px;
+    justify-content: center;
+    /* align-items: center; */
+    margin-left: 10px;
+}
+
+.classTxt{
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    text-align: left;
+    color: white;
+    font-family: 'Lexend', sans-serif; 
+    font-size: 15px;
+    margin-left: 10px;
+}

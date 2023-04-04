@@ -1,0 +1,273 @@
+/* [AI-generated, ChatGpt]*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
+
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+    background-color: black;
+    justify-content: center;
+  }
+
+  .search{
+    margin-top: 1%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    /* position: fixed; */
+    /* background-color: aqua; */
+  }
+
+  .marketNav {
+    background-color: black !important;
+  }
+
+  .greenCube {
+    display: flex;
+    width: 88%;
+    height: 15rem;
+    justify-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
+    margin-left: 4.6rem;
+    margin-top: 4rem;
+    /* background: linear-gradient(to bottom, #335df5, #0026AB); */
+    background: linear-gradient(to bottom, #42d6ff, #0166cc);
+    /* 2A57FA
+    background: linear-gradient(to bottom, #29BA87, #6AD459); */
+  }
+
+  .cubeTxt {
+    display: flex;
+    flex-direction: column;
+    height: 13rem;
+    width: 40rem;
+    font-family: 'Lexend', sans-serif; 
+    padding-left: 4rem;
+    margin-top: 3.5rem;
+    color: white;
+    /* justify-content: left; */
+  }
+
+  .artistTxt{
+    display: flex;
+    font-size: 34px;
+    font-weight: bold;
+    
+    /* justify-content: left; */
+    /* text-align: left; */
+  }
+
+  .descTxt{
+    font-size: 13px;
+    width: 30rem;
+  }
+
+  .buttonSection{
+    margin-top: 10px;
+  }
+
+  .exploreButton{
+    font-family: 'Lexend', sans-serif; 
+    background-color: rgba(209, 209, 209, 0.35);
+    /* background: linear-gradient(to bottom right, #29BA87, #6AD459); */
+    border-radius: 40px;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    transition-duration: 0.4s;
+    border: 1px solid white;
+    cursor: pointer;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .exploreButton:hover {
+    background-color: rgba(209, 209, 209, 0.60);
+    /* background: linear-gradient(to bottom, #6AD459, #29BA87); */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+  }
+
+  .vandyArtists{
+    display:flex;
+    flex-direction: column;
+    height: 17rem;
+    /* background-color: rgba(209, 209, 209, 0.35); */
+    width: 95%;
+    justify-content: space-between;
+    align-items: left;
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+
+  .vandyTxt{
+    display: flex;
+    flex-direction: column;
+    height: 13rem;
+    /* width: 40rem; */
+    font-family: 'Lexend', sans-serif; 
+    padding-left: 3rem;
+    /* margin-top: 0.2rem; */
+    /* color: #C9EFC7; */
+    color: #b6eeff;
+    /* color: #c7e2ef; */
+    /* text-align: left; */
+  }
+
+  .artistBadges{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5rem;
+  }
+  
+  .allArtists{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    width: 88%;
+    background-color: aliceblue;
+    margin-top:5rem;
+    margin-bottom: 5rem;
+    margin-left: 4.6rem;
+  }
+
+  .collectibles{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    width: 88%;
+    background-color: aliceblue;
+    /* margin-top:5rem; */
+    margin-bottom: 5rem;
+    margin-left: 4.6rem;
+  }
+
+  
+  /* .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(45deg, #a6de9a, #086515);
+
+    color: #164604;
+  }
+    
+  .header {
+      font-family: 'Space Mono', 'Lexend', sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      color: #c9efc7;
+  }
+
+    .formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.3rem;
+    width: clamp(10rem, 30%, 20rem);
+  }
+  
+  .label {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #c9efc7;
+  }
+  
+  .input {
+    all: unset;
+    background-color: #3B3B3B;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .input::placeholder {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+  }
+
+  .button {
+    width: 100%;
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    background-color: #c9efc7;
+    color: #164604;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .button:hover {
+    background-color: #d5ffd3;
+    font-size: 0.95rem;
+  }
+  
+  .noCredentials, .artistCheckbox {
+    font-family: 'Space Mono', 'Lexend', sans-serif;
+    margin-top: 1rem;
+    width: clamp(10rem, 30%, 20rem);
+    font-size: 0.9rem;
+    color: #c9efc7;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .noCredentials div{
+    cursor: pointer;
+  }
+
+.artistCheckbox {
+  height: inherit;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.artistCheckbox input[type="checkbox"] {
+  margin-right: 0.4rem;
+  height: 1rem;
+  aspect-ratio: 1;
+}
+
+  .registerLink {
+  font-family: 'Space Mono', 'Lexend', sans-serif;
+  color: #c9efc7;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  }
+  
+  .registerLink:hover {
+  color: #d5ffd3;
+  } */
+   /* [AI-generated, ChatGpt]*/
+  

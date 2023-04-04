@@ -1,0 +1,79 @@
+/* Created by Anneliese Breidsprecher */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
+
+
+
+.nav {
+  font-family: 'Space Mono', 'Lexend', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: rgba(34, 49, 31, 0.35); */
+    background-color: rgba(0, 0, 0, 0.80);
+    /* background-color: aqua; */
+    
+    
+    /* border-bottom: 2px solid #3c482e; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding-top: .5%;
+    padding-bottom: .5%;
+  }
+  
+  .nav .leftside{
+    display: flex;
+  }
+
+  .nav .leftside li {
+    align-items: center;
+  }
+
+
+  .nav .rightside {
+    display:flex;
+    
+  }
+  
+  .nav li a {
+    align-items: center;
+    text-decoration: none;
+    /* color: #C9EFC7; */
+    color: #c7d5ef;
+    font-size: .9rem;
+    font-weight: BOLD;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .nav li a:hover {
+    /* color: #d5ffd3; */
+    color: #c7d5ef;
+    font-size: 1rem;
+  }
+  
+
+   
+   .navbarLinks {
+    display: flex;
+    flex-direction: row;
+   }
+
+  .navbarLinks > *{
+    align-items: center;
+    text-decoration: none;
+    color: #C9EFC7;
+    font-size: .9rem;
+    font-weight: BOLD;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .navbarLinks > *:hover {
+    color: #d5ffd3;
+    font-size: 1rem;
+  }

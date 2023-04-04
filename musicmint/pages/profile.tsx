@@ -1,19 +1,29 @@
-import styles from '../styles/AuthPage.styles/auth.module.css';
+import styles from '../styles/pageStyles/artistpage.module.css'; 
+
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
+//const { CID } = require('ipfs-http-client')
 import { useState } from 'react'
 import { ethers } from "ethers"
+import ExampleBadge from '../components/examplebadge'
+
+const projectId = '2NTlPAsbm2qHgQi2tpi7cebBnNd';   // <---------- your Infura Project ID
+
+const projectSecret = 'cef0ed12c92e5a9a981a156c2f4f7d84';  // <---------- your Infura Secret
+// (for security concerns, consider saving these values in .env files)
+
+const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
 
 const client = ipfsHttpClient({
-  host: 'ipfs.infura.io',
-  port: 5001,
-  protocol: 'https',
-  apiPath: '/api/v0/',
-  headers: {
-    authorization: "auth:auth"
-  }
-})
+    host: 'ipfs.infura.io',
+    port: 5001,
+    protocol: 'https',
+    headers: {
+        authorization: auth,
+    },
+});
+
 export default function ArtistPage({data, error, nft, marketplace}) {
   const [image, setImage] = useState('')
   const [price, setPrice] = useState(0)
@@ -63,13 +73,14 @@ export default function ArtistPage({data, error, nft, marketplace}) {
   return (
     <>
       <div className={styles.artistWrapper}> 
-        <NavBar/>
+        <NavBar nft={nft} marketplace={marketplace}/>
       </div>
 
       <div className={styles.container}>
-        <main className={styles.main}>
+        
+        <div className={styles.main}>
           <div className={styles.artistProfile}>
-            <img className={styles.artistProfileImage} src="https://dummyimage.com/200x200/000/fff" alt="Artist profile" />
+            <img className={styles.artistProfileImage} src="https://media.tenor.com/ji5Mpqf8APoAAAAC/kikis-delivery-service-grass.gif" alt="Artist profile" />
             <h1 className={styles.artistProfileName}>ARTIST NAME</h1>
             <p className={styles.artistProfileBio}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus augue id nisi semper, sit amet hendrerit tortor ultricies.
@@ -79,14 +90,19 @@ export default function ArtistPage({data, error, nft, marketplace}) {
 
 
           <div className={styles.collectibles}>
-          <div className={styles.authPageDivider}>New Collection</div>
+          <div className={styles.authPageDivider}>New Collection  New Collection  New Collection  New Collection  New Collection New Collection  New Collection  New Collection  New Collection  New Collection</div>
             <h2 className={styles.collectiblesTitle}>Collectibles</h2>
             <div className={styles.collectiblesList}>
-              <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 1" />
-              <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 2" />
-              <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 3" />
-              <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 4" />
-              <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 5" />
+            <div className={styles.artistBadges}>
+          <ExampleBadge/>
+          <ExampleBadge/>
+          <ExampleBadge/>
+          <ExampleBadge/>
+          </div>
+          
+        </div>
+       
+       
             </div>
           </div>
           <div className="content mx-auto">
@@ -95,7 +111,8 @@ export default function ArtistPage({data, error, nft, marketplace}) {
                   type="file"
                   required
                   name="file"
-                  onChange={uploadToIPFS}
+                  //UNCOMMENT TO ADD TO STORAGE
+                  //onChange={uploadToIPFS}
                   style={{borderRadius: "20px", border: "2px solid #1DB954",}}
               />
               <Form.Control onChange={(e) => setName(e.target.value)} size="lg" required type="text"
@@ -122,30 +139,29 @@ export default function ArtistPage({data, error, nft, marketplace}) {
                     borderRadius: "10px",
                     overflow: "hidden"
                   }} className="d-grid px-0">
-                <Button
-                    className="btn btn-primary btn-lg rounded-pill px-5"
-                    style={{
-                      background: "#1DB954",
-                      border: "none",
-                      borderRadius: "10px",
-                      color: "white",
-                      fontFamily: "Helvetica",
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                      padding: "12px 36px",
-                      textAlign: "center",
-                      textDecoration: "none",
-                      display: "inline-block",
-                      margin: "4px 2px",
-                      cursor: "pointer"
-                    }} onClick={createNFT} variant="primary" size="lg">
-                  Create & List NFT!
-                </Button>
+                {/*<Button*/}
+                {/*    className="btn btn-primary btn-lg rounded-pill px-5"*/}
+                {/*    style={{*/}
+                {/*      background: "#1DB954",*/}
+                {/*      border: "none",*/}
+                {/*      borderRadius: "10px",*/}
+                {/*      color: "white",*/}
+                {/*      fontFamily: "Helvetica",*/}
+                {/*      fontSize: "18px",*/}
+                {/*      fontWeight: "bold",*/}
+                {/*      padding: "12px 36px",*/}
+                {/*      textAlign: "center",*/}
+                {/*      textDecoration: "none",*/}
+                {/*      display: "inline-block",*/}
+                {/*      margin: "4px 2px",*/}
+                {/*      cursor: "pointer"*/}
+                {/*    }} onClick={createNFT} variant="primary" size="lg">*/}
+                {/*  Create & List NFT!*/}
+                {/*</Button>*/}
               </div>
             </Row>
           </div>
-        </main>
-      </div>
+        </div>
     </>
   )
 }

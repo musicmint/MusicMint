@@ -1,0 +1,42 @@
+/* Created by Anneliese Breidsprecher */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
+
+/* .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  } */
+
+  .search{
+    /* display: flex; */
+    border-radius: 50px;
+    font-family:  'Lexend', sans-serif;
+    padding: 10px 25px;
+    position: fixed;
+    left:50%;
+    /* border-radius: 5px 0 0 5px; */
+  }
+  
+  .input[type="text"] {
+    padding: 10px;
+    border: none;
+    
+    outline: none;
+    border-radius: 50px;
+  }
+  
+  /* .button[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  .button[type="submit"]:hover {
+    background-color: #3e8e41;
+  } */
+  

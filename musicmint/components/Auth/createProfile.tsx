@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../../src/context/auth'
 import styles from '../../styles/AuthPage.styles/loginAndReg.module.css'
 import Wallet from '../../components/Auth/connectWallet'
-import ConnectSpotify from '../../components/Auth/connectSpotify';
 
 const Login = (props) => {
     const { loginUser } = useContext(AuthContext);
@@ -42,11 +41,10 @@ const Login = (props) => {
                 <div className={styles.noCredentials}>
                     <div>Forgot password?</div>
                     <div onClick={props.switchTab}>Register</div>
-                </div>                
+                </div>
                 <div>
                     <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
                 </div>
-                <ConnectSpotify/>
         </div>
     );
 };

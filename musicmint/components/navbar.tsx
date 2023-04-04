@@ -1,11 +1,11 @@
 import React, {useContext, useEffect} from 'react'
-import styles from '../styles/marketplace.module.css'
+import styles from '../styles/componentStyles/navbar.module.css'
 import Link from 'next/link'
 import AuthContext from '../src/context/auth'
 import Image from 'next/image'
 import logo from '../music-mint-marketplace.png'
 
-const NavBar = () => {
+const NavBar = (props, { nft, marketplace }) => {
   let { user, logoutUser, getUserInfo, isAuthorized } = useContext(AuthContext)
 
   useEffect(() => {
@@ -27,8 +27,8 @@ const NavBar = () => {
           </div>
 
           <div className={styles.navbarLinks}>
-              <Link href="/profile">FOR ARTISTS</Link>
-              <Link href="/marketplace">MARKETPLACE</Link>
+              <Link href={`/profile?nft=${nft}&marketplace=${marketplace}`}>FOR ARTISTS</Link>
+              <Link href={`/marketplace?nft=${nft}&marketplace=${marketplace}`}>MARKETPLACE</Link>
               {isAuthorized ? (
                 <p onClick={logoutUser}>LOGOUT</p>
               ) : (
