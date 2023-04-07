@@ -3,8 +3,6 @@ import AuthContext from '../src/context/auth'
 import Login from '../components/Auth/login'
 import Registraion from '../components/Auth/registration'
 import NavBar from '../components/navbar'
-import router from 'next/router'
-import { ethers } from "ethers"
 
 import MarketplaceAbi from "./contractsData/Marketplace.json"
 import MarketplaceAddress from './contractsData/Marketplace-address.json'
