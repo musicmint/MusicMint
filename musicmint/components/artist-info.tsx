@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function ArtistInfo() {
-  const [artist, setArtist] = useState(null);
+  const [artist, setArtist] = useState<any>({name: null, images: [{url: null}], followers: {total: null}});
+  // for lint errors
+  let [access_token, setAccess_token] = useState<any>(null);
+  // for lint errors 
 
   useEffect(() => {
     // Replace YOUR_CLIENT_ID with your actual client ID
