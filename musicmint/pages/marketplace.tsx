@@ -8,6 +8,7 @@ import { Row, Col, Card, Button } from 'react-bootstrap'
 import SearchBar from '../components/searchBar'
 import MarketBadge from '../components/marketplaceBadge'
 import ExampleBadge from '../components/examplebadge'
+import Following from '../components/allArtistsSection/following'
 
 interface Item {
   totalPrice: ethers.BigNumber;
@@ -98,7 +99,12 @@ export default function Home(nft, marketplace, clsssyear, artistname) {
 
       {/* all artists with collectibles */}
       <div className={styles.allArtists}>
-        <p>artists</p>
+        <div className={styles.top}>
+          <p className={styles.followTxt}>Following</p>
+          <p className={styles.followTxt}>All Artists</p>
+        </div>
+        <div className={styles.line}></div>
+        <Following/>
       </div>
 
       {/* collectibles/badges section*/}
