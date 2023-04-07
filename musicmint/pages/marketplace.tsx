@@ -7,6 +7,7 @@ import { ethers } from "ethers"
 import { Row, Col, Card, Button } from 'react-bootstrap'
 import SearchBar from '../components/searchBar'
 import MarketBadge from '../components/marketplaceBadge'
+import ExampleBadge from '../components/examplebadge'
 
 interface Item {
   totalPrice: ethers.BigNumber;
@@ -102,8 +103,18 @@ export default function Home(nft, marketplace, clsssyear, artistname) {
 
       {/* collectibles/badges section*/}
       <div className = {styles.collectibles}>
-         <p>badges/collectibles</p>
+          <div className = {styles.artistAndSeeMore}>
+            <p className={styles.collectibleTxt}>Artist Collectibles</p>
+            <Button className={styles.seeMoreButton}>See more</Button>
+          </div>
+          <div className={styles.allCollectibles}>
+            <ExampleBadge/><ExampleBadge/><ExampleBadge/><ExampleBadge/><ExampleBadge/>
+          </div>
+          <div className={styles.allCollectibles}>
+            <ExampleBadge/><ExampleBadge/><ExampleBadge/><ExampleBadge/><ExampleBadge/>
+          </div>
       </div>
+
       
       <div className="flex justify-center">
         

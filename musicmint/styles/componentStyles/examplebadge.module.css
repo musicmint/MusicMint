@@ -5,7 +5,9 @@
   width: 240px;
   height: 310px;
   padding: 10px;
-  margin: 20px;
+  margin-left:10px;
+  margin-right: 10px;
+  /* margin: 20px; */
   border-radius: 12px;
 
 }

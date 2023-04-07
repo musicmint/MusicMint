@@ -179,4 +179,5 @@
     display: flex;
     flex-direction: row;
     height: 400px;
+    margin-top: 30px;
   }

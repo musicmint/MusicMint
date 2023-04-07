@@ -112,15 +112,9 @@
   .vandyTxt{
     display: flex;
     flex-direction: column;
-    height: 13rem;
-    /* width: 40rem; */
     font-family: 'Lexend', sans-serif; 
     padding-left: 3rem;
-    /* margin-top: 0.2rem; */
-    /* color: #C9EFC7; */
     color: #b6eeff;
-    /* color: #c7e2ef; */
-    /* text-align: left; */
   }
 
   .artistBadges{
@@ -138,21 +132,76 @@
     width: 88%;
     background-color: aliceblue;
     margin-top:5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
     margin-left: 4.6rem;
   }
 
+
+
   .collectibles{
-    display: flex;
+    display:flex;
+    flex-direction: column;
+    height: 45rem;
+    width: 95%;
+    align-items: left;
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+
+  .artistAndSeeMore{
+    display:flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin-right: 3.2rem;
+  }
+
+  .collectibleTxt{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lexend', sans-serif; 
+    padding-left: 3rem;
+    color: #b6eeff;
+    /* align-items: baseline; */
     justify-content: center;
+    padding-bottom: 0;
+    margin-top:1rem;
+  }
+
+  .seeMoreButton{
+    font-family: 'Lexend', sans-serif; 
+    background-color: rgba(209, 209, 209, 0.35);
+    /* background: linear-gradient(to bottom right, #29BA87, #6AD459); */
+    border-radius: 40px;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    transition-duration: 0.4s;
+    border: 1px solid white;
+    cursor: pointer;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .seeMoreButton:hover{
+    background-color: rgba(209, 209, 209, 0.60);
+    /* background: linear-gradient(to bottom, #6AD459, #29BA87); */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+  }
+
+  .allCollectibles{
+    display:flex;
+    flex-direction: row;
+    /* width: 88%; */
+    justify-content: space-between;
+    padding-left: 1.5rem;
+    padding-right: 2.1rem;
     align-items: center;
-    height: 20rem;
-    width: 88%;
-    background-color: aliceblue;
-    /* margin-top:5rem; */
-    margin-bottom: 5rem;
-    margin-left: 4.6rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
   }
 
   
