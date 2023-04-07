@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { SpotifyAuth } from 'react-spotify-auth';
-import 'react-spotify-auth/dist/index.css';
+// import { SpotifyAuth } from 'react-spotify-auth';
+// import 'react-spotify-auth/dist/index.css';
 import styles from '../../styles/AuthPage.styles/auth.module.css'
 
 const ConnectSpotify = () => {
@@ -10,7 +10,7 @@ const ConnectSpotify = () => {
   return (
     <>
     <div className={styles.WalletWrapper}>
-      <SpotifyAuth
+      {/* <SpotifyAuth
         redirectUri="http://localhost:3000/callback"
         clientID="c5c2ed390b3b4a1faf1895f8c269d5a5"
         scopes={['user-read-private', 'user-read-email']}
@@ -19,7 +19,7 @@ const ConnectSpotify = () => {
         noCookie={true}
         btnClassName={styles.spotifyLoginButton}
         btnId="spotify-login-button"
-      />
+      /> */}
       {error && <div className={styles.error}>{error}</div>}
     </div> 
     </>
