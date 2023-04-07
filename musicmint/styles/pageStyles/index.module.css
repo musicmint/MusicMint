@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
 
 
+.body{
+  background-color: black;
+}
 .container {
     background-color: black;
+    height: 100%;
 }
 
 #titleSection {
@@ -166,8 +170,8 @@
     font-size: 3rem;
     font-weight: bold;
     margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: #C9EFC7;
+    /* margin-bottom: 1rem; */
+    color: #b6eeff;
     text-align: center;
   }
 

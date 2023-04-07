@@ -66,7 +66,7 @@
   .navbarLinks > *{
     align-items: center;
     text-decoration: none;
-    color: #C9EFC7;
+    color: #b6eeff;
     font-size: .9rem;
     font-weight: BOLD;
     padding: 1rem;
@@ -74,6 +74,6 @@
   }
 
   .navbarLinks > *:hover {
-    color: #d5ffd3;
+    color: #b6eeff;
     font-size: 1rem;
   }

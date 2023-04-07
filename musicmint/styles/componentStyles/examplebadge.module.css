@@ -1,8 +1,9 @@
 .badge {
- background-color: #42d6ff;
+ /* background-color: #5b6566; */
+ background-color: rgba(91, 101, 102, .5);
   /* background-color: black; */
   width: 240px;
-  height: 400px;
+  height: 310px;
   padding: 10px;
   margin: 20px;
   border-radius: 12px;
@@ -21,8 +22,9 @@ border-radius: 5px;
 .info{
 display: flex;
 flex-direction: column;
-padding-top: 2px;
+padding-top: 5px;
 width: 100%;
+color: white;
 }
 
 .top {
@@ -31,50 +33,54 @@ width: 100%;
 }
 
 .nftName{
-  font-family: 'Space Mono', 'Lexend', sans-serif;
-  font-size:25px;
+  font-family: 'Lexend', sans-serif;
+  font-size:22px;
   text-align: left;
 }
 
 .bottom{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  height: 100px
 }
 
-.leftSide{
-  display: flex;
-  flex-direction: column;
-  width: 55%;
-}
 
 .artistName{
-font-family: 'Space Mono', 'Lexend', sans-serif;
+font-family: 'Lexend', sans-serif;
 font-size:15px;
 text-align: left;
+}
+
+.priceAndButton {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  align-items: center;
 }
 
 .price {
-font-family: 'Space Mono', 'Lexend', sans-serif;
+font-family:  'Lexend', sans-serif;
 font-size:15px;
 text-align: left;
 }
 
-.rightSide {
-  display:flex;
-  flex-direction: column;
+
+
+.buttonSection {
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  width: 45%;
-  /* justify-content:end; */
 }
 
 
 .artistPage {
   font-family: 'Space Mono', 'Lexend', sans-serif; 
-  background: linear-gradient(to bottom right, #29BA87, #6AD459);
+  background: linear-gradient(to bottom right, #42d6ff, #0166cc);
   border-radius: 28px;
   color: white;
-  font-size: 11px;
-  padding: 10px 7px;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 11px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -85,21 +91,23 @@ text-align: left;
 }
 
 .artistPage:hover {
-  background: linear-gradient(to bottom right, #6AD459, #29BA87);
+  background: linear-gradient(to bottom right, #0166cc, #42d6ff);
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-  font-size: 12px;
+  font-size: 11px;
+  /* padding: 9.5px 15px; */
 }
 
-.user-card {
+
+/* .user-card {
 display: flex;
 flex-direction: column;
 align-items: center;
 width: 200px;
 height: 250px;
-border: 20px solid #000; /* Add a 1px black border */
+border: 20px solid #000; 
 border-radius: 5px;
 padding: 10px;
-box-sizing: border-box; /* Add this to include the border in the width and height of the component */
+box-sizing: border-box; 
 }
 
 .user-image {
@@ -145,4 +153,4 @@ box-sizing: border-box; /* Add this to include the border in the width and heigh
   background-color: #023e8a;
 }
 
-
+ */
