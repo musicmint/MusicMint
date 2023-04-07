@@ -77,7 +77,7 @@ export default function Home(nft, marketplace, clsssyear, artistname) {
       {/* green cube */}
       <div className={styles.greenCube}>
         <div className={styles.cubeTxt}>
-          <p className={styles.artistTxt}>Trade your favorite artist's collectibles.</p>
+          <p className={styles.artistTxt}>Trade your favorite artist&apos;s collectibles.</p>
           <p className={styles.descTxt}>A marketplace for you to buy and sell unique,
             single-edition digital artwork from the artists you love.</p>
           <div className={styles.buttonSection}>

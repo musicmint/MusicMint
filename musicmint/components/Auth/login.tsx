@@ -25,7 +25,7 @@ const Login = (props) => {
         return () => {
           window.removeEventListener("keydown", handleKeyDown);
         };
-      }, [email, password]);
+      }, [email, password, loginUser]);
 
     return (
         <div className={styles.container}>
@@ -42,7 +42,7 @@ const Login = (props) => {
                 </div>
                 <div className={styles.noCredentials}>
                     <div>Forgot password?</div>
-                    <div onClick={props.switchTab}>Don't have an account? Register here</div>
+                    <div onClick={props.switchTab}>Don&apos;t have an account? Register here</div>
                 </div>
                 <div>
                     <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
