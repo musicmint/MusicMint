@@ -5,9 +5,9 @@ import styles from '../styles/pageStyles/marketplace.module.css';
 import NavBar from '../components/navbar';
 
 const TestSpotify = () => {
-  const [artist, setArtist] = useState(null);
-  const [user, setUser] = useState(null);
-  const [topTracks, setTopTracks] = useState([]);
+  const [artist, setArtist] = useState<any>(null);
+  const [user, setUser] = useState<any>(null);
+  const [topTracks, setTopTracks] = useState<any>([]);
   let [accessToken, setAccessToken] = useState(window.document !== undefined ? localStorage.getItem("access_token") : "")
 
   useEffect(() => {
