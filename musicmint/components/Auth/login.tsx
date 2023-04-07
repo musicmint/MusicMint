@@ -47,7 +47,7 @@ const Login = (props) => {
                 <div>
                     <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
                 </div>
-                <ConnectSpotify/>
+                {/* <ConnectSpotify/> */}
         </div>
     );
 };

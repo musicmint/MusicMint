@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useContext } from 'react'
 import AuthContext from '../src/context/auth'
-import styles from '../styles/marketplace.module.css'
+import styles from '../styles/pageStyles/index.module.css'
 import NavBar from '../components/navbar'
 import ExampleBadge from '../components/examplebadge'
 import CircleImage from '../circle.png'
@@ -23,7 +23,17 @@ import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin"; // Note the path chan
 
 // const badgeRef = ExampleBadge.badgeRef.current;
 
-export default function Home() {
+
+// if (typeof window !== "undefined") {
+//   const button = document.querySelector("#aboutButton");
+//   if (button){
+//     button.addEventListener("click", () => {
+//       gsap.to(window, {duration: 10, scrollTo: {y: "#aboutSection"}});
+//     })}};
+
+
+
+export default function Home(nft, marketplace) {
   // console.log('data :>> ', data)
   // console.log('error :>> ', error)
   let {user, logoutUser, authTokens} = useContext(AuthContext)
