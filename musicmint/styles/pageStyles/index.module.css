@@ -166,14 +166,21 @@
     font-size: 21px;
   }
 
-  .badges{
+  .badgesWrapper{
     display: flex;
-    width: 100%;
+    justify-content: center;
+  }
+
+  .badges{
+
+    display: flex;
+    width: 95%;
     height: 100vh;
     flex-direction: column;
     padding: 8rem 0;
     font-family: 'Lexend', sans-serif;
     justify-items: center;
+
     font-size: 3.5rem;
     font-weight: bold;
     margin-top: 1rem;
@@ -188,5 +195,5 @@
     height: 400px;
     margin-top: 30px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }

@@ -11,18 +11,17 @@
     background-color: black;
     justify-content: center;
     position: relative;
+
   }
 
   .searchSection{
     display: flex;
     margin-top: 1%;
-    /* width: 100%; */
     align-items: center;
     justify-content: space-between;
     z-index: 2;
     position: absolute;
     height: 3rem;
-    /* background-color: aqua; */
   }
 
   .marketNav {
@@ -31,49 +30,46 @@
     position: absolute;
   }
 
+  .cubeStyling{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .greenCube {
     display: flex;
     width: 88%;
-    height: 15rem;
+    height: 17rem;
     justify-content: space-between;
-    /* justify-content: center; */
     align-items: center;
-    margin-left: 4.6rem;
-    margin-top: 4rem;
-    /* background: linear-gradient(to bottom, #335df5, #0026AB); */
+    /* margin-left: 4.6rem; */
+    margin-top: 6%;
     background: linear-gradient(to bottom, #42d6ff, #0166cc);
-    /* 2A57FA
-    background: linear-gradient(to bottom, #29BA87, #6AD459); */
   }
 
   .cubeTxt {
     display: flex;
     flex-direction: column;
-    height: 13rem;
+    height: 15rem;
     width: 40rem;
     font-family: 'Lexend', sans-serif; 
     padding-left: 4rem;
     margin-top: 3.5rem;
     color: white;
-    /* justify-content: left; */
   }
 
   .artistTxt{
     display: flex;
-    font-size: 34px;
+    font-size: 38px;
     font-weight: bold;
-    
-    /* justify-content: left; */
-    /* text-align: left; */
   }
 
   .descTxt{
-    font-size: 13px;
+    font-size: 18px;
     width: 30rem;
   }
 
   .buttonSection{
-    margin-top: 10px;
+    margin-top:2%;
   }
 
   .exploreButton{
@@ -82,7 +78,7 @@
     /* background: linear-gradient(to bottom right, #29BA87, #6AD459); */
     border-radius: 40px;
     color: white;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     padding: 8px 10px;
     text-align: center;
@@ -96,20 +92,25 @@
 
   .exploreButton:hover {
     background-color: rgba(209, 209, 209, 0.60);
-    /* background: linear-gradient(to bottom, #6AD459, #29BA87); */
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-    font-size: 12px;
+    font-size: 13px;
   }
 
+  .artistWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
   .vandyArtists{
     display:flex;
     flex-direction: column;
-    height: 17rem;
-    /* background-color: rgba(209, 209, 209, 0.35); */
-    width: 95%;
+    height: 19rem;
+    width: 88%;
+   
     justify-content: space-between;
     align-items: left;
-    margin-left: 2rem;
+ 
     margin-top: 1rem;
   }
 
@@ -117,14 +118,21 @@
     display: flex;
     flex-direction: column;
     font-family: 'Lexend', sans-serif; 
-    padding-left: 3rem;
     color: #b6eeff;
+    font-size: 18px;
   }
 
   .artistBadges{
     display: flex;
     flex-direction: row;
-    margin-top: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .blockWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .allArtists{
@@ -132,17 +140,18 @@
     flex-direction: column;
     /* justify-content: center; */
     /* align-items: center; */
-    height: 20rem;
+    height: 25rem;
     width: 88%;
-    margin-top:3rem;
+    margin-top:2.8rem;
     /* margin-bottom: 1rem; */
-    margin-left: 4.6rem;
+    /* margin-left: 4.6rem; */
   }
 
   .top{
     display: flex;
     flex-direction: row;
     font-family: 'Lexend', sans-serif; 
+    font-size: 18px;
     padding-left: 0.2rem;
     color: #b6eeff;
     padding-bottom: 8px;
@@ -155,19 +164,26 @@
     margin-right: .7rem;
   }
 
-  .line{
+  /* .line{
     height:12px;
     width:240px;
     color:#b6eeff;
+  } */
+
+  .collectiblesWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .collectibles{
+  
     display:flex;
     flex-direction: column;
-    height: 45rem;
-    width: 95%;
+    height: 50rem;
+    width: 88%;
     align-items: left;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     margin-top: 1rem;
   }
 
@@ -175,19 +191,21 @@
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 3.2rem;
+    /* margin-right: 3.2rem; */
   }
 
   .collectibleTxt{
     display: flex;
     flex-direction: column;
     font-family: 'Lexend', sans-serif; 
-    padding-left: 3rem;
+    /* padding-left: 3rem; */
     color: #b6eeff;
     /* align-items: baseline; */
     justify-content: center;
     padding-bottom: 0;
     margin-top:1rem;
+    font-size: 18px;
+    margin-left: 5px;
   }
 
   .seeMoreButton{
@@ -206,6 +224,7 @@
     border: 1px solid white;
     cursor: pointer;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    margin-right: 5px;
   }
 
   .seeMoreButton:hover{
@@ -220,8 +239,8 @@
     flex-direction: row;
     /* width: 88%; */
     justify-content: space-between;
-    padding-left: 1.5rem;
-    padding-right: 2.1rem;
+    /* padding-left: 1.5rem; */
+    /* padding-right: 2.1rem; */
     align-items: center;
     margin-top: 0.5rem;
     margin-bottom: 0.8rem;

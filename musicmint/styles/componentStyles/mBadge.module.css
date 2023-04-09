@@ -6,26 +6,25 @@
 .mBadge{
     display: flex;
     flex-direction: column;
-    width: 260px;
-    height: 260px;
+    width: 290px;
+    height: 290px;
     background-color: #42d6ff;
     border-radius: 15px;
-    margin-left: 2.5rem;
-    /* margin-top: 5px; */
-    /* justify-content: center; */
+    /* margin: 1%; */
+    margin-top: .25%;
     align-items: center;
 }
 
 .nameSection{
     display: flex;
     flex-direction: row;
-    width: 230px;
+    width: 260px;
     height: 30px;
     background-color: rgba(46, 46, 46, 0.6);
     border-radius: 50px;
     justify-content: left;
     align-items: center;
-    margin-top: 175px;
+    margin-top: 203px;
 }
 
 .name{
@@ -46,8 +45,8 @@
 
 .photo{
     display: flex;
-    height: 40px;
-    width: 40px;
+    height: 42px;
+    width: 42px;
     border-radius: 50px;
     background-color: azure; 
     /* margin-left: 10px; */
@@ -64,7 +63,7 @@
 .class {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 220px;
     height: 30px;
     background-color: rgba(46, 46, 46, 0.6);
     border-radius: 50px;

@@ -74,7 +74,8 @@ export default function Home(nft, marketplace) {
               }}><div>ARE YOU AN ARTIST? GET STARTED</div></Link></div>
           </div>
         </section>
-
+        
+        <div className={styles.badgesWrapper}>
         <section id="badgesSection" className={styles.badges}>
           <p>Support their journey.</p>
           <p>Cash out when they get famous.</p>
@@ -86,6 +87,7 @@ export default function Home(nft, marketplace) {
             <ExampleBadge/>
           </div>
         </section>
+        </div>
         {/* <main className={styles.main}>
      
 
