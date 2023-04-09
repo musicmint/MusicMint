@@ -5,7 +5,7 @@ import AuthContext from '../src/context/auth'
 import Image from 'next/image'
 import logo from '../music-mint-marketplace.png'
 
-const searchBar = (props, { nft, marketplace }) => {
+const SearchBar = (props, { nft, marketplace }) => {
     let [artistsList, setArtistsList] = useState<any>(null)
 
 
@@ -68,4 +68,4 @@ const searchBar = (props, { nft, marketplace }) => {
     )
 }
 
-export default searchBar
+export default SearchBar
