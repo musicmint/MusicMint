@@ -37,6 +37,7 @@ class User(AbstractUser):
     email = models.EmailField(unique=True) 
     full_name = models.TextField(default="")
     nickname = models.TextField(blank=True)
+    is_artist = models.BooleanField(default=False)
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'email'
