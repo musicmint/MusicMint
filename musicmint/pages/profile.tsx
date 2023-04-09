@@ -1,4 +1,4 @@
-import styles from '../styles/pageStyles/artistpage.module.css'; 
+import styles from '../styles/pageStyles/artistpage.module.css';
 
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
@@ -16,15 +16,15 @@ const projectSecret = 'cef0ed12c92e5a9a981a156c2f4f7d84';  // <---------- your I
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
 
 const client = ipfsHttpClient({
-    host: 'ipfs.infura.io',
-    port: 5001,
-    protocol: 'https',
-    headers: {
-        authorization: auth,
-    },
+  host: 'ipfs.infura.io',
+  port: 5001,
+  protocol: 'https',
+  headers: {
+    authorization: auth,
+  },
 });
 
-export default function ArtistPage({data, error, nft, marketplace}) {
+export default function ArtistPage({ data, error, nft, marketplace }) {
   const [image, setImage] = useState('')
   const [price, setPrice] = useState(0)
   const [name, setName] = useState('')
@@ -49,7 +49,7 @@ export default function ArtistPage({data, error, nft, marketplace}) {
     if (!image || !price || !name || !description) return
     try {
       console.log("Minteddddd1")
-      const result = await client.add(JSON.stringify({image, price, name, description}))
+      const result = await client.add(JSON.stringify({ image, price, name, description }))
       mintThenList(result)
       console.log("Minteddddd2")
     } catch (error) {
@@ -72,96 +72,129 @@ export default function ArtistPage({data, error, nft, marketplace}) {
 
   return (
     <>
-      <div className={styles.artistWrapper}> 
-        <NavBar nft={nft} marketplace={marketplace}/>
-      </div>
+
 
       <div className={styles.container}>
-        
+
         <div className={styles.main}>
+          <div style={{ zIndex: 1 }}>
+            <NavBar nft={nft} marketplace={marketplace} />
+          </div>
           <div className={styles.artistProfile}>
-            <img className={styles.artistProfileImage} src="https://media.tenor.com/ji5Mpqf8APoAAAAC/kikis-delivery-service-grass.gif" alt="Artist profile" />
-            <h1 className={styles.artistProfileName}>ARTIST NAME</h1>
+
+            <img className={styles.artistProfileImage} src="	https://expertvagabond.com/wp-content/uploads/antarctica-ice-arch.jpg.webp" alt="Artist profile" />
+
+            <div className={styles.artistProfileName}>ARTIST NAME</div>
             <p className={styles.artistProfileBio}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus augue id nisi semper, sit amet hendrerit tortor ultricies.
             </p>
-            
+
           </div>
 
 
           <div className={styles.collectibles}>
-          <div className={styles.authPageDivider}>New Collection  New Collection  New Collection  New Collection  New Collection New Collection  New Collection  New Collection  New Collection  New Collection</div>
             <h2 className={styles.collectiblesTitle}>Collectibles</h2>
             <div className={styles.collectiblesList}>
-            <div className={styles.artistBadges}>
-          <ExampleBadge/>
-          <ExampleBadge/>
-          <ExampleBadge/>
-          <ExampleBadge/>
-          </div>
-          
-        </div>
-       
-       
-            </div>
-          </div>
-          <div className="content mx-auto">
-            <Row className="g-4">
-              <Form.Control
-                  type="file"
-                  required
-                  name="file"
-                  //UNCOMMENT TO ADD TO STORAGE
-                  //onChange={uploadToIPFS}
-                  style={{borderRadius: "20px", border: "2px solid #1DB954",}}
-              />
-              <Form.Control onChange={(e) => setName(e.target.value)} size="lg" required type="text"
-                            placeholder="Name"
-                            style={{
-                              borderRadius: "20px",
-                              border: "2px solid #1DB954"
-                            }}/>
-              <Form.Control onChange={(e) => setDescription(e.target.value)} size="lg" required
-                            as="textarea" placeholder="Description"
-                            style={{
-                              borderRadius: "20px",
-                              border: "2px solid #1DB954"
-                            }}/>
-              <Form.Control onChange={(e) => setPrice(parseFloat(e.target.value))} size="lg" required type="number"
-                            placeholder="Price in ETH"
-                            style={{
-                              borderRadius: "20px",
-                              border: "2px solid #1DB954"
-                            }}/>
-              <div
-                  style={{
-                    display: "inline-block",
-                    borderRadius: "10px",
-                    overflow: "hidden"
-                  }} className="d-grid px-0">
-                {/*<Button*/}
-                {/*    className="btn btn-primary btn-lg rounded-pill px-5"*/}
-                {/*    style={{*/}
-                {/*      background: "#1DB954",*/}
-                {/*      border: "none",*/}
-                {/*      borderRadius: "10px",*/}
-                {/*      color: "white",*/}
-                {/*      fontFamily: "Helvetica",*/}
-                {/*      fontSize: "18px",*/}
-                {/*      fontWeight: "bold",*/}
-                {/*      padding: "12px 36px",*/}
-                {/*      textAlign: "center",*/}
-                {/*      textDecoration: "none",*/}
-                {/*      display: "inline-block",*/}
-                {/*      margin: "4px 2px",*/}
-                {/*      cursor: "pointer"*/}
-                {/*    }} onClick={createNFT} variant="primary" size="lg">*/}
-                {/*  Create & List NFT!*/}
-                {/*</Button>*/}
+              <div className={styles.artistBadges}>
+                <ExampleBadge />
+                <ExampleBadge />
+                <ExampleBadge />
+                <ExampleBadge />
               </div>
-            </Row>
+
+            </div>
+
+
           </div>
         </div>
+
+
+        <div className={styles.formControlWrapper}>
+            <Form.Control
+              type="file"
+              required
+              name="file"
+              // UNCOMMENT TO ADD TO STORAGE
+              // onChange={uploadToIPFS}
+              style={{
+                borderRadius: "20px",
+                border: "2px solid #0166cc",
+                backgroundColor: "#f7f7f7",
+                color: "#333",
+                fontSize: "16px",
+                padding: "10px 15px",
+                alignSelf: "end",
+                fontFamily: "Lexend, sans-serif"
+              }}
+            />
+            <Form.Control
+              onChange={(e) => setName(e.target.value)}
+              size="lg"
+              required
+              type="text"
+              placeholder="Name"
+              style={{
+                borderRadius: "20px",
+                border: "2px solid #0166cc",
+                backgroundColor: "#f7f7f7",
+                color: "#333",
+                fontSize: "16px",
+                padding: "10px 15px",
+                alignSelf: "end",
+                fontFamily: "Lexend, sans-serif"
+              }}
+            />
+            <Form.Control
+              onChange={(e) => setDescription(e.target.value)}
+              as="textarea"
+              size="lg"
+              rows={5}
+              placeholder="Description"
+              style={{
+                borderRadius: "20px",
+                border: "2px solid #0166cc",
+                backgroundColor: "#f7f7f7",
+                color: "#333",
+                fontSize: "16px",
+                padding: "10px 15px",
+                alignSelf: "end",
+                fontFamily: "Lexend, sans-serif"
+              }}
+            />
+            <Form.Control
+              onChange={(e) => setPrice(e.target.value as any)}
+              size="lg"
+              required
+              type="number"
+              placeholder="Price in ETH"
+              style={{
+                borderRadius: "20px",
+                border: "2px solid #0166cc",
+                backgroundColor: "#f7f7f7",
+                color: "#333",
+                fontSize: "16px",
+                padding: "10px 15px",
+                alignSelf: "end",
+                fontFamily: "Lexend, sans-serif"
+              }}
+            />
+            <Button
+              onClick={createNFT}
+              style={{
+                borderRadius: "20px",
+                border: "2px solid #0166cc",
+                backgroundColor: "#0166cc",
+                color: "#f7f7f7",
+                fontSize: "16px",
+                padding: "10px 15px",
+                alignSelf: "center",
+                fontFamily: "Lexend, sans-serif"
+              }}
+            >
+              Create NFT
+            </Button>
+          </div>
+      </div>
     </>
   )
 }
