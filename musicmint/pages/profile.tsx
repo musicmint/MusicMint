@@ -3,10 +3,10 @@ import styles from '../styles/pageStyles/artistpage.module.css';
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
-//const { CID } = require('ipfs-http-client')
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { ethers } from "ethers"
 import ExampleBadge from '../components/examplebadge'
+import { MarketplaceContext } from '../src/context/contracts';
 
 const projectId = '2NTlPAsbm2qHgQi2tpi7cebBnNd';   // <---------- your Infura Project ID
 
@@ -16,19 +16,20 @@ const projectSecret = 'cef0ed12c92e5a9a981a156c2f4f7d84';  // <---------- your I
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
 
 const client = ipfsHttpClient({
-  host: 'ipfs.infura.io',
-  port: 5001,
-  protocol: 'https',
-  headers: {
-    authorization: auth,
-  },
+    host: 'ipfs.infura.io',
+    port: 5001,
+    protocol: 'https',
+    headers: {
+        authorization: auth,
+    },
 });
 
-export default function ArtistPage({ data, error, nft, marketplace }) {
+export default function ArtistPage({ data, error}) {
   const [image, setImage] = useState('')
   const [price, setPrice] = useState(0)
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
+  const { nft, marketplace } = useContext(MarketplaceContext);
 
   const uploadToIPFS = async (event) => {
 
@@ -116,7 +117,7 @@ export default function ArtistPage({ data, error, nft, marketplace }) {
               required
               name="file"
               // UNCOMMENT TO ADD TO STORAGE
-              // onChange={uploadToIPFS}
+              onChange={uploadToIPFS}
               style={{
                 borderRadius: "20px",
                 border: "2px solid #0166cc",

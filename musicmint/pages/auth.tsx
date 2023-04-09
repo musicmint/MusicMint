@@ -12,6 +12,7 @@ import NFTAbi from './contractsData/NFT.json'
 import NFTAddress from './contractsData/NFT-address.json'
 import Link from 'next/link'
 import CreateProfile from '../components/Auth/createProfile'
+import { MarketplaceContext } from '../src/context/contracts';
 
 const AuthPage = () => {
     let [onLogin, setOnLogin] = useState(true)
@@ -22,8 +23,7 @@ const AuthPage = () => {
   const { user, logoutUser } = useContext(AuthContext)
   const [loading, setLoading] = useState(true)
   const [account, setAccount] = useState(null)
-  const [nft, setNFT] = useState({})
-  const [marketplace, setMarketplace] = useState({})
+  const { marketplace, setMarketplace, nft, setNFT } = useContext(MarketplaceContext)
 
     const switchTab = () => {
         setOnLogin(!onLogin);
@@ -78,14 +78,22 @@ const web3Handler = async () => {
   const loadContracts = async (signer) => {
 
     // Get deployed copies of contracts
-    const marketplace = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer)
-    setMarketplace(marketplace)
-      console.log("marketplace set")
-    const nft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer)
-    setNFT(nft)
-      console.log("nft set")
-      console.log(nft)
-    setLoading(false)
+    const marketplaceContract = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer)
+      try {
+          const marketplaceContract = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer);
+          const nftContract = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer);
+          if (setMarketplace) {
+              setMarketplace(marketplaceContract);
+          }
+          if (setNFT) {
+              setNFT(nftContract);
+          }
+          const itemCount = await marketplaceContract.itemCount();
+          console.log(itemCount);
+          setLoading(false);
+      } catch (error) {
+          console.error(error);
+      }
   }
 
     return (

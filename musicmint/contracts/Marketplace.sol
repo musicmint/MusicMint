@@ -72,6 +72,7 @@ contract Marketplace is ReentrancyGuard {
     // this allows us to search for it
         address indexed seller
     );
+
     event Bought(
         uint itemId,
         address indexed nft,
@@ -89,6 +90,7 @@ contract Marketplace is ReentrancyGuard {
     //    // this allows us to search for it
     //        address indexed seller
     );
+
     // only deployer can call consturction function
     constructor(uint _feePercent) {
         feeAccount = payable(msg.sender);
@@ -212,6 +214,4 @@ contract Marketplace is ReentrancyGuard {
     function getTotalPrice(uint _itemId) view public returns(uint){
         return((items[_itemId].price*(100 + feePercent))/100);
     }
-
-
 }

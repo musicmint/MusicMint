@@ -68,7 +68,7 @@ const Registraion = (props) => {
                  <div className={styles.button} onClick={() => registerUser(fullName, email, password, isArtist)}>Register</div>
              </div>
              <div className={styles.noCredentials}>
-                 <div onClick={props.switchTab}>Already have an account? Log in</div>
+                 <div onClick={props.switchTab}>Have an account? Log in</div>
              </div>
              <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
      </div>

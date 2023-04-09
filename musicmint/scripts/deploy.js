@@ -1,3 +1,23 @@
+//smart contract where users can list their nfts
+
+// SPDX-License-Identifier: MIT
+
+/*
+
+    ,·'´¨;.  '                              ,.         ,·´'; '           ,  . .,  °        ,-·-.          ,'´¨;
+    ;   ';:\           .·´¨';\         ;'´*´ ,'\       ,'  ';'\°    ;'´    ,   ., _';\'      ';   ';\      ,'´  ,':\'
+   ;     ';:'\      .'´     ;:'\        ;    ';::\      ;  ;::'\    \:´¨¯:;'   `;::'\:'\      ;   ';:\   .'   ,'´::'\'
+   ;   ,  '·:;  .·´,.´';  ,'::;'       ;      '\;'      ;  ;:::;      \::::;   ,'::_'\;'      '\   ';::;'´  ,'´::::;'
+  ;   ;'`.    ¨,.·´::;'  ;:::;       ,'  ,'`\   \      ;  ;:::;          ,'  ,'::;'  ‘          \  '·:'  ,'´:::::;' '
+  ;  ';::; \*´\:::::;  ,':::;‘       ;  ;::;'\  '\    ;  ;:::;           ;  ;:::;  °           '·,   ,'::::::;'´
+ ';  ,'::;   \::\;:·';  ;:::; '      ;  ;:::;  '\  '\ ,'  ;:::;'           ;  ;::;'  ‘             ,'  /::::::;'  '
+ ;  ';::;     '*´  ;',·':::;‘       ,' ,'::;'     '\   ¨ ,'\::;'            ;  ;::;'‚             ,´  ';\::::;'  '
+ \´¨\::;          \¨\::::;        ;.'\::;        \`*´\::\; °           ',.'\::;'‚             \`*ª'´\\::/‘
+  '\::\;            \:\;·'         \:::\'          '\:::\:' '              \::\:;'‚              '\:::::\';  '
+    '´¨               ¨'             \:'             `*´'‚                 \;:'      ‘            `*ª'´‘
+
+*/
+
 // Any time we run this, we're putting our smart contracts on the blockchain
 // We route this to frontend, as our frontend needs to create these instances
 // ethers object injected into hardhat env.
@@ -25,9 +45,8 @@ async function main() {
 
 function saveFrontendFiles(contract, name) {
   const fs = require("fs");
-  const contractsDir = "/Users/anneliesebreidsprecher/Documents/VanderbiltClasses/2023SpringSemester/MusicMint/musicmint/pages/contractsData"
+  const contractsDir = "/Users/mashasedunova/WebstormProjects/MusicMintForMerge/musicmint/pages/contractsData";//__dirname + "/../../pages/contractsData";
 
-  // 
   if (!fs.existsSync(contractsDir)) {
     fs.mkdirSync(contractsDir);
   }
