@@ -7,11 +7,11 @@ import { json } from 'stream/consumers';
 
 const initialContext =
 {
-    user: { full_name: "", email: "", nickname: ""},
+    user: { full_name: "", email: "", nickname: "", isArtist: ""},
     authTokens: { access: "", refresh: "" },
     loginUser: async (email: any, password: any) => { },
     logoutUser: () => { },
-    registerUser: async (full_name: any, email: any, password: any) => { },
+    registerUser: async (full_name: any, email: any, password: any, isArtist: any) => { },
     updateUser: async (updatedInfo: any) => { },
     isAuthorized: false as boolean,
     getUserInfo: (): any => { },
@@ -27,7 +27,7 @@ export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
     let [authTokens, setAuthTokens] = useState(typeof window !== 'undefined' && localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens') || '{}') : null)
-    let [user, setUser] = useState({ full_name: "", email: "", nickname: "" })
+    let [user, setUser] = useState({ full_name: "", email: "", nickname: "", isArtist: ""})
     let [loading, setLoading] = useState(true)
     const router = useRouter()
 
@@ -68,27 +68,24 @@ export const AuthProvider = ({ children }) => {
 
     let logoutUser = () => {
         setAuthTokens(null)
-        setUser({ full_name: "", email: "", nickname: "" })
+        setUser({ full_name: "", email: "", nickname: "", isArtist: "" })
         if (typeof window !== 'undefined') localStorage.removeItem('authTokens')
         if (typeof window !== 'undefined') localStorage.removeItem('isAuthorized')
         router.push('/auth')
     }
 
-    let registerUser = async (full_name: any, email: any, password: any) => {
+    let registerUser = async (full_name: any, email: any, password: any, isArtist: any) => {
         let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/register/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ 'full_name': full_name, 'email': email, 'password': password })
+            body: JSON.stringify({ 'full_name': full_name, 'email': email, 'password': password, 'is_artist': isArtist })
         })
         let data = await response.json()
 
         if (await response.status === 200) {
-            // setAuthTokens(data)
-            // setUser(jwt_decode(data.access))
-            // if (typeof window !== 'undefined') localStorage.setItem('authTokens', JSON.stringify(data))
-            router.push('/')
+            loginUser(email, password)
         } else {
             console.log("Unable to register user with given credentials")
             console.log(response.status)

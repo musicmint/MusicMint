@@ -67,13 +67,15 @@ export default function Home(nft, marketplace) {
               Our platform enables artists to sell their unique creations as NFTs, while providing fans with a new way to engage with
               their favorite artists.
             </p>
-            <Link href={{
-            pathname: '/auth',
-            query: { tab: 'register' },
-          }}><div className={styles.getStarted}>ARE YOU AN ARTIST? GET STARTED</div></Link>
+            <div className = {styles.startSection}>
+            <Link className={styles.getStarted} href={{
+              pathname: '/auth',
+              query: { tab: 'register', user: 'artist' },
+              }}><div>ARE YOU AN ARTIST? GET STARTED</div></Link></div>
           </div>
         </section>
-
+        
+        <div className={styles.badgesWrapper}>
         <section id="badgesSection" className={styles.badges}>
           <p>Support their journey.</p>
           <p>Cash out when they get famous.</p>
@@ -85,6 +87,7 @@ export default function Home(nft, marketplace) {
             <ExampleBadge/>
           </div>
         </section>
+        </div>
         {/* <main className={styles.main}>
      
 

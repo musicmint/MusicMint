@@ -42,7 +42,7 @@
     text-decoration: none;
     /* color: #C9EFC7; */
     color: #c7d5ef;
-    font-size: .9rem;
+    font-size: 1.2rem;
     font-weight: BOLD;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -51,7 +51,7 @@
   .nav li a:hover {
     /* color: #d5ffd3; */
     color: #c7d5ef;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   
 
@@ -65,7 +65,7 @@
     align-items: center;
     text-decoration: none;
     color: #b6eeff;
-    font-size: .9rem;
+    font-size: 1rem;
     font-weight: BOLD;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -73,5 +73,5 @@
 
   .navbarLinks > *:hover {
     color: #b6eeff;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }

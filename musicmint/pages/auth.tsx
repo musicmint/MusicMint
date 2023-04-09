@@ -98,21 +98,14 @@ const web3Handler = async () => {
             web3Handler={web3Handler} 
             account={account} 
             switchTab={switchTab}/> 
-        ) : openTab === 0 ? (
+        ) : (
           <Registraion  
             marketplace={marketplace} 
             nft={nft} 
             web3Handler={web3Handler} 
             account={account} 
             switchTab={switchTab}/>
-        ) : (
-          <CreateProfile 
-          marketplace={marketplace} 
-          nft={nft} 
-          web3Handler={web3Handler} 
-          account={account} 
-          switchTab={switchTab}/>
-        )
+        ) 
         }
         </>
     )

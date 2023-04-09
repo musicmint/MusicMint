@@ -7,12 +7,7 @@ import logo from '../music-mint-marketplace.png'
 
 const searchBar = (props, { nft, marketplace }) => {
     return (
-        <div className = {styles.searchBar}>
-            <form>
-                <input type="text" placeholder="Find your favorite artist" className = {styles.search} ></input>
-                
-            </form>
-        </div>
+        <input type="text" placeholder="Find your favorite artist" className = {styles.search} ></input>
     )
 }
 

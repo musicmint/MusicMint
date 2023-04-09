@@ -69,45 +69,52 @@ export default function Home(nft, marketplace, clsssyear, artistname) {
     <div className ={styles.container}>
       {/* className={styles.nav}  */}
       <NavBar className={styles.marketNav} nft={nft} marketplace={marketplace} />
-      <SearchBar className={styles.searchSection} nft={nft} marketplace={marketplace}/>
+      {/* <SearchBar className={styles.searchSection} nft={nft} marketplace={marketplace}/> */}
       {/* <div className={styles.searchSection}> */}
         {/* <SearchBar className={styles.searchSection} nft={nft} marketplace={marketplace}/> */}
       {/* </div> */}
       
       {/* green cube */}
-      <div className={styles.greenCube}>
-        <div className={styles.cubeTxt}>
-          <p className={styles.artistTxt}>Trade your favorite artist&apos;s collectibles.</p>
-          <p className={styles.descTxt}>A marketplace for you to buy and sell unique,
-            single-edition digital artwork from the artists you love.</p>
-          <div className={styles.buttonSection}>
-            <Button className={styles.exploreButton}>Start Exploring</Button>
+      <div className = {styles.cubeStyling}>
+        <div className={styles.greenCube}>
+          <div className={styles.cubeTxt}>
+            <p className={styles.artistTxt}>Trade your favorite artist&apos;s collectibles.</p>
+            <p className={styles.descTxt}>A marketplace for you to buy and sell unique,
+              single-edition digital artwork from the artists you love.</p>
+            <div className={styles.buttonSection}>
+              <Button className={styles.exploreButton}>Start Exploring</Button>
+            </div>
           </div>
         </div>
       </div>
 
       {/* featured artists */}
-      <div className={styles.vandyArtists}>
-        <p className={styles.vandyTxt}>Vanderbilt Artists</p>
-        <div className={styles.artistBadges}>
+      <div className={styles.artistWrapper}>
+        <div className={styles.vandyArtists}>
+          <p className={styles.vandyTxt}>Vanderbilt Artists</p>
+          <div className={styles.artistBadges}>
           <MarketBadge classyear={'2023'} artistname={'Noah Silver'}/>
           <MarketBadge classyear={'2023'} artistname={'Jace June'}/>
           <MarketBadge classyear={' '} artistname={'Edgehill'}/>
           <MarketBadge classyear={' '} artistname={'Gold Revere'}/>
+          </div>
         </div>
       </div>
 
       {/* all artists with collectibles */}
-      <div className={styles.allArtists}>
-        <div className={styles.top}>
-          <p className={styles.followTxt}>Following</p>
-          <p className={styles.followTxt}>All Artists</p>
+      <div className={styles.blockWrapper}>
+        <div className={styles.allArtists}>
+          <div className={styles.top}>
+            <p className={styles.followTxt}>Following</p>
+            <p className={styles.followTxt}>All Artists</p>
+          </div>
+          <div className={styles.line}></div>
+          <Following/>
         </div>
-        <div className={styles.line}></div>
-        <Following/>
       </div>
 
       {/* collectibles/badges section*/}
+      <div className = {styles.collectiblesWrapper}>
       <div className = {styles.collectibles}>
           <div className = {styles.artistAndSeeMore}>
             <p className={styles.collectibleTxt}>Artist Collectibles</p>
@@ -119,6 +126,7 @@ export default function Home(nft, marketplace, clsssyear, artistname) {
           <div className={styles.allCollectibles}>
             <ExampleBadge/><ExampleBadge/><ExampleBadge/><ExampleBadge/><ExampleBadge/>
           </div>
+      </div>
       </div>
 
       

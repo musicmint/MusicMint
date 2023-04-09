@@ -7,17 +7,20 @@ import Image from 'next/image'
 import logo from '../../music-mint-marketplace.png'
 
 import Wallet from '../../components/Auth/connectWallet'
+import { useRouter } from 'next/router'
 
 const Registraion = (props) => {
     let { registerUser } = useContext(AuthContext)
     let [fullName, setFullName] = useState<any>(null)
     let [email, setEmail] = useState<any>(null)
     let [password, setPassword] = useState<any>(null)
+    let [isArtist, setIsArtist] = useState<any>(false)
+
 
     useEffect(() => {
         function handleKeyDown(event) {
           if (event.key === "Enter") {
-            registerUser(fullName, email, password); // , (document.getElementById("isArtist") as HTMLInputElement).checked
+            registerUser(fullName, email, password, isArtist);
           }
         }
 
@@ -26,6 +29,20 @@ const Registraion = (props) => {
           window.removeEventListener("keydown", handleKeyDown);
         };
       }, [fullName, email, password]);
+
+
+      const router = useRouter()
+      useEffect(() => {
+        if (router.query.user == "artist") {
+          (document.getElementById("isArtist") as HTMLInputElement).checked = true
+          setIsArtist(true)
+        }
+    }, [router.query])
+
+
+    let changeIsArtist = () => {
+      setIsArtist((document.getElementById("isArtist") as HTMLInputElement).checked)      
+    }
 
     return (
          <div className={styles.container}>
@@ -44,11 +61,11 @@ const Registraion = (props) => {
                  <input type="password" id="password" name="password" className={styles.input} onChange={(e) => setPassword(e.target.value)}  placeholder="Enter your password"/>
              </div>
                 <div className={styles.artistCheckbox}>
-                    <input type="checkbox" id="isArtist"></input>
+                    <input type="checkbox" id="isArtist" onChange={(e) => changeIsArtist()}></input>
                     <div>I am an artist</div>
                 </div>
              <div className={styles.formGroup}>
-                 <div className={styles.button} onClick={() => registerUser(fullName, email, password)}>Register</div>
+                 <div className={styles.button} onClick={() => registerUser(fullName, email, password, isArtist)}>Register</div>
              </div>
              <div className={styles.noCredentials}>
                  <div onClick={props.switchTab}>Already have an account? Log in</div>

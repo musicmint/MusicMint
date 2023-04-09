@@ -5,7 +5,7 @@ import NavBar from '../components/navbar'
 
 // ADD PROPS FOR SPECIFIC ARTISTS!!!!!
 
-export default function Home(nft, marketplace) {
+export default function UserPage(nft, marketplace) {
 
     return (
         <div className = {styles.container}>
