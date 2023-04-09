@@ -47,8 +47,16 @@
   font-weight: bold;
   text-align: left;
   color: #ffffff;
+  position: relative;  
+}
+.artistProfileBio {
+  font-size: 1.2rem;
+  text-align: left;
+  font-family: 'Lexend', sans-serif;
+  margin-top: 0px;
+  color: #ffffff;
   position: relative;
-  
+  background-color: rgba(46, 46, 46, 0.6);
 }
 
 .formControlWrapper {
@@ -59,17 +67,6 @@
 
 .formControlWrapper * {
   height: 50px;
-}
-
-.artistProfileBio {
-  font-size: 1.2rem;
-  text-align: left;
-  font-family: 'Lexend', sans-serif;
-  margin-top: 0px;
-  color: #ffffff;
-  position: relative;
-  background-color: rgba(46, 46, 46, 0.6);
-
 }
 
 .collectibles {

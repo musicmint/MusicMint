@@ -77,9 +77,10 @@ export default function ArtistPage({ data, error, nft, marketplace }) {
       <div className={styles.container}>
 
         <div className={styles.main}>
-          <div style={{ zIndex: 1 }}>
+          <div style={{ zIndex: 2 }}>
             <NavBar nft={nft} marketplace={marketplace} />
           </div>
+
           <div className={styles.artistProfile}>
 
             <img className={styles.artistProfileImage} src="	https://expertvagabond.com/wp-content/uploads/antarctica-ice-arch.jpg.webp" alt="Artist profile" />
