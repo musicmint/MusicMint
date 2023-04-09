@@ -85,10 +85,7 @@ export const AuthProvider = ({ children }) => {
         let data = await response.json()
 
         if (await response.status === 200) {
-            // setAuthTokens(data)
-            // setUser(jwt_decode(data.access))
-            // if (typeof window !== 'undefined') localStorage.setItem('authTokens', JSON.stringify(data))
-            router.push('/')
+            loginUser(email, password)
         } else {
             console.log("Unable to register user with given credentials")
             console.log(response.status)
