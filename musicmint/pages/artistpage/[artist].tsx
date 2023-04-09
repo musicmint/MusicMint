@@ -2,13 +2,47 @@
 import styles from '../../styles/AuthPage.styles/auth.module.css';
 import NavBar from '../../components/navbar';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 
 export default function ArtistPage({ }) {
     const router = useRouter()
     const artist = router.query.artist
+    let [artistBio, setArtistBio] = useState<any>(null)
+    let [artistName, setArtistName] = useState<any>(null)
+
+
+    useEffect(() => {
+      if (artist) getArtistInfo()
+    }, [artist])
+
+    let getArtistInfo = async () => {
+      let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/artists/get`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({"artist_name": artist})
+      })
+
+      let data = await response.json()
+
+      if (await response.status === 200) {
+        if (Object.keys(data).includes("error")) {
+          router.push("/404")
+        } else {
+          setArtistBio(data.artist_bio)
+          setArtistName(data.artist_name)
+          console.log(data);
+        }
+      } else {
+          console.log(response);
+      }
+    } 
 
     return (
+        <>
+        {artistName && artistBio ?
         <>
         <div className={styles.artistWrapper}> 
           <NavBar/>
@@ -18,9 +52,9 @@ export default function ArtistPage({ }) {
           <main className={styles.main}>
             <div className={styles.artistProfile}>
               <img className={styles.artistProfileImage} src="https://dummyimage.com/200x200/000/fff" alt="Artist profile" />
-              <h1 className={styles.artistProfileName}>ARTIST NAME: {artist}</h1>
+              <h1 className={styles.artistProfileName}>ARTIST NAME: {artistName}</h1>
               <p className={styles.artistProfileBio}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus augue id nisi semper, sit amet hendrerit tortor ultricies.
+                {artistBio}
               </p>
               
             </div>
@@ -39,6 +73,11 @@ export default function ArtistPage({ }) {
             </div>
           </main>
         </div>
+        </>
+        : <></>
+    }
       </>
+
+
     );
 }
