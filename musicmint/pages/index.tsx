@@ -69,7 +69,7 @@ export default function Home(nft, marketplace) {
             </p>
             <Link href={{
             pathname: '/auth',
-            query: { tab: 'register' },
+            query: { tab: 'register', user: 'artist' },
           }}><div className={styles.getStarted}>ARE YOU AN ARTIST? GET STARTED</div></Link>
           </div>
         </section>

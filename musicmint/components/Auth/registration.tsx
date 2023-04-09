@@ -7,6 +7,7 @@ import Image from 'next/image'
 import logo from '../../music-mint-marketplace.png'
 
 import Wallet from '../../components/Auth/connectWallet'
+import { useRouter } from 'next/router'
 
 const Registraion = (props) => {
     let { registerUser } = useContext(AuthContext)
@@ -26,6 +27,14 @@ const Registraion = (props) => {
           window.removeEventListener("keydown", handleKeyDown);
         };
       }, [fullName, email, password]);
+
+
+      const router = useRouter()
+      useEffect(() => {
+        if (router.query.user == "artist") {
+          (document.getElementById("isArtist") as HTMLInputElement).checked = true
+        }
+    }, [router.query])
 
     return (
          <div className={styles.container}>
