@@ -3,6 +3,8 @@ import axios from 'axios';
 import styles from '../styles/pageStyles/marketplace.module.css';
 import NavBar from '../components/navbar';
 
+const ARTIST_ID = '7kYDjU5spmeNn4aIXU5sGV';
+
 const TestSpotify = () => {
   const [artist, setArtist] = useState<any>(null);
   const [user, setUser] = useState<any>(null);
@@ -17,7 +19,7 @@ const TestSpotify = () => {
         try {
           // Fetch artist information
           const artistResponse = await axios.get(
-            'https://api.spotify.com/v1/artists/1Xyo4u8uXC1ZmMpatF05PJ',
+            `https://api.spotify.com/v1/artists/${ARTIST_ID}`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
@@ -34,7 +36,7 @@ const TestSpotify = () => {
 
           // Fetch artist's top tracks
           const topTracksResponse = await axios.get(
-            'https://api.spotify.com/v1/artists/1Xyo4u8uXC1ZmMpatF05PJ/top-tracks?market=US',
+            `https://api.spotify.com/v1/artists/${ARTIST_ID}/top-tracks?market=US`,
             {
               headers: {
                 Authorization: `Bearer ${accessToken}`,
