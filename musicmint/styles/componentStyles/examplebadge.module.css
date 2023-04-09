@@ -2,8 +2,8 @@
  /* background-color: #5b6566; */
  background-color: rgba(91, 101, 102, .5);
   /* background-color: black; */
-  width: 240px;
-  height: 310px;
+  width: 250px;
+  height: 340px;
   padding: 10px;
   margin-left:10px;
   margin-right: 10px;
@@ -14,8 +14,8 @@
 
 .img {
 background-color: white;
-width: 180px;
-height: 200px;
+width: 220px;
+height: 235px;
 /* margin-top: 10px; */
 margin: 0 auto;
 border-radius: 5px;
