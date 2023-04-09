@@ -44,7 +44,11 @@ const AuthPage = () => {
         if (isAuthorized) {
             router.push('/profile')
         }
-    }, [])
+
+        if (router.query.tab == "register") {
+          switchTab()
+        }
+    }, [router.query])
 
 
 // MetaMask Login/Connect

@@ -67,7 +67,10 @@ export default function Home(nft, marketplace) {
               Our platform enables artists to sell their unique creations as NFTs, while providing fans with a new way to engage with
               their favorite artists.
             </p>
-            <button className={styles.getStarted}>ARE YOU AN ARTIST? GET STARTED</button>
+            <Link href={{
+            pathname: '/auth',
+            query: { tab: 'register' },
+          }}><div className={styles.getStarted}>ARE YOU AN ARTIST? GET STARTED</div></Link>
           </div>
         </section>
 
