@@ -4,15 +4,20 @@ import Link from 'next/link'
 import AuthContext from '../src/context/auth'
 import Image from 'next/image'
 import logo from '../music-mint-marketplace.png'
+import { useRouter } from 'next/router'
+import SearchBar from './searchBar'
 
 const NavBar = (props, { nft, marketplace }) => {
   let { user, logoutUser, getUserInfo, isAuthorized } = useContext(AuthContext)
-
   useEffect(() => {
     if (isAuthorized) {
       getUserInfo()
     }
+    console.log(router);
+    
   }, [isAuthorized])
+
+  const router = useRouter()
 
   return (
         <nav className={styles.nav}>
@@ -25,6 +30,13 @@ const NavBar = (props, { nft, marketplace }) => {
               {/* <Link href="/">Logo</Link> */}
             </li>
           </div>
+
+          {
+            router.pathname == "/marketplace" ? 
+            <SearchBar className={styles.searchSection} nft={nft} marketplace={marketplace}/>
+            : <></>
+          }
+
 
           <div className={styles.navbarLinks}>
               <Link href={`/profile?nft=${nft}&marketplace=${marketplace}`}>FOR ARTISTS</Link>
