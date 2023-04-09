@@ -9,6 +9,7 @@ import SearchBar from '../components/searchBar'
 import MarketBadge from '../components/marketplaceBadge'
 import ExampleBadge from '../components/examplebadge'
 import Following from '../components/allArtistsSection/following'
+import AllArtists from '../components/allArtistsSection/allArtists'
 import { MarketplaceContext } from '../src/context/contracts';
 import is from "@sindresorhus/is";
 import formData = is.formData;
@@ -37,6 +38,7 @@ export default function Home(clsssyear, artistname) {
     return ipfsURL
   }
 
+  const [activeTab, setActiveTab] = useState(1)
   const [loading, setLoading] = useState(true)
   const [items, setItems] = useState<Item[]>([]);
   const { nft, marketplace } = useContext(MarketplaceContext);
@@ -156,11 +158,12 @@ export default function Home(clsssyear, artistname) {
       <div className={styles.blockWrapper}>
         <div className={styles.allArtists}>
           <div className={styles.top}>
-            <p className={styles.followTxt}>All Artists</p>
-            <p className={styles.followTxt}>Following</p>
+            <p className={`${styles.followTxt} ${activeTab == 1 ? styles.activeTab : ""}`} onClick={()=>setActiveTab(1)}>All Artists</p>
+            <p className={`${styles.followTxt} ${activeTab == 2 ? styles.activeTab : ""}`} onClick={()=>setActiveTab(2)}>Following</p>
           </div>
           <div className={styles.line}></div>
-          <Following/>
+          {activeTab == 1 ? <AllArtists/> : <Following/> }
+
         </div>
       </div>
 

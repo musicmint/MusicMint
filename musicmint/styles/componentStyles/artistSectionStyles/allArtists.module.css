@@ -36,7 +36,14 @@ font-size: 15px;
 
 
 .otherHeader{
-
     width: 15%;
+}
 
+.artistHeaderFollowing{
+    width: 69%;
+    margin-left: 2%;
+}
+
+.otherHeaderFollowing{
+    width: 15.5%
 }

@@ -8,18 +8,18 @@ const Following = (props) => {
     <div className={styles.banners}>
       <div className={styles.side}>
         <div className={styles.header}>
-          <p className = {styles.artistHeader}>Artist</p>
-          <p className = {styles.otherHeader}>Followers</p>
-          <p className = {styles.otherHeader}>Volume</p>
+          <p className = {styles.artistHeaderFollowing}>Artist</p>
+          <p className = {styles.otherHeaderFollowing}>Followers</p>
+          <p className = {styles.otherHeaderFollowing}>Your Volume</p>
         </div>
         <Banner/><Banner/><Banner/><Banner/><Banner/>
       </div>
   
       <div className={styles.side}>
         <div className={styles.header}>
-          <p className = {styles.artistHeader}>Artist</p>
-          <p className = {styles.otherHeader}>Followers</p>
-          <p className = {styles.otherHeader}>Volume</p>
+          <p className = {styles.artistHeaderFollowing}>Artist</p>
+          <p className = {styles.otherHeaderFollowing}>Followers</p>
+          <p className = {styles.otherHeaderFollowing}>Volume</p>
         </div>
         <Banner/><Banner/><Banner/><Banner/><Banner/> 
       </div>

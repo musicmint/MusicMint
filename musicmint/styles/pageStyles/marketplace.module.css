@@ -153,17 +153,35 @@
     flex-direction: row;
     font-family: 'Lexend', sans-serif; 
     font-size: 18px;
-    padding-left: 0.2rem;
+    /* padding-left: 0.2rem; */
     color: #b6eeff;
-    padding-bottom: 8px;
+    /* padding-bottom: 8px; */
     border-bottom: 1px solid #b6eeff;
- 
     
   }
 
   .followTxt{
     margin-right: .7rem;
   }
+
+  .followTxt:hover{
+    cursor: pointer;
+  }
+
+  .activeTab{
+    font-size: 19px;
+    font-weight: bold;
+ 
+    height: 29px;
+    padding: none;
+    border-bottom: 1.2px solid #b6eeff
+  }
+
+  
+
+  /* .followTxt:visited{
+    font-size: 19px;
+  } */
 
   /* .line{
     height:12px;
