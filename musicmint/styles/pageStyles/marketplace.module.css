@@ -10,21 +10,25 @@
     /* height: 100vh; */
     background-color: black;
     justify-content: center;
+    position: relative;
   }
 
-  .search{
-    margin-top: 1%;
-    width: 100%;
+  .searchSection{
     display: flex;
+    margin-top: 1%;
+    /* width: 100%; */
     align-items: center;
-    justify-content: center;
-    z-index: 1;
-    /* position: fixed; */
+    justify-content: space-between;
+    z-index: 2;
+    position: absolute;
+    height: 3rem;
     /* background-color: aqua; */
   }
 
   .marketNav {
     background-color: black !important;
+    z-index: 1;
+    position: absolute;
   }
 
   .greenCube {

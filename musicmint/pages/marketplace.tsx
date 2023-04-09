@@ -69,10 +69,10 @@ export default function Home(nft, marketplace, clsssyear, artistname) {
     <div className ={styles.container}>
       {/* className={styles.nav}  */}
       <NavBar className={styles.marketNav} nft={nft} marketplace={marketplace} />
-     
-      <div className={styles.search}>
-        <SearchBar nft={nft} marketplace={marketplace}/>
-      </div>
+      <SearchBar className={styles.searchSection} nft={nft} marketplace={marketplace}/>
+      {/* <div className={styles.searchSection}> */}
+        {/* <SearchBar className={styles.searchSection} nft={nft} marketplace={marketplace}/> */}
+      {/* </div> */}
       
       {/* green cube */}
       <div className={styles.greenCube}>
