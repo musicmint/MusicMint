@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
+
+.artist{
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding-left: 1%;
+    color: #b6eeff;
+    font-family: 'Lexend', sans-serif;
+    
+}
+
+.picAndName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:70%
+}
+.pic{
+    height: 42px;
+    width: 42px;
+    border-radius: 50px;
+    background-color: azure; 
+}
+
+.name{
+    padding-left: 1%;
+}
+
+.info {
+    width: 15%;
+}

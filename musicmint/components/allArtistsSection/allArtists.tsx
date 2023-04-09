@@ -1,31 +1,32 @@
 import React from 'react'
-import styles from '../../styles/componentStyles/examplebadge.module.css'
+import styles from '../../styles/componentStyles/artistSectionStyles/allArtists.module.css'
+import Banner from './banner'
 
 const allArtists = (props) => {
     return (
-      // whole badge
-        <div className={styles.badge} >
-          <div className={styles.img}></div>
-
-          {/* NFT info section */}
-          <div className={styles.info}>
-            <div className={styles.top}>
-              <p className={styles.nftName}>NFT Name</p>
-            </div>
-
-            {/* artist name, price, and artist page button */}
-            <div className={styles.bottom}>
-                <p className={styles.artistName}>Artist Name</p>
-                <div className={styles.priceAndButton}>
-                  <p className={styles.price}>$__</p>
-                  <div className={styles.buttonSection}>
-                    <button className={styles.artistPage}>Go To Artist</button>
-                  </div>
-                </div>
-            </div>
+      
+        // whole badge
+      <div className={styles.banners}>
+        <div className={styles.side}>
+          <div className={styles.header}>
+            <p className = {styles.artistHeader}>Artist</p>
+            <p className = {styles.otherHeader}>Followers</p>
+            <p className = {styles.otherHeader}>Volume</p>
           </div>
+          <Banner/><Banner/><Banner/><Banner/><Banner/>
         </div>
+    
+        <div className={styles.side}>
+          <div className={styles.header}>
+            <p className = {styles.artistHeader}>Artist</p>
+            <p className = {styles.otherHeader}>Followers</p>
+            <p className = {styles.otherHeader}>Volume</p>
+          </div>
+          <Banner/><Banner/><Banner/><Banner/><Banner/> 
+        </div>
+      </div>
+    
        
-      )
+  )
 }
 export default allArtists

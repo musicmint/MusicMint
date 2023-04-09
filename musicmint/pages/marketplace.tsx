@@ -105,8 +105,8 @@ export default function Home(nft, marketplace, clsssyear, artistname) {
       <div className={styles.blockWrapper}>
         <div className={styles.allArtists}>
           <div className={styles.top}>
-            <p className={styles.followTxt}>Following</p>
             <p className={styles.followTxt}>All Artists</p>
+            <p className={styles.followTxt}>Following</p>
           </div>
           <div className={styles.line}></div>
           <Following/>
