@@ -135,12 +135,18 @@
     padding-right: 2rem;
   }
 
+  .startSection{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+  }
   .getStarted {
     font-family: 'Space Mono', 'Lexend', sans-serif; 
+    width: 50%;
     background: linear-gradient(to bottom right, #42d6ff, #0166cc);
     border-radius: 28px;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     padding: 15px 1px;
     text-align: center;
     text-decoration: none;
@@ -157,7 +163,7 @@
   .getStarted:hover {
     background: linear-gradient(to bottom right, #0166cc, #42d6ff);
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-    font-size: 20px;
+    font-size: 21px;
   }
 
   .badges{
