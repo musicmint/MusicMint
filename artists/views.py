@@ -59,9 +59,8 @@ def update_artist(request):
 @api_view(['POST'])
 def upload_profile_image(request):
     artist_name = request.data["artist_name"]
+    artist = Artist.objects.filter(artist_name=artist_name).first()
     if artist is not None:
-        artist = Artist.objects.filter(artist_name=artist_name).first()
-
         file = request.FILES.get('file')
         file_bytes = file.read()
 
