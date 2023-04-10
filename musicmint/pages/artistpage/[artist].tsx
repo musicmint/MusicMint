@@ -1,9 +1,14 @@
 
-import styles from '../../styles/AuthPage.styles/auth.module.css';
+import styles from '../../styles/pageStyles/artistpage.module.css';
 import NavBar from '../../components/navbar';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useState , useContext } from 'react';
 import Image from 'next/image'
+import ExampleBadge from '../../components/examplebadge';
+import Wallet from '../../components/Auth/connectWallet';
+import { MarketplaceContext } from '../../src/context/contracts';
+import Banner from '../../components/artistBanner';
+import VisibleBanner from '../../components/Banners/visibleBanner';
 
 export default function ArtistPage({ }) {
     const router = useRouter()
@@ -12,6 +17,7 @@ export default function ArtistPage({ }) {
     let [artistName, setArtistName] = useState<any>(null)
     let [imageURL, setImageURL] = useState<any>(null)
     let [uploadedFile, setUploadedFile] = useState<any>(null)
+    const { nft, marketplace } = useContext(MarketplaceContext)
 
 
     useEffect(() => {
@@ -66,46 +72,73 @@ export default function ArtistPage({ }) {
     }
 
     return (
-        <>
+        
+      <div className={styles.container}>
+       
         {artistName && artistBio ?
         <>
-        <div className={styles.artistWrapper}> 
-          <NavBar/>
-        </div>
-  
-        <div className={styles.container}>
-          <main className={styles.main}>
-            <div className={styles.artistProfile}>
-              <img className={styles.artistProfileImage} src="https://dummyimage.com/200x200/000/fff" alt="Artist profile" />
-              <h1 className={styles.artistProfileName}>ARTIST NAME: {artistName}</h1>
-              <p className={styles.artistProfileBio}>
-                {artistBio}
-              </p>
-              
-            </div>
-            <div>UPLOAD YOUR PROFILE IMAGE</div>
-            <img src={uploadedFile ? uploadedFile : imageURL} width="200" height="200" alt="profile pic" loading="eager"></img>
-            <input type="file" onChange={handleFileChange} />
+          <div className={styles.container}>
+            <div className={styles.main}>
+              <div style={{ zIndex: 2 }}>
+                <NavBar nft={nft} marketplace={marketplace} />
+              </div>
 
-  
-  
-            <div className={styles.collectibles}>
-            <div className={styles.authPageDivider}>New Collection</div>
-              <h2 className={styles.collectiblesTitle}>Collectibles</h2>
-              <div className={styles.collectiblesList}>
-                <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 1" />
-                <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 2" />
-                <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 3" />
-                <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 4" />
-                <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 5" />
+              <div className={styles.artistProfile}>
+                <img className={styles.profPlaceholder} src="https://dummyimage.com/200x200/000/fff" alt="Artist profile" />
+                {/* <div className={styles.profPlaceholder}></div> */}
+                <div className={styles.overlay}></div>
+                <div className={styles.nameSection}>
+                  <div className={styles.artistProfileName}>{artistName}</div>
+                  <div className={styles.bannerContainer}><VisibleBanner/></div>
+                </div>
+              </div>
+
+              <div className={styles.collectibles}>
+                <h2 className={styles.collectiblesTitle}>Avaliable Collectibles</h2>
+                {/* <div className={styles.collectiblesList}> */}
+                <div className={styles.artistBadges}>
+                  <ExampleBadge />
+                  <ExampleBadge />
+                  <ExampleBadge />
+                  <ExampleBadge />
+                </div>
               </div>
             </div>
-          </main>
-        </div>
+
+        
+  
+            <div className={styles.container}>
+              <main className={styles.main}>
+                <div className={styles.artistProfile}>
+                  {/* <img className={styles.artistProfileImage} src="https://dummyimage.com/200x200/000/fff" alt="Artist profile" /> */}
+                  
+                  
+                </div>
+                <div className={styles.idk}>
+                <div>UPLOAD YOUR PROFILE IMAGE</div>
+                <img src={uploadedFile ? uploadedFile : imageURL} width="200" height="200" alt="profile pic" loading="eager"></img>
+                <input type="file" onChange={handleFileChange} />
+                </div>
+  
+  
+                <div className={styles.collectibles}>
+                  <div className={styles.authPageDivider}>New Collection</div>
+                  <h2 className={styles.collectiblesTitle}>Collectibles</h2>
+                  <div className={styles.collectiblesList}>
+                    <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 1" />
+                    <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 2" />
+                    <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 3" />
+                    <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 4" />
+                    <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 5" />
+                  </div>
+                </div>
+              </main>
+            </div>
+          </div>
         </>
         : <></>
-    }
-      </>
+        }
+      </div>
 
 
     );

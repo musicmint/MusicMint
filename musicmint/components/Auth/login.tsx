@@ -31,6 +31,7 @@ const Login = (props) => {
         <div className={styles.container}>
             
             <div className={styles.header}><Image src={logo} alt="logo" width={400} height={40}/></div>
+            
                 <div className={styles.formGroup}>
                     <input type="email" id="email" name="email" className={styles.input} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your E-mail"/>
                 </div>

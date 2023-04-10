@@ -49,7 +49,7 @@ const Registraion = (props) => {
          <div className={styles.header}><Image src={logo} alt="logo" width={400} height={40}/></div>
              <div>
                  
-                 
+             
              </div>
              <div className={styles.formGroup}>
                  <input type="text" id="fullName" name="fullName" className={styles.input} onChange={(e) => setFullName(e.target.value)} placeholder="Enter your full name"/>
@@ -71,6 +71,7 @@ const Registraion = (props) => {
                  <div onClick={props.switchTab}>Have an account? Log in</div>
              </div>
              <Wallet web3Handler={props.web3Handler} account={props.account}></Wallet>
+             
      </div>
     )
 }

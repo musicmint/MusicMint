@@ -84,7 +84,7 @@ export default function ArtistPage({ data, error}) {
             <div className={styles.profPlaceholder}></div>
             <div className={styles.overlay}></div>
             <div className={styles.nameSection}>
-              <div className={styles.artistProfileName}>ARTIST NAME</div>
+              <div className={styles.artistProfileName}>YOUR NAME</div>
               <div className={styles.bannerContainer}><Banner/></div>
             </div>
           </div>
@@ -137,7 +137,8 @@ export default function ArtistPage({ data, error}) {
                     padding: "10px 1px",
                     justifyContent: "center",
                     textAlign: "center",
-                    fontFamily: "Lexend, sans-serif"
+                    fontFamily: "Lexend, sans-serif",
+                    outline: "none"
                   }}
                 />
               </div>
@@ -159,7 +160,8 @@ export default function ArtistPage({ data, error}) {
                     fontSize: "16px",
                     padding: "10px 15px",
                     alignSelf: "end",
-                    fontFamily: "Lexend, sans-serif"
+                    fontFamily: "Lexend, sans-serif",
+                    outline: "none",
                   }}
                 />
               </div>

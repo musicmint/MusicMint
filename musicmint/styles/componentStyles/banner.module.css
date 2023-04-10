@@ -3,11 +3,16 @@
 
 .bannerContainer{
     display:flex;
-    width: 100%;
+    width: 75%;
     height: 3rem;
     justify-content: center;
-   
+}
 
+.visibleBannerContainer{
+    display:flex;
+    height: 3rem;
+    width: 53%;
+    justify-content: center;
 }
 
 .sections{
@@ -30,6 +35,30 @@
     padding-bottom: 5px;
 }
 
+.followerSectionV {
+    display:flex;
+    flex-direction: column;
+
+    /* background-color: yellow; */
+    width: 33%;
+    justify-content: center;
+    align-items: center;
+    /* padding-bottom: 5px; */
+
+}
+
+.availSection{
+    display:flex;
+    flex-direction: column;
+    border-left: 1px solid #b6eeff;
+
+    
+    justify-content: center;
+    align-items: center;
+    /* padding-bottom: 5px; */
+    width: 67%;
+    
+}
 /* .walletContainer{
     background-color: yellow;
 } */

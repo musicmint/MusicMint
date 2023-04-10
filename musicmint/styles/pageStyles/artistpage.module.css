@@ -7,7 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: black;
+  background-color: #0166cc;
+  /* background: black; */
   padding: none;
 }
 
@@ -64,7 +65,7 @@ position: absolute;
   flex-direction: row;
   margin-top: 380px;
 
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .artistProfileName {
@@ -91,21 +92,24 @@ position: absolute;
 
 .formControlWrapper {
   display: flex;
-  width: 70%;
+  width: 64%;
   flex-direction: column;
   /* background-color: green; */
   align-items: flex-start;
-  margin-top: 2rem; 
+  margin-top: 4rem; 
 }
 
 
 .minting {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
   font-family: 'Lexend', sans-serif; 
-    color: #b6eeff;
-    font-size: 30px;
-    border-bottom: 1px solid #b6eeff;
-    width: 100%;
-    margin-bottom: 0;
+  color: #b6eeff;
+  font-size: 30px;
+  border-bottom: 1px solid #b6eeff;
+  width: 100%;
+  margin-bottom: 0;
 }
 .all {
   display: flex;
@@ -117,7 +121,7 @@ position: absolute;
 
 .forms{
   display: flex;
-  width: 86%;
+  width: 100%;
   flex-direction: row;
   margin: 10px;
   justify-content: center;
