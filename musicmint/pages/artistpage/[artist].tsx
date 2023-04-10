@@ -46,12 +46,13 @@ export default function ArtistPage({ }) {
     
       const formData = new FormData();
       formData.append('file', file);
+      formData.append('artist_name', artistName);
+
     
-      let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/upload-image`, {
+      let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/artists/upload_profile_image`, {
         method: 'POST',
         body: formData,
-      })
-        .then(response => response.json())
+      }).then(response => response.json())
         .then(result => {
           console.log('Image uploaded:', result);
         })
