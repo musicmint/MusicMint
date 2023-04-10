@@ -66,7 +66,8 @@ def upload_profile_image(request):
 
         upload(
             file=file_bytes,
-            public_id=f'{artist_name}_image'
+            public_id=f'{artist_name}_image',
+            invalidate=True
         )    
 
         url, options = cloudinary_url(f'{artist_name}_image')
