@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from '../../styles/componentStyles/artistSectionStyles/allArtists.module.css'
 import Banner from './banner'
 
-const allArtists = (props) => {
+const AllArtists = (props) => {
   let [artistList, setArtistList] = useState<any>(null)
 
   useEffect(() => {
@@ -75,4 +75,4 @@ const allArtists = (props) => {
     : <></> } </>
   )
 }
-export default allArtists
+export default AllArtists
