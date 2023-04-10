@@ -10,6 +10,8 @@ export default function ArtistPage({ }) {
     const artist = router.query.artist
     let [artistBio, setArtistBio] = useState<any>(null)
     let [artistName, setArtistName] = useState<any>(null)
+    let [imageURL, setImageURL] = useState<any>(null)
+
 
 
     useEffect(() => {
@@ -33,6 +35,7 @@ export default function ArtistPage({ }) {
         } else {
           setArtistBio(data.artist_bio)
           setArtistName(data.artist_name)
+          setImageURL(data.image_url)
           console.log(data);
         }
       } else {
@@ -55,6 +58,7 @@ export default function ArtistPage({ }) {
       }).then(response => response.json())
         .then(result => {
           console.log('Image uploaded:', result);
+          setImageURL(result.image_url)
         })
         .catch(error => {
           console.error('Error uploading image:', error);
@@ -80,6 +84,7 @@ export default function ArtistPage({ }) {
               
             </div>
             <div>UPLOAD YOUR PROFILE IMAGE</div>
+            <img src={imageURL}></img>
             <input type="file" onChange={handleFileChange} />
 
   
