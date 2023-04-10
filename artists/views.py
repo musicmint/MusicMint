@@ -69,7 +69,7 @@ def upload_profile_image(request):
             public_id=f'{artist_name}_image'
         )    
 
-        url, options = cloudinary_url(f'{artist_name}_image', crop="fill")
+        url, options = cloudinary_url(f'{artist_name}_image')
 
         artist.image_url = url
         artist.save()
