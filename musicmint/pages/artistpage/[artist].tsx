@@ -40,6 +40,26 @@ export default function ArtistPage({ }) {
       }
     } 
 
+
+    let handleFileChange = async (event) => {
+      const file = event.target.files[0];
+    
+      const formData = new FormData();
+      formData.append('file', file);
+    
+      let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/upload-image`, {
+        method: 'POST',
+        body: formData,
+      })
+        .then(response => response.json())
+        .then(result => {
+          console.log('Image uploaded:', result);
+        })
+        .catch(error => {
+          console.error('Error uploading image:', error);
+        });
+    }
+
     return (
         <>
         {artistName && artistBio ?
@@ -58,6 +78,9 @@ export default function ArtistPage({ }) {
               </p>
               
             </div>
+            <div>UPLOAD YOUR PROFILE IMAGE</div>
+            <input type="file" onChange={handleFileChange} />
+
   
   
             <div className={styles.collectibles}>
