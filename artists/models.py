@@ -7,6 +7,7 @@ class Artist(models.Model):
     artist_name = models.TextField(default="")
     artist_endpoint = models.TextField(default="")
     artist_bio = models.TextField(default="")
+    image_url = models.TextField(default="")
 
     class Meta:
         verbose_name_plural = "Artists"
@@ -18,5 +19,6 @@ class Artist(models.Model):
         return {
             "artist_name": self.artist_name,
             "artist_endpoint": self.artist_endpoint,
-            "artist_bio": self.artist_bio
+            "artist_bio": self.artist_bio,
+            "image_url": self.image_url
         }
