@@ -67,6 +67,9 @@ def upload_profile_image(request):
         upload(
             file=file_bytes,
             public_id=f'{artist_name}_image',
+            headers={
+                'Cache-Control': 'no-cache',
+            },
             invalidate=True
         )    
 
