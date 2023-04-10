@@ -12,7 +12,7 @@ const Following = (props) => {
           <p className = {styles.otherHeaderFollowing}>Followers</p>
           <p className = {styles.otherHeaderFollowing}>Your Volume</p>
         </div>
-        <Banner/><Banner/><Banner/><Banner/><Banner/>
+        {/* <Banner/><Banner/><Banner/><Banner/><Banner/> */}
       </div>
   
       <div className={styles.side}>
@@ -21,7 +21,7 @@ const Following = (props) => {
           <p className = {styles.otherHeaderFollowing}>Followers</p>
           <p className = {styles.otherHeaderFollowing}>Volume</p>
         </div>
-        <Banner/><Banner/><Banner/><Banner/><Banner/> 
+        {/* <Banner/><Banner/><Banner/><Banner/><Banner/>  */}
       </div>
     </div>
   )
