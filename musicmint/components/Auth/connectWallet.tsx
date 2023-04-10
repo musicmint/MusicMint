@@ -2,17 +2,16 @@ import React, {useContext} from 'react'
 import Link from 'next/link'
 import AuthContext from '../../src/context/auth'
 import {Button} from "react-bootstrap";
-import styles from '../../styles/AuthPage.styles/auth.module.css'
+import styles from '../../styles/AuthPage.styles/wallet.module.css'
 
 const Wallet = ({ web3Handler, account }) => {
-
-    let {user, logoutUser, authTokens} = useContext(AuthContext)
 
     return (
 
         <div className={styles.WalletWrapper}>
             <div className={styles.connectText}>
-                    <p>Connect Wallet:</p></div>
+                    {/* <p>Connect Wallet:</p> */}
+                    </div>
             {account ? (
                 <Link
                     href={`https://etherscan.io/address/${account}`}

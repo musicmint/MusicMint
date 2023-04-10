@@ -7,6 +7,7 @@ import { useState, useContext } from 'react'
 import { ethers } from "ethers"
 import ExampleBadge from '../components/examplebadge'
 import { MarketplaceContext } from '../src/context/contracts';
+import Banner from '../components/artistBanner';
 
 const projectId = '2NTlPAsbm2qHgQi2tpi7cebBnNd';   // <---------- your Infura Project ID
 
@@ -82,7 +83,10 @@ export default function ArtistPage({ data, error}) {
           <div className={styles.artistProfile}>
             <div className={styles.profPlaceholder}></div>
             <div className={styles.overlay}></div>
-            <div className={styles.artistProfileName}>ARTIST NAME</div>
+            <div className={styles.nameSection}>
+              <div className={styles.artistProfileName}>ARTIST NAME</div>
+              <div className={styles.bannerContainer}><Banner/></div>
+            </div>
           </div>
 
           <div className={styles.formControlWrapper}>
@@ -170,7 +174,7 @@ export default function ArtistPage({ data, error}) {
       
 
           <div className={styles.collectibles}>
-            <h2 className={styles.collectiblesTitle}>Your Unpurchased Collectibles</h2>
+            <h2 className={styles.collectiblesTitle}>Your Avaliable Collectibles</h2>
             {/* <div className={styles.collectiblesList}> */}
               <div className={styles.artistBadges}>
                 <ExampleBadge />

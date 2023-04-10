@@ -1,0 +1,22 @@
+.connectButton{
+    font-family: 'Lexend', sans-serif; 
+      /* width: 30%; */
+      background: linear-gradient(to bottom right, #42d6ff, #0166cc);
+      border-radius: 28px;
+      color: white;
+      font-size: 17px;
+      padding: 8px 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      transition-duration: 0.4s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .connectButton:hover {
+    background: linear-gradient(to bottom right, #0166cc, #42d6ff);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+  }
