@@ -3,7 +3,7 @@ import styles from '../../styles/AuthPage.styles/auth.module.css';
 import NavBar from '../../components/navbar';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-
+import Image from 'next/image'
 
 export default function ArtistPage({ }) {
     const router = useRouter()
@@ -11,7 +11,7 @@ export default function ArtistPage({ }) {
     let [artistBio, setArtistBio] = useState<any>(null)
     let [artistName, setArtistName] = useState<any>(null)
     let [imageURL, setImageURL] = useState<any>(null)
-
+    let [uploadedFile, setUploadedFile] = useState<any>(null)
 
 
     useEffect(() => {
@@ -56,9 +56,9 @@ export default function ArtistPage({ }) {
         method: 'POST',
         body: formData,
       }).then(response => response.json())
-        .then(result => {
-          console.log('Image uploaded:', result);
-          setImageURL(result.image_url)
+        .then(async result => {
+          console.log('Image uploaded:', result);          
+          setUploadedFile(URL.createObjectURL(file))
         })
         .catch(error => {
           console.error('Error uploading image:', error);
@@ -84,7 +84,7 @@ export default function ArtistPage({ }) {
               
             </div>
             <div>UPLOAD YOUR PROFILE IMAGE</div>
-            <img src={imageURL}></img>
+            <img src={uploadedFile ? uploadedFile : imageURL} width="200" height="200" alt="profile pic" loading="eager"></img>
             <input type="file" onChange={handleFileChange} />
 
   
