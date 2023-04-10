@@ -130,6 +130,7 @@ export default function Home(clsssyear, artistname) {
       {/* </div> */}
       
       {/* green cube */}
+      <div className={styles.cubeStyling}>
       <div className={styles.greenCube}>
         <div className={styles.cubeTxt}>
           <p className={styles.artistTxt}>Trade your favorite artist&apos;s collectibles.</p>
@@ -139,6 +140,7 @@ export default function Home(clsssyear, artistname) {
             <Button className={styles.exploreButton}>Start Exploring</Button>
           </div>
         </div>
+      </div>
       </div>
 
       {/* featured artists */}
