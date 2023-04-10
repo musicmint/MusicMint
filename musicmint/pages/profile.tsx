@@ -72,31 +72,106 @@ export default function ArtistPage({ data, error}) {
   }
 
   return (
-    <>
-
-
+    
       <div className={styles.container}>
-
         <div className={styles.main}>
           <div style={{ zIndex: 2 }}>
             <NavBar nft={nft} marketplace={marketplace} />
           </div>
 
           <div className={styles.artistProfile}>
-
-            <img className={styles.artistProfileImage} src="	https://expertvagabond.com/wp-content/uploads/antarctica-ice-arch.jpg.webp" alt="Artist profile" />
-
+            <div className={styles.profPlaceholder}></div>
+            <div className={styles.overlay}></div>
             <div className={styles.artistProfileName}>ARTIST NAME</div>
-            <p className={styles.artistProfileBio}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus augue id nisi semper, sit amet hendrerit tortor ultricies.
-            </p>
-
           </div>
 
+          <div className={styles.formControlWrapper}>
+            <p className={styles.minting}>Get minting!</p>
+            <div className={styles.all}>
+
+              {/* NAME SECTION */}
+              <div className={styles.forms}>
+                <p className={styles.instructions}>Give your collectible a name:</p>
+                <Form.Control
+                  onChange={(e) => setName(e.target.value)}
+                  size="lg"
+                  required
+                  type="text"
+                  placeholder="Ex: Midnights Number 1 Fan"
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    borderRadius: "50px",
+                    outline: "none",
+                    backgroundColor: "#f7f7f7",
+                    color: "#333",
+                    fontSize: "15px",
+                    padding: "10px 70px",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    fontFamily: "Lexend, sans-serif"
+                  }}
+                />
+              </div>
+            
+              {/* PRICE SECTION */}
+              <div className={styles.forms}>
+                <p className={styles.instructions}>Give it a price. The collector will cover the cost of minting.</p>
+                <Form.Control
+                  onChange={(e) => setPrice(e.target.value as any)}
+                  size="lg"
+                  required
+                  type="number"
+                  placeholder="Price in ETH"
+                  style={{
+                    display: "flex",
+                    width: "40%",
+                    borderRadius: "50px",
+                    backgroundColor: "#f7f7f7",
+                    color: "#333",
+                    fontSize: "15px",
+                    padding: "10px 1px",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    fontFamily: "Lexend, sans-serif"
+                  }}
+                />
+              </div>
+              
+              {/* IMAGE SECTION */}
+              <div className={styles.forms}>
+                <p className={styles.instructions}>Pick an image for your collectible.
+                  Collectors are more likely to purchase if they see an image they like!</p>
+                <Form.Control
+                  type="file"
+                  required
+                  name="file"
+                  // UNCOMMENT TO ADD TO STORAGE
+                  onChange={uploadToIPFS}
+                  style={{
+                    borderRadius: "50px",
+                    backgroundColor: "#f7f7f7",
+                    color: "#333",
+                    fontSize: "16px",
+                    padding: "10px 15px",
+                    alignSelf: "end",
+                    fontFamily: "Lexend, sans-serif"
+                  }}
+                />
+              </div>
+
+              {/* CREATE NFT SECTION */}
+              <div className={styles.forms}>
+                <p className={styles.instructions}>You're ready to go!</p>
+                <Button className={styles.createButton} onClick={createNFT}> Create Collectible </Button>
+              </div>
+            </div>
+          </div>
+      
 
           <div className={styles.collectibles}>
-            <h2 className={styles.collectiblesTitle}>Collectibles</h2>
-            <div className={styles.collectiblesList}>
+            <h2 className={styles.collectiblesTitle}>Your Unpurchased Collectibles</h2>
+            {/* <div className={styles.collectiblesList}> */}
               <div className={styles.artistBadges}>
                 <ExampleBadge />
                 <ExampleBadge />
@@ -104,99 +179,15 @@ export default function ArtistPage({ data, error}) {
                 <ExampleBadge />
               </div>
 
-            </div>
+            {/* </div> */}
 
 
           </div>
         </div>
 
 
-        <div className={styles.formControlWrapper}>
-            <Form.Control
-              type="file"
-              required
-              name="file"
-              // UNCOMMENT TO ADD TO STORAGE
-              onChange={uploadToIPFS}
-              style={{
-                borderRadius: "20px",
-                border: "2px solid #0166cc",
-                backgroundColor: "#f7f7f7",
-                color: "#333",
-                fontSize: "16px",
-                padding: "10px 15px",
-                alignSelf: "end",
-                fontFamily: "Lexend, sans-serif"
-              }}
-            />
-            <Form.Control
-              onChange={(e) => setName(e.target.value)}
-              size="lg"
-              required
-              type="text"
-              placeholder="Name"
-              style={{
-                borderRadius: "20px",
-                border: "2px solid #0166cc",
-                backgroundColor: "#f7f7f7",
-                color: "#333",
-                fontSize: "16px",
-                padding: "10px 15px",
-                alignSelf: "end",
-                fontFamily: "Lexend, sans-serif"
-              }}
-            />
-            <Form.Control
-              onChange={(e) => setDescription(e.target.value)}
-              as="textarea"
-              size="lg"
-              rows={5}
-              placeholder="Description"
-              style={{
-                borderRadius: "20px",
-                border: "2px solid #0166cc",
-                backgroundColor: "#f7f7f7",
-                color: "#333",
-                fontSize: "16px",
-                padding: "10px 15px",
-                alignSelf: "end",
-                fontFamily: "Lexend, sans-serif"
-              }}
-            />
-            <Form.Control
-              onChange={(e) => setPrice(e.target.value as any)}
-              size="lg"
-              required
-              type="number"
-              placeholder="Price in ETH"
-              style={{
-                borderRadius: "20px",
-                border: "2px solid #0166cc",
-                backgroundColor: "#f7f7f7",
-                color: "#333",
-                fontSize: "16px",
-                padding: "10px 15px",
-                alignSelf: "end",
-                fontFamily: "Lexend, sans-serif"
-              }}
-            />
-            <Button
-              onClick={createNFT}
-              style={{
-                borderRadius: "20px",
-                border: "2px solid #0166cc",
-                backgroundColor: "#0166cc",
-                color: "#f7f7f7",
-                fontSize: "16px",
-                padding: "10px 15px",
-                alignSelf: "center",
-                fontFamily: "Lexend, sans-serif"
-              }}
-            >
-              Create NFT
-            </Button>
-          </div>
+       
       </div>
-    </>
+    
   )
 }
