@@ -11,8 +11,8 @@ from users.models import User
 
 @api_view(['POST'])
 def get_artist(request):
-    artist_name = request.data["artist_name"]
-    artist = Artist.objects.filter(artist_name=artist_name).first()
+    endpoint = request.data["artist_name"]
+    artist = Artist.objects.filter(artist_endpoint=endpoint).first()
     if artist is not None:
         return Response(artist.to_json())
     else:
