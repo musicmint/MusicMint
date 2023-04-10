@@ -203,5 +203,12 @@ django_on_heroku.settings(locals())
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_WHITELIST = [
+    'https://api.cloudinary.com', 
+    'http://localhost:3000',
+    'https://music-mint.vercel.app/',
+]
+
+CORS_ALLOW_CREDENTIALS = True 
 
 AUTH_USER_MODEL = 'users.User'
