@@ -3,13 +3,14 @@ import axios from 'axios';
 import styles from '../styles/pageStyles/marketplace.module.css';
 import NavBar from '../components/navbar';
 
-const ARTIST_ID = '7kYDjU5spmeNn4aIXU5sGV';
+const ARTIST_ID = '3TVXtAsR1Inumwj472S9r4';
 
 const TestSpotify = () => {
   const [artist, setArtist] = useState<any>(null);
   const [user, setUser] = useState<any>(null);
   const [topTracks, setTopTracks] = useState<any>([]);
   let [accessToken, setAccessToken] = useState(window.document !== undefined ? localStorage.getItem("access_token") : "")
+// const [accessToken, setAccessToken] = useState('');
 
   useEffect(() => {
     console.log(accessToken); 
@@ -79,6 +80,7 @@ const TestSpotify = () => {
             <p>Genres: {artist.genres.join(', ')}</p>
             <p>Popularity: {artist.popularity}</p>
             <p>Followers: {artist.followers.total}</p>
+            <p>Bio : {artist.artist_bio}</p>
           </>
         ) : (
           <p>Loading...</p>

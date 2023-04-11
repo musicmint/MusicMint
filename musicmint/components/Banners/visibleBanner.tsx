@@ -8,7 +8,7 @@ const VisibleBanner = (props) => {
         <div className={styles.visibleBannerContainer}>
             <div className={styles.sections}>
                 <div className={styles.followerSectionV}> 
-                    <p className={styles.txt}>0 Followers</p>
+                    <p className={styles.txt}>{props.followers} Followers</p>
                 </div>
                 <div className={styles.availSection}>
                     <p className={styles.txt}>0 Available Collectibles</p>

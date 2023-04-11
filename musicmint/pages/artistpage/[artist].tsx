@@ -19,6 +19,8 @@ interface Item {
     description: string;
     image: string;
 }
+import axios from 'axios';
+
 
 export default function ArtistPage({ }) {
     const router = useRouter()
@@ -26,6 +28,8 @@ export default function ArtistPage({ }) {
     let [artistBio, setArtistBio] = useState<any>(null)
     let [artistName, setArtistName] = useState<any>(null)
     let [imageURL, setImageURL] = useState<any>(null)
+    let [spotifyID, setSpotifyID] = useState<any>(null)
+    let [spotifyData, setSpotifyData] = useState<any>(null)
     let [uploadedFile, setUploadedFile] = useState<any>(null)
     const { nft, marketplace } = useContext(MarketplaceContext)
 
@@ -117,6 +121,62 @@ export default function ArtistPage({ }) {
     }
 
 
+   // const [artist, setArtist] = useState<any>(null);
+    const [user, setUser] = useState<any>(null);
+    const [topTracks, setTopTracks] = useState<any>([]);
+    let [accessToken, setAccessToken] = useState(window.document !== undefined ? localStorage.getItem("access_token") : "")
+  // const [accessToken, setAccessToken] = useState('');
+  
+    useEffect(() => {
+      if (spotifyID) {
+        console.log(spotifyID)
+        console.log(accessToken); 
+        if (accessToken != "") {
+        
+          const fetchData = async () => {
+            try {
+              // Fetch artist information
+              const artistResponse = await axios.get(
+                `https://api.spotify.com/v1/artists/${spotifyID}`,
+                {
+                  headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                  },
+                }
+              );
+    
+              // Fetch user information
+              const userResponse = await axios.get('https://api.spotify.com/v1/me', {
+                headers: {
+                  Authorization: `Bearer ${accessToken}`,
+                },
+              });
+    
+              // Fetch artist's top tracks
+              const topTracksResponse = await axios.get(
+                `https://api.spotify.com/v1/artists/${spotifyID}/top-tracks?market=US`,
+                {
+                  headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                  },
+                }
+              );
+    
+              setSpotifyData(artistResponse.data);
+              console.log(artistResponse.data)
+              setTopTracks(topTracksResponse.data.tracks);
+            } catch (error) {
+              console.error(error);
+            }
+          };
+    
+          fetchData();
+        } else {
+          setAccessToken(window.document !== undefined ? localStorage.getItem("access_token") : "")
+        }
+      }
+    }, [spotifyID]);
+
     useEffect(() => {
       if (artist) getArtistInfo()
     }, [artist])
@@ -139,6 +199,7 @@ export default function ArtistPage({ }) {
           setArtistBio(data.artist_bio)
           setArtistName(data.artist_name)
           setImageURL(data.image_url)
+          setSpotifyID(data.spotify_id)
           console.log(data);
         }
       } else {
@@ -190,14 +251,19 @@ export default function ArtistPage({ }) {
               </div>
 
               <div className={styles.artistProfile}>
-                <img className={styles.profPlaceholder} src="https://dummyimage.com/200x200/000/fff" alt="Artist profile" />
+                <img className={styles.profPlaceholder} src={spotifyData ? spotifyData.images[0].url : "https://dummyimage.com/200x200/000/fff"} alt="Artist profile" />
                 {/* <div className={styles.profPlaceholder}></div> */}
                 <div className={styles.overlay}></div>
                 <div className={styles.nameSection}>
                   <div className={styles.artistProfileName}>{artistName}</div>
-                  <div className={styles.bannerContainer}><VisibleBanner/></div>
+                  <div className={styles.bannerContainer}><VisibleBanner 
+                  followers={spotifyData ? spotifyData.followers.total : 0}
+                  />
+                  </div>
                 </div>
               </div>
+
+
 
               <div className={styles.collectibles}>
                 <h2 className={styles.collectiblesTitle}>Avaliable Collectibles</h2>
@@ -230,6 +296,8 @@ export default function ArtistPage({ }) {
               </div>
             </div>
 
+
+            
         
   
             <div className={styles.container}>
