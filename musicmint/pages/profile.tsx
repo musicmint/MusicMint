@@ -4,12 +4,14 @@ import styles from '../styles/pageStyles/artistpage.module.css';
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { ethers } from "ethers"
 import ExampleBadge from '../components/examplebadge'
 import { MarketplaceContext } from '../src/context/contracts';
 import Banner from '../components/artistBanner';
-// import { render } from "react-dom";
+import { render } from "react-dom";
+import AuthContext from '../src/context/auth';
+import { useRouter } from 'next/router';
 
 
 const projectId = '2NTlPAsbm2qHgQi2tpi7cebBnNd';   // <---------- your Infura Project ID
@@ -57,6 +59,7 @@ export default function ArtistPage({ data, error}) {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const { nft, marketplace } = useContext(MarketplaceContext);
+  const { user } = useContext(AuthContext);
 
   const uploadToIPFS = async (event) => {
 
@@ -97,6 +100,17 @@ export default function ArtistPage({ data, error}) {
     const listingPrice = ethers.utils.parseEther(price.toString())
     await (await marketplace.makeItem(nft.address, id, listingPrice)).wait()
   }
+
+
+  const router = useRouter()
+  // if the enpoint is reached by a non-artist user, go to 404
+  useEffect(() => {
+    console.log(user);
+    
+    if (user.isArtist !== "" && !user.isArtist) {
+      router.push("/404")
+    }
+  }, [user])
 
   return (
     

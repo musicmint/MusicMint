@@ -266,7 +266,7 @@ export default function ArtistPage({ }) {
 
 
               <div className={styles.collectibles}>
-                <h2 className={styles.collectiblesTitle}>Avaliable Collectibles</h2>
+                <h2 className={styles.collectiblesTitle}>Available Collectibles</h2>
                 {/* <div className={styles.collectiblesList}> */}
                 <div className={styles.artistBadges}>
                     <div className = {styles.artistAndSeeMore}>
