@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
+
+.container {
+  /* height: 100%; */
+  min-height: 200vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0166cc;
+  /* background: black; */
+  padding: none;
+}
+
+.main {
+  /* padding: 5rem 0; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+}
+
+.artistProfile {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: left;
+  width: 100vw;
+}
+
+.profPlaceholder{
+  width:100%;
+  height:450px;
+  position: absolute;
+  background-color: #b6eeff;;
+}
+
+.overlay{
+position: absolute;
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  height: 450px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.artistProfileImage {
+
+  width: 2000px;
+  height: 550px;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.nameSection {
+  display:flex;
+  flex-direction: row;
+  margin-top: 380px;
+
+  /* justify-content: space-between; */
+}
+
+.artistProfileName {
+  font-size: 6rem;
+  font-family: 'Lexend', sans-serif;
+  /* margin-top: 370px; */
+  /* background-color: rgba(46, 46, 46, 0.6); */
+  font-weight: bold;
+  text-align: left;
+  color: #ffffff;
+  position: relative;  
+  margin-left: 1%;
+
+}
+
+
+
+.bannerContainer{
+  margin-top: 70px;
+  z-index: 1;
+  width: 50%;
+
+}
+
+.formControlWrapper {
+  display: flex;
+  width: 64%;
+  flex-direction: column;
+  /* background-color: green; */
+  align-items: flex-start;
+  margin-top: 4rem; 
+}
+
+
+.minting {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  font-family: 'Lexend', sans-serif; 
+  color: #b6eeff;
+  font-size: 30px;
+  border-bottom: 1px solid #b6eeff;
+  width: 100%;
+  margin-bottom: 0;
+}
+.all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.forms{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructions{
+  font-family: 'Lexend', sans-serif; 
+    color: #b6eeff;
+    font-size: 20px;
+    width: 95%;
+}
+
+.createButton{
+  font-family: 'Lexend', sans-serif; 
+    width: 30%;
+    background: linear-gradient(to bottom right, #42d6ff, #0166cc);
+    border-radius: 28px;
+    color: white;
+    font-size: 17px;
+    padding: 15px 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.createButton:hover {
+  background: linear-gradient(to bottom right, #0166cc, #42d6ff);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+}
+
+.collectibles {
+  margin-top: 4rem;
+  width: 80%;
+  margin-bottom: 2rem;
+ 
+}
+
+.collectiblesTitle {
+  font-size: 3.5rem;
+  /* margin-bottom: 1.5rem; */
+  font-family: 'Lexend', sans-serif;
+  color: #b6eeff;
+  text-align: center;
+  font-weight: normal;
+}
+
+
+
+.artistBadges {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 1rem;
+  /* background-color: yellow; */
+  align-items: center;
+  justify-content: space-between;
+}
