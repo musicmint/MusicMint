@@ -206,15 +206,15 @@ export default function ArtistPage({ }) {
           console.log(response);
       }
     }
-    useEffect(() => {
-        console.log("trying to load")
-        loadMarketplaceItems()
-    }, [])
-    if (loading) return (
-        <main style={{ padding: "1rem 0" }}>
-            <h2>Loading...</h2>
-        </main>
-    )
+    // useEffect(() => {
+    //     console.log("trying to load")
+    //     loadMarketplaceItems()
+    // }, [])
+    // if (loading) return (
+    //     <main style={{ padding: "1rem 0" }}>
+    //         <h2>Loading...</h2>
+    //     </main>
+    // )
 
 
     let handleFileChange = async (event) => {
