@@ -4,6 +4,9 @@ import React from 'react'
 import styles from '../styles/componentStyles/examplebadge.module.css'
 
 const ExampleBadge = (props) => {
+    const handleBuyClick = () => {
+        props.onBuyClick()
+    }
     return (
       // whole badge
         <div className={styles.badge} >
@@ -21,7 +24,7 @@ const ExampleBadge = (props) => {
                 <div className={styles.priceAndButton}>
                   <p className={styles.price}>{props.price} ETH</p>
                   <div className={styles.buttonSection}>
-                    <button className={styles.artistPage}>Go To Artist</button>
+                    <button className={styles.artistPage} onClick={handleBuyClick}>buy nft</button>
                   </div>
                 </div>
             </div>

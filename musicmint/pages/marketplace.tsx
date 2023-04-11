@@ -113,13 +113,13 @@ export default function Home(clsssyear, artistname) {
 
   useEffect(() => {
     console.log("trying to load")
-    // loadMarketplaceItems()
+    loadMarketplaceItems()
   }, [])
-  // if (loading) return (
-  //     <main style={{ padding: "1rem 0" }}>
-  //       <h2>Loading...</h2>
-  //     </main>
-  // )
+  if (loading) return (
+      <main style={{ padding: "1rem 0" }}>
+        <h2>Loading...</h2>
+      </main>
+  )
   return (
     <div className ={styles.container}>
       {/* className={styles.nav}  */}
@@ -177,37 +177,45 @@ export default function Home(clsssyear, artistname) {
             <p className={styles.collectibleTxt}>Artist Collectibles</p>
             <Button className={styles.seeMoreButton}>See more</Button>
           </div>
+        {/*{items.length > 0 ?*/}
+        {/*    <div className={styles.allCollectibles}>*/}
+        {/*      <Row className="gx-5">*/}
+        {/*        {items.map((item, idx) => (*/}
+        {/*            <Col xs={6} md={3} key={idx}>*/}
+        {/*              <ExampleBadge*/}
+        {/*                  onBuyClick={() => buyMarketItem(item)}*/}
+        {/*                  name={item.name}*/}
+        {/*                  image={item.image}*/}
+        {/*                  desc={item.description}*/}
+        {/*                  price={ethers.utils.formatEther(item.totalPrice) }/>*/}
+        {/*            </Col>*/}
+        {/*        ))}*/}
+        {/*      </Row>*/}
+        {/*    </div>*/}
+        {/*    : (*/}
+        {/*        <main style={{ padding: "1rem 0" }}>*/}
+        {/*          <h2>No listed assets</h2>*/}
+        {/*        </main>*/}
+        {/*    )}*/}
         {items.length > 0 ?
-            <div className={styles.allCollectibles}>
-              <Row xs={1} md={2} lg={4} className="g-4 py-5">
-                {items.map((item, idx) => (
-                    <Col key={idx} className="overflow-hidden">
-                      <ExampleBadge name={item.name} image={item.image} desc={item.description} price={ethers.utils.formatEther(item.totalPrice)}/>
-                      {/*<Card>*/}
-                      {/*  <Card.Img variant="top" src={item.image} />*/}
-                      {/*  <Card.Body color="secondary">*/}
-                      {/*    <Card.Title>{item.name}</Card.Title>*/}
-                      {/*    <Card.Text>*/}
-                      {/*      {item.description}*/}
-                      {/*    </Card.Text>*/}
-                      {/*  </Card.Body>*/}
-                      {/*  <Card.Footer>*/}
-                      {/*    <div className='d-grid'>*/}
-                      {/*      <Button onClick={() => buyMarketItem(item)} variant="primary" size="lg">*/}
-                      {/*        Buy for {ethers.utils.formatEther(item.totalPrice)} ETH*/}
-                      {/*      </Button>*/}
-                      {/*    </div>*/}
-                      {/*  </Card.Footer>*/}
-                      {/*</Card>*/}
-                    </Col>
-                ))}
-              </Row>
+            <div className={styles.allCollectibles} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gridColumnGap: "1rem", gridRowGap: "1rem" }}>
+              {items.map((item, idx) => (
+                  <ExampleBadge
+                      onBuyClick={() => buyMarketItem(item)}
+                      name={item.name}
+                      image={item.image}
+                      desc={item.description}
+                      price={ethers.utils.formatEther(item.totalPrice)}
+                      key={idx}
+                  />
+              ))}
             </div>
             : (
                 <main style={{ padding: "1rem 0" }}>
                   <h2>No listed assets</h2>
                 </main>
-            )}
+            )
+        }
           <div className={styles.allCollectibles}>
             {/*<ExampleBadge/><ExampleBadge/><ExampleBadge/><ExampleBadge/><ExampleBadge/>*/}
           </div>
