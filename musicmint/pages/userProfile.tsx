@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
-import styles from '../styles/pageStyles/userpage.module.css'
+import styles from '../styles/pageStyles/userprofile.module.css'
 import NavBar from '../components/navbar'
-import Banner from '../components/artistBanner';
+import Banner from '../components/userProfileBanner';
 import { Row, Form, Button } from 'react-bootstrap'
 import ExampleBadge from '../components/examplebadge'
 
@@ -30,8 +30,12 @@ export default function UserPage(nft, marketplace) {
 
                 <div className={styles.formControlWrapper}>
                     
+                    
+                </div>
+
+
                 <div className={styles.collectibles}>
-                    <h2 className={styles.collectiblesTitle}>Your Avaliable Collectibles</h2>
+                    <h2 className={styles.collectiblesTitle}>Purchased Collectibles</h2>
                     {/* <div className={styles.collectiblesList}> */}
                     <div className={styles.artistBadges}>
                         <ExampleBadge />
@@ -40,12 +44,10 @@ export default function UserPage(nft, marketplace) {
                         <ExampleBadge />
                     </div>
 
+                    {/* </div> */}
+
 
                 </div>
-                </div>
-
-
-                
             </div>
 
 
