@@ -177,26 +177,6 @@ export default function Home(clsssyear, artistname) {
             <p className={styles.collectibleTxt}>Artist Collectibles</p>
             <Button className={styles.seeMoreButton}>See more</Button>
           </div>
-        {/*{items.length > 0 ?*/}
-        {/*    <div className={styles.allCollectibles}>*/}
-        {/*      <Row className="gx-5">*/}
-        {/*        {items.map((item, idx) => (*/}
-        {/*            <Col xs={6} md={3} key={idx}>*/}
-        {/*              <ExampleBadge*/}
-        {/*                  onBuyClick={() => buyMarketItem(item)}*/}
-        {/*                  name={item.name}*/}
-        {/*                  image={item.image}*/}
-        {/*                  desc={item.description}*/}
-        {/*                  price={ethers.utils.formatEther(item.totalPrice) }/>*/}
-        {/*            </Col>*/}
-        {/*        ))}*/}
-        {/*      </Row>*/}
-        {/*    </div>*/}
-        {/*    : (*/}
-        {/*        <main style={{ padding: "1rem 0" }}>*/}
-        {/*          <h2>No listed assets</h2>*/}
-        {/*        </main>*/}
-        {/*    )}*/}
         {items.length > 0 ?
             <div className={styles.allCollectibles} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gridColumnGap: "1rem", gridRowGap: "1rem" }}>
               {items.map((item, idx) => (

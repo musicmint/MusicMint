@@ -48,7 +48,7 @@ export default function ArtistPage({ data, error}) {
   }
   const createNFT = async () => {
     console.log("Minteddddd")
-    if (!image || !price || !name || !description) return
+    if (!image || !price || !name) return
     try {
       console.log("Minteddddd1")
       const result = await client.add(JSON.stringify({ image, price, name, description }))
