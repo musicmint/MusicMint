@@ -17,7 +17,7 @@ export default function UserPage(nft, marketplace) {
                     <NavBar className={styles.marketNav} nft={nft} marketplace={marketplace} />
       
 
-                </div>
+                </div >
 
                 <div className={styles.artistProfile}>
                     <div className={styles.profPlaceholder}></div>
