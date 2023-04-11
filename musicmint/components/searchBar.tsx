@@ -7,6 +7,8 @@ import logo from '../music-mint-marketplace.png'
 
 const SearchBar = (props, { nft, marketplace }) => {
     let [artistsList, setArtistsList] = useState<any>(null)
+    let [searchResult, setSearchResult] = useState<any>(null)
+    let [hideResult, setHideResult] = useState<any>(null)
 
 
     useEffect(() => {
@@ -23,13 +25,40 @@ const SearchBar = (props, { nft, marketplace }) => {
         }
     }, [artistsList])
 
+    useEffect(() => {
+        console.log("ENTERED USEFEFECT");
+        
+        (document.getElementById("artistSearch") as HTMLElement).addEventListener('focus', hideDropdown);
+
+        (document.getElementById("artistSearch") as HTMLElement).addEventListener('blur', hideDropdown);
+
+    }, [artistsList])
+ 
+    // useEffect(() => {
+    //     if (hideResult) {
+
+    //     }
+    // })
+
+    let hideDropdown = async (event: Event) => {              
+        const searchInput = document.getElementById('artistSearch') as HTMLInputElement;
+        console.log(document.activeElement)
+        if (searchInput != document.activeElement) {
+            (document.getElementById("searchResults") as HTMLElement).style.display = "none"
+        } else {
+            (document.getElementById("searchResults") as HTMLElement).style.display = "block"
+        }
+    }
+
     let filterOnKeyPress = async (event: Event) => {
         const searchQuery = (event.target as HTMLInputElement).value;
         let filteredObjects = filterObjectsBySearchQuery(searchQuery);
-
+        setSearchResult(filteredObjects);
         console.log(filteredObjects);
+
         // Anneliese Take it from here, just use the filtereObjects to display the search results
     }
+
 
 
     let filterObjectsBySearchQuery = (query: string) => {
@@ -64,7 +93,18 @@ const SearchBar = (props, { nft, marketplace }) => {
     }
 
     return (
+        <>
         <input type="text" placeholder="Find your favorite artist" className = {styles.search} id="artistSearch"></input>
+        {/* <div className={styles.dropdownContainer}> */}
+        <div className={styles.dropdown} id="searchResults">
+
+            {searchResult &&
+            searchResult.map((artist) => (
+                <p key={artist}>{artist}</p>
+            ))}
+        </div>
+ 
+        </>
     )
 }
 

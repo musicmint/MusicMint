@@ -9,7 +9,7 @@ import { ethers } from "ethers"
 import ExampleBadge from '../components/examplebadge'
 import { MarketplaceContext } from '../src/context/contracts';
 import Banner from '../components/artistBanner';
-import { render } from "react-dom";
+// import { render } from "react-dom";
 
 
 const projectId = '2NTlPAsbm2qHgQi2tpi7cebBnNd';   // <---------- your Infura Project ID
