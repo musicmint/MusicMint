@@ -34,7 +34,7 @@ const CallbackPage = () => {
         if (data.access_token) {
           setAccessToken(data.access_token);
           localStorage.setItem('access_token', data.access_token); // store access token in localStorage
-          router.push("/test-spotify"); // redirect to your home page
+          router.push("/marketplace"); // redirect to your home page
         } else if (data.error) {
           setError(data.error_description);
         }
