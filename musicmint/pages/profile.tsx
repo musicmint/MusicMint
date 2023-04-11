@@ -1,4 +1,5 @@
 import styles from '../styles/pageStyles/artistpage.module.css';
+import EditIcon from '@mui/icons-material/Edit';
 
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
@@ -24,6 +25,21 @@ const client = ipfsHttpClient({
         authorization: auth,
     },
 });
+
+const button = document.getElementById("my-button")!;
+
+button.addEventListener("mouseenter", () => {
+  if (button) {
+  button.innerHTML = `<span>${EditIcon}</span> Click me!`;
+  }
+});
+
+button.addEventListener("mouseleave", () => {
+  if (button) {
+  button.innerHTML = "Hover me";
+  }
+});
+
 
 export default function ArtistPage({ data, error}) {
   const [image, setImage] = useState('')
@@ -82,7 +98,7 @@ export default function ArtistPage({ data, error}) {
 
           <div className={styles.artistProfile}>
             <div className={styles.profPlaceholder}></div>
-            <div className={styles.overlay}></div>
+            <Button id="editButton" className={styles.overlay}></Button>
             <div className={styles.nameSection}>
               <div className={styles.artistProfileName}>YOUR NAME</div>
               <div className={styles.bannerContainer}><Banner/></div>
