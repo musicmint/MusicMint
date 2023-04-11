@@ -176,63 +176,7 @@ export default function ArtistPage({ }) {
         }
       }
     }, [spotifyID]);
-
-   // const [artist, setArtist] = useState<any>(null);
-    const [user, setUser] = useState<any>(null);
-    const [topTracks, setTopTracks] = useState<any>([]);
-    let [accessToken, setAccessToken] = useState(window.document !== undefined ? localStorage.getItem("access_token") : "")
-  // const [accessToken, setAccessToken] = useState('');
-  
-    useEffect(() => {
-      if (spotifyID) {
-        console.log(spotifyID)
-        console.log(accessToken); 
-        if (accessToken != "") {
-        
-          const fetchData = async () => {
-            try {
-              // Fetch artist information
-              const artistResponse = await axios.get(
-                `https://api.spotify.com/v1/artists/${spotifyID}`,
-                {
-                  headers: {
-                    Authorization: `Bearer ${accessToken}`,
-                  },
-                }
-              );
-    
-              // Fetch user information
-              const userResponse = await axios.get('https://api.spotify.com/v1/me', {
-                headers: {
-                  Authorization: `Bearer ${accessToken}`,
-                },
-              });
-    
-              // Fetch artist's top tracks
-              const topTracksResponse = await axios.get(
-                `https://api.spotify.com/v1/artists/${spotifyID}/top-tracks?market=US`,
-                {
-                  headers: {
-                    Authorization: `Bearer ${accessToken}`,
-                  },
-                }
-              );
-    
-              setSpotifyData(artistResponse.data);
-              console.log(artistResponse.data)
-              setTopTracks(topTracksResponse.data.tracks);
-            } catch (error) {
-              console.error(error);
-            }
-          };
-    
-          fetchData();
-        } else {
-          setAccessToken(window.document !== undefined ? localStorage.getItem("access_token") : "")
-        }
-      }
-    }, [spotifyID]);
-
+   
     useEffect(() => {
       if (artist) getArtistInfo()
     }, [artist])
