@@ -111,15 +111,15 @@ export default function Home(clsssyear, artistname) {
     loadMarketplaceItems()
   }
 
-  useEffect(() => {
-    console.log("trying to load")
-    loadMarketplaceItems()
-  }, [])
-  if (loading) return (
-      <main style={{ padding: "1rem 0" }}>
-        <h2>Loading...</h2>
-      </main>
-  )
+  // useEffect(() => {
+  //   console.log("trying to load")
+  //   loadMarketplaceItems()
+  // }, [])
+  // if (loading) return (
+  //     <main style={{ padding: "1rem 0" }}>
+  //       <h2>Loading...</h2>
+  //     </main>
+  // )
   return (
     <div className ={styles.container}>
       {/* className={styles.nav}  */}

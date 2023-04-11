@@ -1,4 +1,5 @@
 import styles from '../styles/pageStyles/artistpage.module.css';
+// import EditIcon from '@mui/icons-material/Edit';
 
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
@@ -8,6 +9,8 @@ import { ethers } from "ethers"
 import ExampleBadge from '../components/examplebadge'
 import { MarketplaceContext } from '../src/context/contracts';
 import Banner from '../components/artistBanner';
+import { render } from "react-dom";
+
 
 const projectId = '2NTlPAsbm2qHgQi2tpi7cebBnNd';   // <---------- your Infura Project ID
 
@@ -24,6 +27,29 @@ const client = ipfsHttpClient({
         authorization: auth,
     },
 });
+
+// if (typeof window !== 'undefined'){
+// document.addEventListener("DOMContentLoaded", function() {
+// if (typeof window !== 'undefined') {
+  
+//     const button = document.getElementById("editButton")!;
+
+// button.addEventListener("mouseenter", () => {
+//   if (button) {
+//     render(<span><EditIcon /></span>, button);
+//   }
+// });
+
+// button.addEventListener("mouseleave", () => {
+//   if (button) {
+//   button.innerHTML = "Hover me";
+//   }
+// });
+// }
+// });
+// }
+
+
 
 export default function ArtistPage({ data, error}) {
   const [image, setImage] = useState('')
@@ -82,7 +108,7 @@ export default function ArtistPage({ data, error}) {
 
           <div className={styles.artistProfile}>
             <div className={styles.profPlaceholder}></div>
-            <div className={styles.overlay}></div>
+            <Button  className={styles.overlay} id="editButton"></Button>
             <div className={styles.nameSection}>
               <div className={styles.artistProfileName}>YOUR NAME</div>
               <div className={styles.bannerContainer}><Banner/></div>
@@ -168,7 +194,7 @@ export default function ArtistPage({ data, error}) {
 
               {/* CREATE NFT SECTION */}
               <div className={styles.forms}>
-                <p className={styles.instructions}>You're ready to go!</p>
+                <p className={styles.instructions}>You&apos;re ready to go!</p>
                 <Button className={styles.createButton} onClick={createNFT}> Create Collectible </Button>
               </div>
             </div>
