@@ -194,7 +194,7 @@ export default function ArtistPage({ data, error}) {
 
               {/* CREATE NFT SECTION */}
               <div className={styles.forms}>
-                <p className={styles.instructions}>You're ready to go!</p>
+                <p className={styles.instructions}>You&apos;re ready to go!</p>
                 <Button className={styles.createButton} onClick={createNFT}> Create Collectible </Button>
               </div>
             </div>
