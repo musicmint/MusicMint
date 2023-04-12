@@ -162,7 +162,7 @@ export default function ArtistPage({ }) {
               <div className={styles.artistProfile}>
                 <img className={styles.profPlaceholder} src={spotifyData ? spotifyData.images[0].url : "https://dummyimage.com/200x200/000/fff"} alt="Artist profile" />
                 {/* <div className={styles.profPlaceholder}></div> */}
-                <div className={styles.overlay}></div>
+                
                 <div className={styles.nameSection}>
                   <div className={styles.artistProfileName}>{artistName}</div>
                   <div className={styles.bannerContainer}><VisibleBanner
