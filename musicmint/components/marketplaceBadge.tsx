@@ -26,7 +26,7 @@ const marketBadge = (props) => {
                 </div>
             </div>
             
-            <img className = {styles.imagebox} />
+            <img className = {styles.imagebox} src={props.imageURL} />
             
             <Button className={styles.nameSection} onClick={handleButtonClick}>
                 <p className = {styles.name}>{props.artistname}</p></Button>

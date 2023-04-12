@@ -70,10 +70,10 @@ export default function Home(clsssyear, artistname) {
         <div className={styles.vandyArtists}>
           <p className={styles.vandyTxt}>Vanderbilt Artists</p>
           <div className={styles.artistBadges}>
-          <MarketBadge classyear={'2023'} artistname={'Noah Silver'} endpoint = {'noahsilver'} />
-          <MarketBadge classyear={'2023'} artistname={'Jace June'} endpoint = {'jacejune'}/>
-          <MarketBadge classyear={'2023'} artistname={'Edgehill'} endpoint = {'edgehill'}/>
-          <MarketBadge classyear={'2023 & 2024'} artistname={'Gold Revere'} endpoint={'goldrevere'}/>
+          <MarketBadge classyear={'2023'} artistname={'Noah Silver'} endpoint = {'noahsilver'} imageURL={"https://i.scdn.co/image/ab6761610000e5eb0bd9035f49d1a8e4e2d968a8"} />
+          <MarketBadge classyear={'2023'} artistname={'Jace June'} endpoint = {'jacejune'} imageURL={"https://i.scdn.co/image/ab6761610000e5ebb9ca6560a46b47138813fc81"}/>
+          <MarketBadge classyear={'2023'} artistname={'Edgehill'} endpoint = {'edgehill'} imageURL={"https://i.scdn.co/image/ab6761610000e5eb1ce131286634db99d044bbc0"}/>
+          <MarketBadge classyear={'2023 & 2024'} artistname={'Gold Revere'} endpoint={'goldrevere'} imageURL={"https://i.scdn.co/image/ab6761610000e5ebee2787ef28008d0513a50398"}/>
           </div>
         </div>
       </div>
