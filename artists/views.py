@@ -35,7 +35,7 @@ def get_artists_list(request):
     artists = Artist.objects.all()
     artists_json = {} 
     for artist in artists:
-        artists_json[artist.artist_name] = artist.artist_endpoint
+        artists_json[artist.artist_name] = artist.to_json()
 
     return Response(artists_json)
 
