@@ -14,7 +14,6 @@ import {ethers} from "ethers";
 export default function UserPage() {
 
     const { nft, marketplace, accountWallet } = useContext(MarketplaceContext);
-
     const [purchases, setPurchases] = useState<PurchasedItem[]>([]);
 
     //here we get our imported loadPurchased items function, load the items, and set them
@@ -39,7 +38,7 @@ export default function UserPage() {
                     <div className={styles.overlay}></div>
                     <div className={styles.nameSection}>
                         <div className={styles.artistProfileName}>MASHA S.</div>
-                        <div className={styles.bannerContainer}><Banner /></div>
+                        <div className={styles.bannerContainer}><Banner collected={purchases.length}/></div>
                     </div>
                 </div>
 
@@ -50,7 +49,7 @@ export default function UserPage() {
                     {/* <div className={styles.collectiblesList}> */}
                     <div className={styles.artistBadges}>
                         {purchases.length > 0 ?
-                            <div className={styles.allCollectibles} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gridColumnGap: "1rem", gridRowGap: "1rem" }}>
+                            <div className={styles.allCollectibles} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridColumnGap: "1rem", gridRowGap: "1rem" }}>
                                 {purchases.map((item, idx) => (
                                     <ExampleBadge
                                         //onBuyClick={() => buyMarketItem(item)}
@@ -70,15 +69,9 @@ export default function UserPage() {
                             )
                         }
                     </div>
-
                     {/* </div> */}
-
-
                 </div>
             </div>
-
-
-
         </div>
 
     )

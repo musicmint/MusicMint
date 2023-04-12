@@ -18,7 +18,7 @@ const Banner = (props) => {
                 
                 <div className={styles.ethSection}>
                     
-                    <p className={styles.txt}>0 COLLECTED</p>
+                    <p className={styles.txt}>{props.collected} COLLECTED</p>
                 </div>
             </div>
         </div>
