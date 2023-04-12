@@ -134,3 +134,11 @@ def get_spotify_info(spotify_id):
         "profile_image": data["images"][0]["url"],
         "name": data["name"]
     }
+
+@api_view(['GET'])
+def update_current_artists_info(request):
+    artists = Artist.objects.all()
+    for artist in artists:
+        get_spotify_info(artist.spotify_id)
+
+    return Response("Success")
