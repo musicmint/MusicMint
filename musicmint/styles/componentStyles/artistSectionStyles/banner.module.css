@@ -11,13 +11,16 @@
     padding-left: 1%;
     color: #b6eeff;
     font-family: 'Lexend', sans-serif;
+    /* background-color: orchid; */
+    border: solid black;
+
 }
 
 .picAndName{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width:70%
+    width:80%
 }
 
 .pic{
@@ -32,5 +35,8 @@
 }
 
 .info {
+    display: flex;
     width: 15%;
+    /* background-color: orange; */
+    justify-content: center;
 }

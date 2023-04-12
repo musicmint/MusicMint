@@ -15,14 +15,18 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    overflow: hidden;
 }
 .imagebox{
     display: flex;
     width: 290px;
+    height: 344.98px;
     /* height: 290px; */
     position: absolute;
     z-index: 3;
     border-radius: 15px;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .nameSection {

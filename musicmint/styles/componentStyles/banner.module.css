@@ -6,6 +6,7 @@
     width: 75%;
     height: 3rem;
     justify-content: center;
+
 }
 
 .visibleBannerContainer{
@@ -41,7 +42,7 @@
     flex-direction: column;
 
     /* background-color: yellow; */
-    width: 50%;
+    width: 35%;
     justify-content: left;
     text-align: left;
     align-items: left;
@@ -55,11 +56,11 @@
     flex-direction: column;
     border-left: 1px solid #b6eeff;
 
-    
+    /* background-color: olivedrab; */
     justify-content: center;
     align-items: center;
     /* padding-bottom: 5px; */
-    width: 60%;
+    width: 62%;
     
 }
 /* .walletContainer{
