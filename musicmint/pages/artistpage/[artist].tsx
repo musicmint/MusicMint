@@ -176,12 +176,12 @@ export default function ArtistPage({ }) {
                 <h2 className={styles.collectiblesTitle}>Available Collectibles</h2>
                 {/* <div className={styles.collectiblesList}> */}
                 <div className={styles.artistBadges}>
-                  <div className={styles.artistAndSeeMore}>
+                  {/*<div className={styles.artistAndSeeMore}>*/}
 
-                    <p className={styles.instructions}>Artist Collectibles</p>
+                  {/*  <p className={styles.instructions}>Artist Collectibles</p>*/}
 
-                    <Button className={styles.seeMoreButton}>See more</Button>
-                  </div>
+                  {/*  <Button className={styles.seeMoreButton}>See more</Button>*/}
+                  {/*</div>*/}
                   {items.length > 0 ?
                     <div className={styles.allCollectibles} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gridColumnGap: "1rem", gridRowGap: "1rem" }}>
                       {items.map((item, idx) => (
