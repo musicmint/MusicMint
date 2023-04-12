@@ -126,17 +126,17 @@ export default function ArtistPage({ data, error}) {
     await (await marketplace.makeItem(nft.address, id, listingPrice)).wait()
   }
 
-    // useEffect(() => {
-    //     const fetchMarketplaceItems = async () => {
-    //         const items = await loadMarketplaceItems(nft, marketplace);
-    //         setItems(items);
-    //
-    //         //leave only the artist nfts that match the artist name
-    //         let filteredItems = items.filter(item => item.description === user.full_name);
-    //         setItems(filteredItems);
-    //     };
-    //     fetchMarketplaceItems();
-    // }, []);
+    useEffect(() => {
+        const fetchMarketplaceItems = async () => {
+            const items = await loadMarketplaceItems(nft, marketplace);
+            setItems(items);
+
+            //leave only the artist nfts that match the artist name
+            let filteredItems = items.filter(item => item.description === user.full_name);
+            setItems(filteredItems);
+        };
+        fetchMarketplaceItems();
+    }, []);
 
 
   return (
@@ -254,6 +254,7 @@ export default function ArtistPage({ data, error}) {
                                   desc={item.description} //should be this lol item.description
                                   price={ethers.utils.formatEther(item.totalPrice)}
                                   key={idx}
+                                  showButton={false}
                               />
                           ))}
                       </div>

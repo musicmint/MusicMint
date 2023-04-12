@@ -27,21 +27,21 @@ export default function Home(clsssyear, artistname) {
   }
 
   //here we get our imported loadMarketplace items function, load the items, and set them
-  // useEffect(() => {
-  //   const fetchMarketplaceItems = async () => {
-  //     setLoading(true);
-  //     const items = await loadMarketplaceItems(nft, marketplace);
-  //     setItems(items);
-  //     setLoading(false);
-  //   };
-  //   fetchMarketplaceItems();
-  // }, []);
-  //
-  // if (loading) return (
-  //     <main style={{ padding: "1rem 0" }}>
-  //       <h2>Loading...</h2>
-  //     </main>
-  // )
+  useEffect(() => {
+    const fetchMarketplaceItems = async () => {
+      setLoading(true);
+      const items = await loadMarketplaceItems(nft, marketplace);
+      setItems(items);
+      setLoading(false);
+    };
+    fetchMarketplaceItems();
+  }, []);
+
+  if (loading) return (
+      <main style={{ padding: "1rem 0" }}>
+        <h2>Loading...</h2>
+      </main>
+  )
   return (
     <div className ={styles.container}>
       {/* className={styles.nav}  */}
@@ -109,6 +109,7 @@ export default function Home(clsssyear, artistname) {
                       desc={item.description}
                       price={ethers.utils.formatEther(item.totalPrice)}
                       key={idx}
+                      showButton={true}
                   />
               ))}
             </div>

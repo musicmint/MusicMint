@@ -17,13 +17,13 @@ export default function UserPage() {
     const [purchases, setPurchases] = useState<PurchasedItem[]>([]);
 
     //here we get our imported loadPurchased items function, load the items, and set them
-    // useEffect(() => {
-    //     const fetchPurchasedItems = async () => {
-    //         const items = await loadPurchasedItems(nft, marketplace, accountWallet);
-    //         setPurchases(items);
-    //     };
-    //     fetchPurchasedItems();
-    // }, []);
+    useEffect(() => {
+        const fetchPurchasedItems = async () => {
+            const items = await loadPurchasedItems(nft, marketplace, accountWallet);
+            setPurchases(items);
+        };
+        fetchPurchasedItems();
+    }, []);
 
     return (
 
@@ -58,6 +58,7 @@ export default function UserPage() {
                                         desc={item.description} //should be this lol item.description
                                         price={ethers.utils.formatEther(item.totalPrice)}
                                         key={idx}
+                                        showButton={false}
                                     />
                                 ))}
                             </div>
