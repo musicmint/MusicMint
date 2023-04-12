@@ -177,7 +177,9 @@ export default function ArtistPage({ }) {
                 {/* <div className={styles.collectiblesList}> */}
                 <div className={styles.artistBadges}>
                   <div className={styles.artistAndSeeMore}>
+
                     <p className={styles.instructions}>Artist Collectibles</p>
+
                     <Button className={styles.seeMoreButton}>See more</Button>
                   </div>
                   {items.length > 0 ?
@@ -205,16 +207,18 @@ export default function ArtistPage({ }) {
             </div>
             <div className={styles.container}>
               <main className={styles.main}>
+                
                 <div className={styles.artistProfile}>
                   {/* <img className={styles.artistProfileImage} src="https://dummyimage.com/200x200/000/fff" alt="Artist profile" /> */}
 
 
                 </div>
+                {/*
                 <div className={styles.instructions}>
                   <div>UPLOAD YOUR PROFILE IMAGE</div>
                   <img src={uploadedFile ? uploadedFile : imageURL} width="200" height="200" alt="profile pic" loading="eager"></img>
                   <input type="file" onChange={handleFileChange} />
-                </div>
+                </div> */}
 
                 <div className={styles.instructions}>
 

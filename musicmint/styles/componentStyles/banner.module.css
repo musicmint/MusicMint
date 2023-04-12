@@ -3,7 +3,7 @@
 
 .bannerContainer{
     display:flex;
-    width: 75%;
+    width: 90%;
     height: 3rem;
     justify-content: center;
 }
