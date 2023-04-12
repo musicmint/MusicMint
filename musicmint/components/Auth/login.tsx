@@ -4,7 +4,7 @@ import styles from '../../styles/AuthPage.styles/loginAndReg.module.css'
 import Wallet from '../../components/Auth/connectWallet'
 import ConnectSpotify from '../../components/Auth/connectSpotify';
 import Image from 'next/image'
-import logo from '../../music-mint-marketplace.png'
+import logo from '../../images/music-mint-marketplace.png'
 
 const Login = (props) => {
     const { loginUser } = useContext(AuthContext);

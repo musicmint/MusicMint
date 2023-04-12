@@ -4,7 +4,7 @@ import styles from '../../styles/AuthPage.styles/loginAndReg.module.css'
 import Link from "next/link"
 import { InputType } from 'zlib'
 import Image from 'next/image'
-import logo from '../../music-mint-marketplace.png'
+import logo from '../../images/music-mint-marketplace.png'
 
 import Wallet from '../../components/Auth/connectWallet'
 import { useRouter } from 'next/router'
