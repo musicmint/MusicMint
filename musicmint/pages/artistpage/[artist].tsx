@@ -83,6 +83,8 @@ export default function ArtistPage({ }) {
 
             setSpotifyData(artistResponse.data);
             console.log(artistResponse.data)
+            console.log(topTracksResponse);
+            
             setTopTracks(topTracksResponse.data.tracks);
           } catch (error) {
             console.error(error);
@@ -115,6 +117,8 @@ export default function ArtistPage({ }) {
       if (Object.keys(data).includes("error")) {
         router.push("/404")
       } else {
+        console.log(data);
+        
         setArtistBio(data.artist_bio)
         setArtistName(data.artist_name)
         setImageURL(data.image_url)
@@ -151,7 +155,7 @@ export default function ArtistPage({ }) {
 
     <div className={styles.container}>
 
-      {artistName && artistBio ?
+      {artistName ?
         <>
           <div className={styles.container}>
             <div className={styles.main}>
