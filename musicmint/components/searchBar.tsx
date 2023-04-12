@@ -36,13 +36,14 @@ const SearchBar = (props, { nft, marketplace }) => {
 
     let hideDropdown = async (event: Event) => {              
         const searchInput = document.getElementById('artistSearch') as HTMLInputElement;
+        const resultsDiv = document.getElementById('searchResults') as HTMLElement;
         console.log(document.activeElement)
-        if (searchInput != document.activeElement) {
+        if (searchInput != document.activeElement && resultsDiv) {
             setTimeout(function(){
-                (document.getElementById("searchResults") as HTMLElement).style.display = "none"
+                resultsDiv.style.display = "none"
             },100);
         } else {
-            (document.getElementById("searchResults") as HTMLElement).style.display = "block"
+            resultsDiv.style.display = "block"
         }
     }
 
