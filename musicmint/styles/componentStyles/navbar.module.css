@@ -22,6 +22,7 @@
     padding-top: .5%;
     padding-bottom: .5%;
     backdrop-filter: blur(4px);
+    z-index: 1000;
   }
   
   .nav .leftside{
