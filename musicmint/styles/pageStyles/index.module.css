@@ -5,11 +5,12 @@
   background-color: black;
 }
 .container {
-    background-color: black;
+    /* background-color: black; */
     height: 100%;
 }
 
 #titleSection {
+
     justify-content: center;
     height: 100vh;
     padding: 5rem 0;
@@ -174,9 +175,9 @@
   .badges{
     display: flex;
     width: 95%;
-    height: 100vh;
+    height: 40vh;
     flex-direction: column;
-    padding: 8rem 0;
+    padding: 3rem 0;
     font-family: 'Lexend', sans-serif;
     justify-items: center;
 

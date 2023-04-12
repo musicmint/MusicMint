@@ -6,7 +6,8 @@ import AuthContext from '../src/context/auth'
 import styles from '../styles/pageStyles/index.module.css'
 import NavBar from '../components/navbar'
 import ExampleBadge from '../components/examplebadge'
-import CircleImage from '../circle.png'
+import CD from '../CD.png'
+import Headphones from '../Headphones.png'
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin"; // Note the path change
 
@@ -50,13 +51,13 @@ export default function Home(nft, marketplace) {
               <a href="#about">ABOUT US</a></button>
           </div>
           <div className={styles.circle}>
-            <Image src={CircleImage} alt="logo" width={450} height={450}/>
+            <Image src={CD} alt="logo" width={550} height={550}/>
           </div>
         </section>
 
         <section id="about" className={styles.abt}>
           <div className={styles.section2Left}>
-            <Image src={CircleImage} alt="logo" width={450} height={450}/>
+            <Image src={Headphones} alt="logo" width={600} height={600}/>
           </div>
           <div className={styles.section2Right}>
             <h2 className={styles.secondaryTitle}>WHO ARE WE?</h2>
@@ -79,13 +80,13 @@ export default function Home(nft, marketplace) {
         <section id="badgesSection" className={styles.badges}>
           <p>Support their journey.</p>
           <p>Cash out when they get famous.</p>
-          <div className={styles.multibadge}>
+          {/* <div className={styles.multibadge}>
             <ExampleBadge/>
             <ExampleBadge/>
             <ExampleBadge/>
             <ExampleBadge/>
             <ExampleBadge/>
-          </div>
+          </div> */}
         </section>
         </div>
         {/* <main className={styles.main}>
