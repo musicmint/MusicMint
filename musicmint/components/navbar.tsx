@@ -39,7 +39,7 @@ const NavBar = (props, {nft, marketplace}) => {
 
 
           <div className={styles.navbarLinks}>
-              {isAuthorized && !user.isArtist ? 
+              {isAuthorized && !user.is_artist ? 
               <Link href={`/userProfile`}>PROFILE</Link>
               :
               <Link href={`/profile`}>YOUR PROFILE</Link>
