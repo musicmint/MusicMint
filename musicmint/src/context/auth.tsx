@@ -11,7 +11,7 @@ const initialContext =
     authTokens: { access: "", refresh: "" },
     loginUser: async (email: any, password: any) => { },
     logoutUser: () => { },
-    registerUser: async (full_name: any, email: any, password: any, isArtist: any) => { },
+    registerUser: async (full_name: any, email: any, password: any, isArtist: any, spotifyID: any) => { },
     updateUser: async (updatedInfo: any) => { },
     isAuthorized: false as boolean,
     getUserInfo: (): any => { },
@@ -74,13 +74,13 @@ export const AuthProvider = ({ children }) => {
         router.push('/auth')
     }
 
-    let registerUser = async (full_name: any, email: any, password: any, isArtist: any) => {
+    let registerUser = async (full_name: any, email: any, password: any, isArtist: any, spotifyID: any) => {
         let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/register/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ 'full_name': full_name, 'email': email, 'password': password, 'is_artist': isArtist })
+            body: JSON.stringify({ 'full_name': full_name, 'email': email, 'password': password, 'is_artist': isArtist, 'spotify_id': spotifyID })
         })
         let data = await response.json()
 

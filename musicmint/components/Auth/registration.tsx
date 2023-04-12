@@ -15,12 +15,13 @@ const Registraion = (props) => {
     let [email, setEmail] = useState<any>(null)
     let [password, setPassword] = useState<any>(null)
     let [isArtist, setIsArtist] = useState<any>(false)
+    let [spotifyID, setSpotifyID] = useState<any>(null)
 
 
     useEffect(() => {
         function handleKeyDown(event) {
           if (event.key === "Enter") {
-            registerUser(fullName, email, password, isArtist);
+            registerUser(fullName, email, password, isArtist, spotifyID);
           }
         }
 
@@ -60,12 +61,19 @@ const Registraion = (props) => {
              <div className={styles.formGroup}>
                  <input type="password" id="password" name="password" className={styles.input} onChange={(e) => setPassword(e.target.value)}  placeholder="Enter your password"/>
              </div>
-                <div className={styles.artistCheckbox}>
-                    <input type="checkbox" id="isArtist" onChange={(e) => changeIsArtist()}></input>
-                    <div>I am an artist</div>
+              <div className={styles.artistCheckbox}>
+                  <input type="checkbox" id="isArtist" onChange={(e) => changeIsArtist()}></input>
+                  <div>I am an artist</div>
+              </div>
+              {
+                isArtist ?
+                <div className={styles.formGroup}>
+                  <input type="text" id="spotifyID" name="spotifyID" className={styles.input} onChange={(e) => setSpotifyID(e.target.value)} placeholder="Enter your Spotify ID"/>
                 </div>
+                : <></>
+              }
              <div className={styles.formGroup}>
-                 <div className={styles.button} onClick={() => registerUser(fullName, email, password, isArtist)}>Register</div>
+                 <div className={styles.button} onClick={() => registerUser(fullName, email, password, isArtist, spotifyID)}>Register</div>
              </div>
              <div className={styles.noCredentials}>
                  <div onClick={props.switchTab}>Have an account? Log in</div>
