@@ -9,6 +9,7 @@ class Artist(models.Model):
     artist_bio = models.TextField(default="")
     image_url = models.TextField(default="")
     spotify_id = models.TextField(default="")
+    followers = models.IntegerField(default=0)
 
     class Meta:
         verbose_name_plural = "Artists"
@@ -22,5 +23,6 @@ class Artist(models.Model):
             "artist_endpoint": self.artist_endpoint,
             "artist_bio": self.artist_bio,
             "image_url": self.image_url,
-            "spotify_id": self.spotify_id
+            "spotify_id": self.spotify_id,
+            "followers": self.followers
         }

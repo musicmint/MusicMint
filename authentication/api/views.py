@@ -4,6 +4,10 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import generics
+import base64
+import requests
+import json
+from artists.models import Artist
 
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -56,3 +60,62 @@ class RegisterAPIView(generics.GenericAPIView):
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
         })
+
+
+
+
+client_id = "c5c2ed390b3b4a1faf1895f8c269d5a5"
+client_secret = "6ada78b5f3b6433b901d4731841a670f"
+
+def get_spotify_access_token():
+    # Set up the token endpoint and parameters
+    token_endpoint = "https://accounts.spotify.com/api/token"
+    headers = {
+        "Authorization": "Basic " + base64.b64encode(
+            f"{client_id}:{client_secret}".encode("ascii")
+        ).decode("ascii")
+    }
+    params = {
+        "grant_type": "client_credentials"
+    }
+
+    # Send a POST request to the token endpoint to obtain an access token
+    response = requests.post(token_endpoint, headers=headers, data=params)
+
+    # Parse the JSON response and extract the access token
+    data = json.loads(response.text)
+    access_token = data.get("access_token")
+
+    return access_token
+
+
+@api_view(['POST'])
+def get_spotify_info(request):
+    access_token = get_spotify_access_token()
+    # Set up the API endpoint and parameters
+    spotify_id = request.data["spotify_id"]
+    url = f'https://api.spotify.com/v1/artists/{spotify_id}'
+    headers = {"Authorization": f"Bearer {access_token}"}
+
+    artist = Artist.objects.filter(spotify_id = spotify_id).first()
+
+    # Send a GET request to the API
+    response = requests.get(url, headers=headers)
+
+    # Parse the JSON response
+    data = json.loads(response.text)
+
+    if artist is not None:
+        artist.followers = data["followers"]["total"]
+        artist.image_url = data["images"][0]["url"]
+
+        return Response({
+            "followers": data["followers"]["total"],
+            "profile_image": data["images"][0]["url"]
+        })
+    else:
+        return Response({
+            "error": "no artist with given spotify_id in our directory"
+        })
+    
+
