@@ -18,13 +18,16 @@ const marketBadge = (props) => {
         <div className = {styles.mBadge}>
             <div className = {styles.classSection}>
                 {/* will be pulled from spotify api */}
-                <div className = {styles.photo}></div>
+                <img className = {styles.photo}/>
                 <div className={styles.classWrapper}>
                     <div className = {styles.class}>
                         <p className = {styles.classTxt}>Class of {props.classyear}</p>
                     </div>
                 </div>
             </div>
+            
+            <img className = {styles.imagebox} />
+            
             <Button className={styles.nameSection} onClick={handleButtonClick}>
                 <p className = {styles.name}>{props.artistname}</p></Button>
             </div>

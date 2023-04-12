@@ -14,6 +14,10 @@
     margin-top: .25%;
     align-items: center;
 }
+.imagebox{
+    display: flex;
+    height: 180px;
+}
 
 .nameSection {
     display: flex;
@@ -24,14 +28,14 @@
     border-radius: 50px;
     justify-content: left;
     align-items: center;
-    margin-top: 203px;
+    margin-top: 20px;
     transition: background-color 0.2s ease; /* Add transition effect */
   }
   
   .nameSection:hover {
     background-color: rgba(46, 46, 46, 0.8); /* Change background color on hover */
   }
-  
+
 .name{
     margin-left: 10px;
     color: white;
