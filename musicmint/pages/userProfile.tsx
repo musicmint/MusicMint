@@ -23,7 +23,7 @@ export default function UserPage(nft, marketplace) {
                     <div className={styles.profPlaceholder}></div>
                     <div className={styles.overlay}></div>
                     <div className={styles.nameSection}>
-                        <div className={styles.artistProfileName}>YOUR NAME</div>
+                        <div className={styles.artistProfileName}>MASHA S.</div>
                         <div className={styles.bannerContainer}><Banner /></div>
                     </div>
                 </div>
