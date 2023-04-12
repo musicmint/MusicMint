@@ -21,7 +21,7 @@ const MarketBadge = (props) => {
                 <img className = {styles.photo}/>
                 <div className={styles.classWrapper}>
                     <div className = {styles.class}>
-                        <p className = {styles.classTxt}>Class of {props.classyear}</p>
+                        <p className =  {styles.classTxt}>Class of {props.classyear}</p>
                     </div>
                 </div>
             </div>
