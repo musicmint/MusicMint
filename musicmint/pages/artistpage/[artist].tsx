@@ -33,7 +33,7 @@ export default function ArtistPage({ }) {
   //         setItems(items);
   //
   //         //leave only the artist nfts that match the artist name
-  //         let filteredItems = items.filter(item => item.name === artistName);
+  //         let filteredItems = items.filter(item => item.description === artistName);
   //         setItems(filteredItems);
   //     };
   //     fetchMarketplaceItems();
@@ -198,7 +198,6 @@ export default function ArtistPage({ }) {
                     : (
                       <main style={{ padding: "1rem 0" }}>
                         <div className = {styles.instructions}>No Listed Assets</div>
-                      
                       </main>
                     )
                   }

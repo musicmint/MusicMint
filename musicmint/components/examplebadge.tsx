@@ -4,6 +4,7 @@ import React from 'react'
 import styles from '../styles/componentStyles/examplebadge.module.css'
 
 const ExampleBadge = (props) => {
+    console.log(props.description)
     const handleBuyClick = () => {
         props.onBuyClick()
     }
@@ -20,7 +21,7 @@ const ExampleBadge = (props) => {
 
             {/* artist name, price, and artist page button */}
             <div className={styles.bottom}>
-                <p className={styles.artistName}>Artist Name</p>
+                <p className={styles.artistName}>{props.desc}</p>
                 <div className={styles.priceAndButton}>
                   <p className={styles.price}>{props.price} ETH</p>
                   <div className={styles.buttonSection}>

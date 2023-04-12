@@ -1,6 +1,5 @@
 import styles from '../styles/pageStyles/artistpage.module.css';
 // import EditIcon from '@mui/icons-material/Edit';
-
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
@@ -12,6 +11,9 @@ import Banner from '../components/artistBanner';
 import { render } from "react-dom";
 import AuthContext from '../src/context/auth';
 import { useRouter } from 'next/router';
+import { addIPFSProxy, loadMarketplaceItems } from "../components/loadMarketplaceItems";
+import {Item} from "../interfaces/Item";
+
 
 
 const projectId = '2NTlPAsbm2qHgQi2tpi7cebBnNd';   // <---------- your Infura Project ID
@@ -54,13 +56,16 @@ const client = ipfsHttpClient({
 
 
 export default function ArtistPage({ data, error}) {
+
+    // nft variables
   const [image, setImage] = useState('')
   const [price, setPrice] = useState(0)
   const [name, setName] = useState('')
-  const [description, setDescription] = useState('')
+  const [description, setDescription] = useState('') ///THIS WILL BE USED FOR ARTIST NAME
+  const [items, setItems] = useState<Item[]>([]);
+
   const { nft, marketplace } = useContext(MarketplaceContext);
   const { user, getUserInfo, isAuthorized} = useContext(AuthContext);
-
 
   const router = useRouter()
   // if the enpoint is reached by a non-artist user, go to 404
@@ -71,6 +76,10 @@ export default function ArtistPage({ data, error}) {
       router.push("/404")
     }
   }, [user])
+
+    useEffect(() => {
+        setDescription(user.full_name)
+    })
 
   useEffect(() => {
     if (isAuthorized) {
@@ -95,19 +104,16 @@ export default function ArtistPage({ data, error}) {
     }
   }
   const createNFT = async () => {
-    console.log("Minteddddd")
-    if (!image || !price || !name) return
+      console.log(description)
+    if (!image || !price || !name || !description) return
     try {
-      console.log("Minteddddd1")
-      const result = await client.add(JSON.stringify({ image, price, name, description }))
+      const result = await client.add(JSON.stringify({ image, price, name, description}))
       mintThenList(result)
-      console.log("Minteddddd2")
     } catch (error) {
       console.log("ipfs uri upload error: ", error)
     }
   }
   const mintThenList = async (result) => {
-    console.log("Minteddddd2")
     const uri = `https://ipfs.infura.io/ipfs/${result.path}`
     // mint nft
     await (await nft.mint(uri)).wait()
@@ -119,6 +125,18 @@ export default function ArtistPage({ data, error}) {
     const listingPrice = ethers.utils.parseEther(price.toString())
     await (await marketplace.makeItem(nft.address, id, listingPrice)).wait()
   }
+
+    // useEffect(() => {
+    //     const fetchMarketplaceItems = async () => {
+    //         const items = await loadMarketplaceItems(nft, marketplace);
+    //         setItems(items);
+    //
+    //         //leave only the artist nfts that match the artist name
+    //         let filteredItems = items.filter(item => item.description === user.full_name);
+    //         setItems(filteredItems);
+    //     };
+    //     fetchMarketplaceItems();
+    // }, []);
 
 
   return (
@@ -222,26 +240,34 @@ export default function ArtistPage({ data, error}) {
               </div>
             </div>
           </div>
-      
-
           <div className={styles.collectibles}>
             <h2 className={styles.collectiblesTitle}>Your Avaliable Collectibles</h2>
             {/* <div className={styles.collectiblesList}> */}
               <div className={styles.artistBadges}>
-                <ExampleBadge />
-                <ExampleBadge />
-                <ExampleBadge />
-                <ExampleBadge />
+                  {items.length > 0 ?
+                      <div className={styles.allCollectibles} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gridColumnGap: "1rem", gridRowGap: "1rem" }}>
+                          {items.map((item, idx) => (
+                              <ExampleBadge
+                                  //onBuyClick={() => buyMarketItem(item)}
+                                  name={item.name}
+                                  image={item.image}
+                                  desc={item.description} //should be this lol item.description
+                                  price={ethers.utils.formatEther(item.totalPrice)}
+                                  key={idx}
+                              />
+                          ))}
+                      </div>
+                      : (
+                          <main style={{ padding: "1rem 0" }}>
+                              <div className = {styles.instructions}>No Listed Assets</div>
+
+                          </main>
+                      )
+                  }
               </div>
-
             {/* </div> */}
-
-
           </div>
         </div>
-
-
-       
       </div>
     
   )

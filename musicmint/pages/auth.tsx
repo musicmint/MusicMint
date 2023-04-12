@@ -23,7 +23,7 @@ const AuthPage = () => {
   const { user, logoutUser } = useContext(AuthContext)
   const [loading, setLoading] = useState(true)
   const [account, setAccount] = useState(null)
-  const { marketplace, setMarketplace, nft, setNFT } = useContext(MarketplaceContext)
+  const { marketplace, setMarketplace, nft, setNFT, accountWallet, setAccountWallet} = useContext(MarketplaceContext)
 
     const switchTab = () => {
         setOnLogin(!onLogin);
@@ -55,6 +55,12 @@ const AuthPage = () => {
 const web3Handler = async () => {
     const accounts = await (window as any).ethereum.request({ method: 'eth_requestAccounts' });
     setAccount(accounts[0])
+
+    //set for context
+    const accountWallet = await (window as any).ethereum.request({ method: 'eth_requestAccounts' });
+    if (setAccountWallet) {
+        setAccountWallet(accountWallet);
+    }
 
     // Get provider from Metamask
     const provider = new ethers.providers.Web3Provider((window as any).ethereum)
