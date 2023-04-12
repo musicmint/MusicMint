@@ -15,6 +15,10 @@ const VisibleBanner = (props) => {
                 </div>
             </div>
         </div>
+
+
+
+
       )
 }
 export default VisibleBanner

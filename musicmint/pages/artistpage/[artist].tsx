@@ -173,24 +173,11 @@ export default function ArtistPage({ }) {
               </div>
 
               <div className={styles.collectibles}>
-                <h2 className={styles.collectiblesTitle}>Top Songs</h2>
-                {topTracks.length > 0 && (
-                  <ul>
-                    {topTracks.map((track) => (
-                      <li key={track.id}>
-                        {track.name} - (Album:  {track.album.name})
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-
-              <div className={styles.collectibles}>
                 <h2 className={styles.collectiblesTitle}>Available Collectibles</h2>
                 {/* <div className={styles.collectiblesList}> */}
                 <div className={styles.artistBadges}>
                   <div className={styles.artistAndSeeMore}>
-                    <p className={styles.collectibleTxt}>Artist Collectibles</p>
+                    <p className={styles.instructions}>Artist Collectibles</p>
                     <Button className={styles.seeMoreButton}>See more</Button>
                   </div>
                   {items.length > 0 ?
@@ -208,7 +195,8 @@ export default function ArtistPage({ }) {
                     </div>
                     : (
                       <main style={{ padding: "1rem 0" }}>
-                        <h2>No listed assets</h2>
+                        <div className = {styles.instructions}>No Listed Assets</div>
+                      
                       </main>
                     )
                   }
@@ -222,24 +210,28 @@ export default function ArtistPage({ }) {
 
 
                 </div>
-                <div className={styles.idk}>
+                <div className={styles.instructions}>
                   <div>UPLOAD YOUR PROFILE IMAGE</div>
                   <img src={uploadedFile ? uploadedFile : imageURL} width="200" height="200" alt="profile pic" loading="eager"></img>
                   <input type="file" onChange={handleFileChange} />
                 </div>
 
+                <div className={styles.instructions}>
 
-                <div className={styles.collectibles}>
-                  <div className={styles.authPageDivider}>New Collection</div>
-                  <h2 className={styles.collectiblesTitle}>Collectibles</h2>
-                  <div className={styles.collectiblesList}>
-                    <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 1" />
-                    <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 2" />
-                    <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 3" />
-                    <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 4" />
-                    <img className={styles.collectibleImage} src="https://dummyimage.com/150x150/000/fff" alt="Collectible 5" />
+                  <h2 className={styles.collectiblesTitle}>Top Songs</h2>
+                  <div style={{ textAlign: "center" }}>
+                    {topTracks.length > 0 && (
+                      <ul>
+                        {topTracks.map((track) => (
+                          <li key={track.id}>
+                            {track.name} - (Album:  {track.album.name})
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
+
               </main>
             </div>
           </div>
@@ -247,7 +239,5 @@ export default function ArtistPage({ }) {
         : <></>
       }
     </div>
-
-
   );
 }
