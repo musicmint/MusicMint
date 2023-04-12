@@ -7,7 +7,7 @@ import { json } from 'stream/consumers';
 
 const initialContext =
 {
-    user: { full_name: "", email: "", nickname: "", isArtist: ""},
+    user: { full_name: "", email: "", nickname: "", is_artist: ""},
     authTokens: { access: "", refresh: "" },
     loginUser: async (email: any, password: any) => { },
     logoutUser: () => { },
@@ -27,7 +27,7 @@ export default AuthContext;
 
 export const AuthProvider = ({ children }) => {
     let [authTokens, setAuthTokens] = useState(typeof window !== 'undefined' && localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens') || '{}') : null)
-    let [user, setUser] = useState({ full_name: "", email: "", nickname: "", isArtist: ""})
+    let [user, setUser] = useState({ full_name: "", email: "", nickname: "", is_artist: ""})
     let [loading, setLoading] = useState(true)
     const router = useRouter()
 
@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
 
     let logoutUser = () => {
         setAuthTokens(null)
-        setUser({ full_name: "", email: "", nickname: "", isArtist: "" })
+        setUser({ full_name: "", email: "", nickname: "", is_artist: "" })
         if (typeof window !== 'undefined') localStorage.removeItem('authTokens')
         if (typeof window !== 'undefined') localStorage.removeItem('isAuthorized')
         router.push('/auth')

@@ -67,11 +67,11 @@ export default function ArtistPage({ data, error}) {
   useEffect(() => {
     console.log(user);
     
-    if (user.isArtist !== "" && !user.isArtist) {
+    if (user.email !== "" && !user.is_artist) {      
       router.push("/404")
     }
   }, [user])
-  
+
   useEffect(() => {
     if (isAuthorized) {
       getUserInfo()
