@@ -101,7 +101,7 @@ const SearchBar = (props, { nft, marketplace }) => {
 
             {searchResult &&
             Object.keys(searchResult).map((artist) => (
-                <Link href={`/artistpage/${searchResult[artist]}`}><p key={artist}>{artist}</p></Link>
+                <Link href={`/artistpage/${searchResult[artist]}`} key={artist}><p>{artist}</p></Link>
             ))}
         </div>
  
