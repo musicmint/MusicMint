@@ -225,13 +225,13 @@ export default function ArtistPage({ }) {
                   <h2 className={styles.collectiblesTitle}>Top Songs</h2>
                   <div style={{ textAlign: "center" }}>
                     {topTracks.length > 0 && (
-                      <ul>
+                      <p>
                         {topTracks.map((track) => (
-                          <li key={track.id}>
-                            {track.name} - (Album:  {track.album.name})
-                          </li>
+                          <div key={track.id}>
+                            {track.name} 
+                          </div>
                         ))}
-                      </ul>
+                      </p>
                     )}
                   </div>
                 </div>
