@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500&family=Space+Mono:wght@400;700&display=swap');
+
 .container {
   /* height: 100%; */
   min-height: 200vh;
@@ -11,27 +12,17 @@
   padding: none;
 }
 
-
-    
-          
-            
-    
-
-          
-          
-            
-    
-
- 
-  
 .main {
   /* padding: 5rem 0; */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+
 }
+
 .artistProfile {
   display: flex;
   flex-direction: column;
@@ -39,12 +30,15 @@
   align-items: left;
   width: 100vw;
 }
+
 .profPlaceholder{
-  width:100%;
-  height:450px;
-  position: absolute;
+  width:640px;
+  height:640px;
+  position: relative;
+  align-items: left;
   background-color: #b6eeff;;
 }
+
 .overlay{
 position: absolute;
   /* top: 0;
@@ -73,7 +67,6 @@ position: absolute;
 .artistProfileImage {
 
   width: 2000px;
-
   height: 550px;
   margin-top: 0rem;
   margin-bottom: 1rem;
@@ -83,12 +76,15 @@ position: absolute;
   transform: translateX(-50%);
   z-index: 0;
 }
+
 .nameSection {
   display:flex;
   flex-direction: row;
-  margin-top: 380px;
+  /*margin-top: 380px;
+
   /* justify-content: space-between; */
 }
+
 .artistProfileName {
   font-size: 6rem;
   font-family: 'Lexend', sans-serif;
@@ -99,12 +95,18 @@ position: absolute;
   color: #ffffff;
   position: relative;  
   margin-left: 1%;
+
 }
+
+
+
 .bannerContainer{
   margin-top: 70px;
   z-index: 1;
   width: 50%;
+
 }
+
 .formControlWrapper {
   display: flex;
   width: 64%;
@@ -113,6 +115,8 @@ position: absolute;
   align-items: flex-start;
   margin-top: 4rem; 
 }
+
+
 .minting {
   display: flex;
   /* flex-direction: row; */
@@ -131,6 +135,7 @@ position: absolute;
   flex-direction: column;
   width: 100%;
 }
+
 .forms{
   display: flex;
   width: 100%;
@@ -139,12 +144,14 @@ position: absolute;
   justify-content: center;
   align-items: center;
 }
+
 .instructions{
   font-family: 'Lexend', sans-serif; 
     color: #b6eeff;
     font-size: 20px;
     width: 95%;
 }
+
 .createButton{
   font-family: 'Lexend', sans-serif; 
     width: 30%;
@@ -161,17 +168,20 @@ position: absolute;
     cursor: pointer;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
+
 .createButton:hover {
   background: linear-gradient(to bottom right, #0166cc, #42d6ff);
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
   font-size: 18px;
 }
+
 .collectibles {
   margin-top: 4rem;
   width: 80%;
   margin-bottom: 2rem;
  
 }
+
 .collectiblesTitle {
   font-size: 3.5rem;
   /* margin-bottom: 1.5rem; */
@@ -180,6 +190,9 @@ position: absolute;
   text-align: center;
   font-weight: normal;
 }
+
+
+
 .artistBadges {
   display: flex;
   flex-direction: row;
@@ -187,5 +200,5 @@ position: absolute;
   margin-top: 1rem;
   /* background-color: yellow; */
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between
 }

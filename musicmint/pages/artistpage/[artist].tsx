@@ -1,4 +1,4 @@
-import styles from '../../styles/pageStyles/artistpage.module.css';
+import styles from '../../styles/pageStyles/individualArtist.module.css';
 import NavBar from '../../components/navbar';
 import { useRouter } from 'next/router';
 import { useEffect, useState, useContext } from 'react';
