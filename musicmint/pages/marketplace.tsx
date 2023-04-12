@@ -72,8 +72,8 @@ export default function Home(clsssyear, artistname) {
           <div className={styles.artistBadges}>
           <MarketBadge classyear={'2023'} artistname={'Noah Silver'}/>
           <MarketBadge classyear={'2023'} artistname={'Jace June'}/>
-          <MarketBadge classyear={' '} artistname={'Edgehill'}/>
-          <MarketBadge classyear={' '} artistname={'Gold Revere'}/>
+          <MarketBadge classyear={'2023'} artistname={'Edgehill'}/>
+          <MarketBadge classyear={'2023 & 2024'} artistname={'Gold Revere'}/>
           </div>
         </div>
       </div>

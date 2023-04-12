@@ -3,10 +3,10 @@ import React, { useEffect } from 'react'
 import styles from '../../styles/componentStyles/artistSectionStyles/banner.module.css'
 
 const Banner = ({artist}) => {
-  // useEffect(()=>{
-  //   console.log(artist);
+  useEffect(()=>{
+    console.log(artist);
     
-  // })
+  })
     return (
       // whole badge
       <Link href={`/artistpage/${artist.link}`}>
