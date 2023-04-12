@@ -8,7 +8,8 @@
   flex-direction: column;
   align-items: center;
   /* background-color: #0166cc; */
-  background: black;
+  /* background: linear-gradient(to bottom, #42d6ff, black); */
+  /* background-position: center top; */
   padding: none;
 }
 
@@ -25,61 +26,31 @@
 
 .artistProfile {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
   align-items: left;
   width: 100vw;
+  background: linear-gradient(to bottom, #42d6ff, black);
+
 }
 
 .profPlaceholder{
-  width:640px;
-  height:640px;
+  width:500px;
+  height:500px;
   position: relative;
   align-items: left;
-  background-color: #b6eeff;;
-}
-
-.overlay{
-position: absolute;
-  /* top: 0;
-  left: 0; */
-  width: 100%;
-  height: 450px;
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.overlay:hover{
-  /* position: relative; */
-
-  background-color: rgba(0, 0, 0, 0.50);
-
-}
-
-.overlay:hover::before{
-  display: flex;
-  content: '';
-  color: black;
-  justify-content: center;
-  align-items: center;
-  font-size: 19rem;
-}
-
-.artistProfileImage {
-
-  width: 2000px;
-  height: 550px;
-  margin-top: 0rem;
-  margin-bottom: 1rem;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 0;
+  background-color: #b6eeff;
+  border-radius: 50%;
+  margin-top: 90px;
+  margin-left: 20px;
 }
 
 .nameSection {
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin-top: 400px;
+  /* background-color: yellow; */
+  width: 50%;
   /*margin-top: 380px;
 
   /* justify-content: space-between; */
@@ -94,16 +65,18 @@ position: absolute;
   text-align: left;
   color: #ffffff;
   position: relative;  
-  margin-left: 1%;
+  /* margin-left: 1%; */
+  /* background-color: orange; */
 
 }
 
 
 
 .bannerContainer{
-  margin-top: 70px;
+  margin-top: 10px;
   z-index: 1;
-  width: 50%;
+  width: 100%;
+  /* background-color: green; */
 
 }
 
@@ -114,6 +87,7 @@ position: absolute;
   /* background-color: green; */
   align-items: flex-start;
   margin-top: 4rem; 
+  background-color: black;
 }
 
 
