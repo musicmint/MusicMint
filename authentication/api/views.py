@@ -54,6 +54,11 @@ class RegisterAPIView(generics.GenericAPIView):
         user = serializer.save()
         user.is_artist = request.data["is_artist"]
         user.save()
+        if user.is_artist:
+            spotify_id = request.data["spotify_id"]
+            if spotify_id is not None:
+                Artist.objects.create(spotify_id = spotify_id)
+                get_spotify_info(spotify_id)
         # print(user)
         # serializer.create(user)
 
@@ -90,10 +95,23 @@ def get_spotify_access_token():
 
 
 @api_view(['POST'])
-def get_spotify_info(request):
+def update_spotify_info(request):
+    spotify_id = request.data["spotify_id"]
+    artist = Artist.objects.filter(spotify_id = spotify_id).first()
+    
+    if artist is not None:
+        resp = get_spotify_info(spotify_id)
+
+        return Response(resp)
+    else:
+        return Response({
+            "error": "no artist with given spotify_id in our directory"
+        })
+    
+
+def get_spotify_info(spotify_id):
     access_token = get_spotify_access_token()
     # Set up the API endpoint and parameters
-    spotify_id = request.data["spotify_id"]
     url = f'https://api.spotify.com/v1/artists/{spotify_id}'
     headers = {"Authorization": f"Bearer {access_token}"}
 
@@ -105,17 +123,14 @@ def get_spotify_info(request):
     # Parse the JSON response
     data = json.loads(response.text)
 
-    if artist is not None:
-        artist.followers = data["followers"]["total"]
-        artist.image_url = data["images"][0]["url"]
+    artist.followers = data["followers"]["total"]
+    artist.artist_endpoint = data["name"]
+    artist.image_url = data["images"][0]["url"]
+    artist.artist_name = data["name"]
+    artist.save()
 
-        return Response({
-            "followers": data["followers"]["total"],
-            "profile_image": data["images"][0]["url"]
-        })
-    else:
-        return Response({
-            "error": "no artist with given spotify_id in our directory"
-        })
-    
-
+    return {
+        "followers": data["followers"]["total"],
+        "profile_image": data["images"][0]["url"],
+        "name": data["name"]
+    }
