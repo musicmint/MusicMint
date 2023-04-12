@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react'
 import styles from '../styles/pageStyles/userprofile.module.css'
 import NavBar from '../components/navbar'
-import Banner from '../components/userProfileBanner';
+import Banner from '../components/Banners/userProfileBanner';
 import { Row, Form, Button } from 'react-bootstrap'
-import ExampleBadge from '../components/examplebadge'
+import ExampleBadge from '../components/Badges/examplebadge'
 import { MarketplaceContext } from '../src/context/contracts';
 import { PurchasedItem } from "../interfaces/PurchasedItem";
 import {addIPFSProxy, loadMarketplaceItems, loadPurchasedItems} from "../components/loadMarketplaceItems";

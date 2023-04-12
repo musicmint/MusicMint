@@ -5,9 +5,9 @@ import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 import { useState, useContext, useEffect } from 'react'
 import { ethers } from "ethers"
-import ExampleBadge from '../components/examplebadge'
+import ExampleBadge from '../components/Badges/examplebadge'
 import { MarketplaceContext } from '../src/context/contracts';
-import Banner from '../components/artistBanner';
+import Banner from '../components/Banners/artistBanner';
 import { render } from "react-dom";
 import AuthContext from '../src/context/auth';
 import { useRouter } from 'next/router';

@@ -6,8 +6,8 @@ import {useEffect, useState, useContext} from "react";
 import { ethers } from "ethers"
 import { Button } from 'react-bootstrap'
 import SearchBar from '../components/searchBar'
-import MarketBadge from '../components/marketplaceBadge'
-import ExampleBadge from '../components/examplebadge'
+import MarketBadge from '../components/Badges/marketplaceBadge'
+import ExampleBadge from '../components/Badges/examplebadge'
 import Following from '../components/allArtistsSection/following'
 import AllArtists from '../components/allArtistsSection/allArtists'
 import { MarketplaceContext } from '../src/context/contracts';

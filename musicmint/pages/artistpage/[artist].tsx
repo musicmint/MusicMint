@@ -3,10 +3,10 @@ import NavBar from '../../components/navbar';
 import { useRouter } from 'next/router';
 import { useEffect, useState, useContext } from 'react';
 import Image from 'next/image'
-import ExampleBadge from '../../components/examplebadge';
+import ExampleBadge from '../../components/Badges/examplebadge';
 import Wallet from '../../components/Auth/connectWallet';
 import { MarketplaceContext } from '../../src/context/contracts';
-import Banner from '../../components/artistBanner';
+import Banner from '../../components/Banners/artistBanner';
 import VisibleBanner from '../../components/Banners/visibleBanner';
 import { ethers } from "ethers";
 import { Button } from "react-bootstrap";

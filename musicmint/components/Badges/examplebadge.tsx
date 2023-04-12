@@ -1,7 +1,7 @@
 // Created by Anneliese Breidsprecher
 
 import React from 'react'
-import styles from '../styles/componentStyles/examplebadge.module.css'
+import styles from '../../styles/componentStyles/examplebadge.module.css'
 
 const ExampleBadge = (props) => {
     console.log(props.showButton)

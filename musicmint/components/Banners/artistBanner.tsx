@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 
-import styles from '../styles/componentStyles/banner.module.css'
-import Wallet from './Auth/connectWallet'
+import styles from '../../styles/componentStyles/banner.module.css'
+import Wallet from '../Auth/connectWallet'
 
 const Banner = (props) => {
     return (
@@ -18,7 +18,7 @@ const Banner = (props) => {
                 
                 <div className={styles.ethSection}>
                     
-                    <p className={styles.txt}>{props.collected} COLLECTED</p>
+                    <p className={styles.txt}>0 ETH</p>
                 </div>
             </div>
         </div>
