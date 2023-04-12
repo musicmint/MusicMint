@@ -92,13 +92,20 @@ export const loadPurchasedItems = async (nft, marketplace, accountWallet) => {
         // get total price of item (item price + fee)
         const totalPrice = await marketplace.getTotalPrice(i.itemId)
         // define listed item object
+
+        //again, super hacky, but such is life
+        const imageParts = (metadata.image).split("/"); // split the string into an array of substrings
+        const lastImagePart = imageParts.pop(); // get the last element of the array
+        const imagee = addIPFSProxy(lastImagePart);
+
+
         const purchasedItem: PurchasedItem = {
             totalPrice,
             price: i.price,
             itemId: i.itemId,
             name: metadata.name,
             description: metadata.description,
-            image: metadata.image
+            image: imagee
         };
         return purchasedItem;
     }))

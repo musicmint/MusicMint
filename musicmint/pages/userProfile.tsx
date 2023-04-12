@@ -49,7 +49,7 @@ export default function UserPage() {
                     {/* <div className={styles.collectiblesList}> */}
                     <div className={styles.artistBadges}>
                         {purchases.length > 0 ?
-                            <div className={styles.allCollectibles} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridColumnGap: "1rem", gridRowGap: "1rem" }}>
+                            <div className={styles.allCollectibles} style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gridColumnGap: "1rem", gridRowGap: "1rem" }}>
                                 {purchases.map((item, idx) => (
                                     <ExampleBadge
                                         //onBuyClick={() => buyMarketItem(item)}

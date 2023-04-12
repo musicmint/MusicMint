@@ -27,17 +27,17 @@ export default function ArtistPage({ }) {
   const [items, setItems] = useState<Item[]>([]);
 
   //here we get our imported loadMarketplace items function, load the items, and set them
-  // useEffect(() => {
-  //     const fetchMarketplaceItems = async () => {
-  //         const items = await loadMarketplaceItems(nft, marketplace);
-  //         setItems(items);
-  //
-  //         //leave only the artist nfts that match the artist name
-  //         let filteredItems = items.filter(item => item.description === artistName);
-  //         setItems(filteredItems);
-  //     };
-  //     fetchMarketplaceItems();
-  // }, []);
+  useEffect(() => {
+      const fetchMarketplaceItems = async () => {
+          const items = await loadMarketplaceItems(nft, marketplace);
+          setItems(items);
+
+          //leave only the artist nfts that match the artist name
+          let filteredItems = items.filter(item => item.description === artistName);
+          setItems(filteredItems);
+      };
+      fetchMarketplaceItems();
+  }, []);
 
 
   // const [artist, setArtist] = useState<any>(null);
