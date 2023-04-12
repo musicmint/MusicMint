@@ -50,7 +50,7 @@ const AllArtists = (props) => {
         <div className={styles.header}>
           <p className = {styles.artistHeader}>Artist</p>
           <p className = {styles.otherHeader}>Followers</p>
-          <p className = {styles.otherHeader}>Volume</p>
+          {/* <p className = {styles.otherHeader}>Volume</p> */}
         </div>
         <Banner artist={artistList[0]}/>
         <Banner artist={artistList[1]}/>
@@ -63,7 +63,7 @@ const AllArtists = (props) => {
         <div className={styles.header}>
           <p className = {styles.artistHeader}>Artist</p>
           <p className = {styles.otherHeader}>Followers</p>
-          <p className = {styles.otherHeader}>Volume</p>
+          {/* <p className = {styles.otherHeader}>Volume</p> */}
         </div>
         <Banner artist={artistList[5]}/>
         <Banner artist={artistList[6]}/>

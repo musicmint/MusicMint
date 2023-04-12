@@ -16,7 +16,7 @@ const Banner = ({artist}) => {
                 <div className={styles.name}>{artist.name}</div>
             </div>
             <div className={styles.info}>{artist.followers}</div>
-            <div className={styles.info}>{artist.volume}</div>
+            {/* <div className={styles.info}>{artist.volume}</div> */}
         </div>
       </Link>
        
