@@ -37,6 +37,7 @@
     margin-bottom: 5px;
     transition: background-color 0.2s ease; /* Add transition effect */
     z-index: 4;
+    border: none;
   }
   
   .nameSection:hover {
