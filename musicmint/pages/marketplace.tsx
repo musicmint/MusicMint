@@ -70,10 +70,10 @@ export default function Home(clsssyear, artistname) {
         <div className={styles.vandyArtists}>
           <p className={styles.vandyTxt}>Vanderbilt Artists</p>
           <div className={styles.artistBadges}>
-          <MarketBadge classyear={'2023'} artistname={'Noah Silver'}/>
-          <MarketBadge classyear={'2023'} artistname={'Jace June'}/>
-          <MarketBadge classyear={'2023'} artistname={'Edgehill'}/>
-          <MarketBadge classyear={'2023 & 2024'} artistname={'Gold Revere'}/>
+          <MarketBadge classyear={'2023'} artistname={'Noah Silver'} endpoint = {'noahsilver'} />
+          <MarketBadge classyear={'2023'} artistname={'Jace June'} endpoint = {'jacejune'}/>
+          <MarketBadge classyear={'2023'} artistname={'Edgehill'} endpoint = {'edgehill'}/>
+          <MarketBadge classyear={'2023 & 2024'} artistname={'Gold Revere'} endpoint={'goldrevere'}/>
           </div>
         </div>
       </div>
