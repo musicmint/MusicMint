@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap'
 import { useRouter } from 'next/router';
 
 // ADD PROPS FOR SPECIFIC ARTISTS!!!!!
-const marketBadge = (props) => {
+const MarketBadge = (props) => {
     const router = useRouter(); 
     const END = props.endpoint;
 
@@ -34,4 +34,4 @@ const marketBadge = (props) => {
     )
 }
 
-export default marketBadge
+export default MarketBadge
