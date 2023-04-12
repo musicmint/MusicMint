@@ -12,7 +12,7 @@ const Banner = ({artist}) => {
       <Link href={`/artistpage/${artist.link}`}>
         <div className={styles.artist}>
             <div className={styles.picAndName}>
-                <div className={styles.pic}></div>
+                <img className={styles.pic} src={artist.image}></img>
                 <div className={styles.name}>{artist.name}</div>
             </div>
             <div className={styles.info}>{artist.followers}</div>

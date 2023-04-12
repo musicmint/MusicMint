@@ -24,9 +24,10 @@ const AllArtists = (props) => {
 
     if (await response.status === 200) {
       let artistData = [] as any
-      for (const [key, value] of Object.entries(data)) {
+      for (let [key, value] of Object.entries(data)) {
+        let artistInfo = (value as any)
         console.log(`${key}: ${value}`);
-        artistData.push({name: key, link: value, followers: "todo", volume: "todo"})
+        artistData.push({name: key, link: artistInfo["artist_endpoint"], followers: artistInfo["followers"], volume: "todo", image: artistInfo["image_url"]})
       }
       console.log(artistData);
       console.log(artistData[0]);
