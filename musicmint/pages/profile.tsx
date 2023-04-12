@@ -59,7 +59,26 @@ export default function ArtistPage({ data, error}) {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const { nft, marketplace } = useContext(MarketplaceContext);
-  const { user } = useContext(AuthContext);
+  const { user, getUserInfo, isAuthorized} = useContext(AuthContext);
+
+
+  const router = useRouter()
+  // if the enpoint is reached by a non-artist user, go to 404
+  useEffect(() => {
+    console.log(user);
+    
+    if (user.isArtist !== "" && !user.isArtist) {
+      router.push("/404")
+    }
+  }, [user])
+  
+  useEffect(() => {
+    if (isAuthorized) {
+      getUserInfo()
+    }
+    console.log(router);
+    
+  }, [isAuthorized])
 
   const uploadToIPFS = async (event) => {
 
@@ -101,16 +120,6 @@ export default function ArtistPage({ data, error}) {
     await (await marketplace.makeItem(nft.address, id, listingPrice)).wait()
   }
 
-
-  const router = useRouter()
-  // if the enpoint is reached by a non-artist user, go to 404
-  useEffect(() => {
-    console.log(user);
-    
-    if (user.isArtist !== "" && !user.isArtist) {
-      router.push("/404")
-    }
-  }, [user])
 
   return (
     
