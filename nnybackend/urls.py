@@ -39,6 +39,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('authentication.api.urls')),
     path('api/', include('artists.urls')),
+    path('api/', include('users.urls')),
 ]
 
 
