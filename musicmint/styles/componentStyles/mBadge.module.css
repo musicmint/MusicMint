@@ -15,7 +15,7 @@
     align-items: center;
 }
 
-.nameSection{
+.nameSection {
     display: flex;
     flex-direction: row;
     width: 260px;
@@ -25,8 +25,13 @@
     justify-content: left;
     align-items: center;
     margin-top: 203px;
-}
-
+    transition: background-color 0.2s ease; /* Add transition effect */
+  }
+  
+  .nameSection:hover {
+    background-color: rgba(46, 46, 46, 0.8); /* Change background color on hover */
+  }
+  
 .name{
     margin-left: 10px;
     color: white;
