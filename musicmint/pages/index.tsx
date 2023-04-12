@@ -5,9 +5,9 @@ import { useContext } from 'react'
 import AuthContext from '../src/context/auth'
 import styles from '../styles/pageStyles/index.module.css'
 import NavBar from '../components/navbar'
-import ExampleBadge from '../components/examplebadge'
-import CD from '../CD.png'
-import Headphones from '../Headphones.png'
+import ExampleBadge from '../components/Badges/examplebadge'
+import CD from '../images/CD.png'
+import Headphones from '../images/Headphones.png'
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin"; // Note the path change
 

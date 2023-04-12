@@ -3,7 +3,7 @@ import styles from '../styles/componentStyles/navbar.module.css'
 import Link from 'next/link'
 import AuthContext from '../src/context/auth'
 import Image from 'next/image'
-import logo from '../music-mint-marketplace.png'
+import logo from '../images/music-mint-marketplace.png'
 import { useRouter } from 'next/router'
 import SearchBar from './searchBar'
 
