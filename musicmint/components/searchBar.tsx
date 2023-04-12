@@ -33,18 +33,14 @@ const SearchBar = (props, { nft, marketplace }) => {
         (document.getElementById("artistSearch") as HTMLElement).addEventListener('blur', hideDropdown);
 
     }, [artistsList])
- 
-    // useEffect(() => {
-    //     if (hideResult) {
-
-    //     }
-    // })
 
     let hideDropdown = async (event: Event) => {              
         const searchInput = document.getElementById('artistSearch') as HTMLInputElement;
         console.log(document.activeElement)
         if (searchInput != document.activeElement) {
-            (document.getElementById("searchResults") as HTMLElement).style.display = "none"
+            setTimeout(function(){
+                (document.getElementById("searchResults") as HTMLElement).style.display = "none"
+            },100);
         } else {
             (document.getElementById("searchResults") as HTMLElement).style.display = "block"
         }
@@ -54,9 +50,6 @@ const SearchBar = (props, { nft, marketplace }) => {
         const searchQuery = (event.target as HTMLInputElement).value;
         let filteredObjects = filterObjectsBySearchQuery(searchQuery);
         setSearchResult(filteredObjects);
-        console.log(filteredObjects);
-
-        // Anneliese Take it from here, just use the filtereObjects to display the search results
     }
 
 
@@ -69,8 +62,16 @@ const SearchBar = (props, { nft, marketplace }) => {
       
           return false;
         });
+
+        let result = {}
+        for (let i=0; i<filteredObjects.length; i++) {
+            result[filteredObjects[i]] =  artistsList[filteredObjects[i]]
+        }
+
+        console.log(result);
+        
       
-        return filteredObjects;
+        return result;
       }
       
 
@@ -99,8 +100,8 @@ const SearchBar = (props, { nft, marketplace }) => {
         <div className={styles.dropdown} id="searchResults">
 
             {searchResult &&
-            searchResult.map((artist) => (
-                <p key={artist}>{artist}</p>
+            Object.keys(searchResult).map((artist) => (
+                <Link href={`/artistpage/${searchResult[artist]}`}><p key={artist}>{artist}</p></Link>
             ))}
         </div>
  
