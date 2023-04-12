@@ -13,12 +13,16 @@
     /* margin: 1%; */
     /* margin-top: .25%; */
     align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
 }
 .imagebox{
     display: flex;
-    height: 180px;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    width: 290px;
+    height: 290px;
+    position: absolute;
+    z-index: 3;
+    border-radius: 15px;
 }
 
 .nameSection {
@@ -30,8 +34,10 @@
     border-radius: 50px;
     justify-content: left;
     align-items: center;
-    margin-top: 20px;
+    margin-bottom: 5px;
     transition: background-color 0.2s ease; /* Add transition effect */
+    z-index: 4;
+    border: none;
   }
   
   .nameSection:hover {
@@ -43,6 +49,7 @@
     color: white;
     font-family: 'Lexend', sans-serif; 
     font-size: 15px;
+    z-index: 4;
 }
 
 .classSection{
@@ -53,6 +60,7 @@
     width: 260px;
     align-items: center;
     border-radius: 50px;
+    z-index: 4;
 }
 
 
