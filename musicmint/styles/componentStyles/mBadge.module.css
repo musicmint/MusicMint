@@ -17,6 +17,8 @@
 .imagebox{
     display: flex;
     height: 180px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .nameSection {
@@ -48,7 +50,9 @@
     flex-direction: row;
     justify-content: center;
     margin-top: 5px;
-    width: 100%;
+    width: 260px;
+    align-items: center;
+    border-radius: 50px;
 }
 
 

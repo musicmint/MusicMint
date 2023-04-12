@@ -18,7 +18,7 @@ const MarketBadge = (props) => {
         <div className = {styles.mBadge}>
             <div className = {styles.classSection}>
                 {/* will be pulled from spotify api */}
-                <img className = {styles.photo}/>
+                
                 <div className={styles.classWrapper}>
                     <div className = {styles.class}>
                         <p className =  {styles.classTxt}>Class of {props.classyear}</p>
