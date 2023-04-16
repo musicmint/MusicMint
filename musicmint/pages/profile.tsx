@@ -16,9 +16,9 @@ import {Item} from "../interfaces/Item";
 
 
 
-const projectId = '2NTlPAsbm2qHgQi2tpi7cebBnNd';   // <---------- your Infura Project ID
+const projectId = process.env["SECRET_INFURA_ID "];   // <---------- your Infura Project ID
 
-const projectSecret = 'cef0ed12c92e5a9a981a156c2f4f7d84';  // <---------- your Infura Secret
+const projectSecret = process.env["SECRET_INFURA_KEY "];  // <---------- your Infura Secret
 // (for security concerns, consider saving these values in .env files)
 
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
@@ -78,7 +78,7 @@ export default function ArtistPage({ data, error}) {
   }, [user])
 
     useEffect(() => {
-        setDescription(user.full_name)
+        setDescription("Mr. Commodore")
     })
 
   useEffect(() => {
@@ -151,7 +151,7 @@ export default function ArtistPage({ data, error}) {
             <div className={styles.profPlaceholder}></div>
             <Button  className={styles.overlay} id="editButton"></Button>
             <div className={styles.nameSection}>
-              <div className={styles.artistProfileName}>mashaArtist</div>
+              <div className={styles.artistProfileName}>Mr. Commodore</div>
               <div className={styles.bannerContainer}><Banner/></div>
             </div>
           </div>
@@ -243,9 +243,9 @@ export default function ArtistPage({ data, error}) {
           <div className={styles.collectibles}>
             <h2 className={styles.collectiblesTitle}>Your Avaliable Collectibles</h2>
             {/* <div className={styles.collectiblesList}> */}
-              <div className={styles.artistBadges}>
+            {/*  <div className={styles.artistBadges}>*/}
                   {items.length > 0 ?
-                      <div className={styles.allCollectibles} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gridColumnGap: "1rem", gridRowGap: "1rem" }}>
+                      <div className={styles.allCollectibles} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit)", gridColumnGap: "1rem", gridRowGap: "1rem" }}>
                           {items.map((item, idx) => (
                               <ExampleBadge
                                   //onBuyClick={() => buyMarketItem(item)}
@@ -261,11 +261,10 @@ export default function ArtistPage({ data, error}) {
                       : (
                           <main style={{ padding: "1rem 0" }}>
                               <div className = {styles.instructions}>No Listed Assets</div>
-
                           </main>
                       )
                   }
-              </div>
+              {/*</div>*/}
             {/* </div> */}
           </div>
         </div>
