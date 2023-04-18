@@ -15,7 +15,7 @@ const ConnectSpotify = () => {
       const tokenUrl = 'https://accounts.spotify.com/api/token';
       const clientId = process.env.NEXT_PUBLIC_CLIENT_ID;
       const clientSecret = process.env.NEXT_PUBLIC_CLIENT_SECRET;
-      const redirectUri = process.env.REDIRECT_URI;
+      const redirectUri = process.env.NEXT_PUBLIC_REDIRECT_URI;
       const authString = `${clientId}:${clientSecret}`;
       const base64AuthString = btoa(authString);
 
