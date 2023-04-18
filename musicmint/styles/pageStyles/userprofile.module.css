@@ -81,10 +81,12 @@ position: absolute;
   flex-direction: row;
   margin-top: 380px;
 
+
   /* justify-content: space-between; */
 }
 
 .artistProfileName {
+  /* font: 100%; */
   font-size: 6rem;
   font-family: 'Lexend', sans-serif;
   /* margin-top: 370px; */
@@ -200,4 +202,21 @@ position: absolute;
   /* background-color: yellow; */
   align-items: center;
   justify-content: space-between;
+}
+
+@media only screen and (min-width: 480px) {
+  .artistProfileName {
+    font-size: 3.7rem;
+  }
+
+  .nameSection {
+
+    margin-top: 410px;
+    /* justify-content: space-between; */
+  }
+
+  .bannerContainer{
+    margin-top: 40px;
+
+  }
 }
