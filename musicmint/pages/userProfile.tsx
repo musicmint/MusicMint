@@ -49,7 +49,7 @@ export default function UserPage() {
                     <div className={styles.profPlaceholder}></div>
                     <div className={styles.overlay}></div>
                     <div className={styles.nameSection}>
-                        <div className={styles.artistProfileName}>MASHA S.</div>
+                        <div className={styles.artistProfileName}>{user.full_name}</div>
                         <div className={styles.bannerContainer}><Banner collected={purchases.length}/></div>
                     </div>
                 </div>

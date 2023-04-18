@@ -151,7 +151,7 @@ export default function ArtistPage({ data, error}) {
             <div className={styles.profPlaceholder}></div>
             <Button  className={styles.overlay} id="editButton"></Button>
             <div className={styles.nameSection}>
-              <div className={styles.artistProfileName}>Mr. Commodore</div>
+              <div className={styles.artistProfileName}>{user.full_name}</div>
               <div className={styles.bannerContainer}><Banner/></div>
             </div>
           </div>
