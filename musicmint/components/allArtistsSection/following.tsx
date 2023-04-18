@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../../styles/componentStyles/artistSectionStyles/allArtists.module.css'
-import Banner from './banner'
 
 const Following = (props) => {
   return (

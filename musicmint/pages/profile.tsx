@@ -1,5 +1,4 @@
 import styles from '../styles/pageStyles/artistpage.module.css';
-// import EditIcon from '@mui/icons-material/Edit';
 import NavBar from '../components/navbar';
 import { Row, Form, Button } from 'react-bootstrap'
 import { create as ipfsHttpClient } from 'ipfs-http-client'

@@ -10,8 +10,6 @@ import MarketplaceAbi from "./contractsData/Marketplace.json"
 import MarketplaceAddress from './contractsData/Marketplace-address.json'
 import NFTAbi from './contractsData/NFT.json'
 import NFTAddress from './contractsData/NFT-address.json'
-import Link from 'next/link'
-import CreateProfile from '../components/Auth/createProfile'
 import { MarketplaceContext } from '../src/context/contracts';
 
 const AuthPage = () => {

@@ -1,9 +1,6 @@
 import { createContext, useState, useEffect } from 'react'
 import jwt_decode from "jwt-decode";
 import { useRouter } from 'next/router'
-import { access } from 'fs';
-import { send } from 'process';
-import { json } from 'stream/consumers';
 
 const initialContext =
 {

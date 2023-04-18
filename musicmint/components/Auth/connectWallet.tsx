@@ -1,6 +1,5 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import Link from 'next/link'
-import AuthContext from '../../src/context/auth'
 import {Button} from "react-bootstrap";
 import styles from '../../styles/AuthPage.styles/wallet.module.css'
 

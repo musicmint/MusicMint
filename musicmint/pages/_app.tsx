@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import React, { useState } from 'react'
+import React from 'react'
 import { AppWrapper } from '../src/context/state'
 import { AuthProvider } from '../src/context/auth'
 import MarketplaceProvider from '../src/context/contracts' // import the MarketplaceProvider

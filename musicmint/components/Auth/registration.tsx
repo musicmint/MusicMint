@@ -1,8 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import AuthContext from '../../src/context/auth'
 import styles from '../../styles/AuthPage.styles/loginAndReg.module.css'
-import Link from "next/link"
-import { InputType } from 'zlib'
 import Image from 'next/image'
 import logo from '../../images/music-mint-marketplace.png'
 

@@ -1,6 +1,6 @@
 /* Created by Anneliese Breidsprecher */
 
-import React, {useContext, useEffect} from 'react'
+import React from 'react'
 import styles from '../../styles/componentStyles/mBadge.module.css'
 import { Button } from 'react-bootstrap'
 import { useRouter } from 'next/router';
