@@ -15,7 +15,7 @@ const ConnectSpotify = () => {
       const tokenUrl = 'https://accounts.spotify.com/api/token';
       const clientId = 'c5c2ed390b3b4a1faf1895f8c269d5a5';
       const clientSecret = '6ada78b5f3b6433b901d4731841a670f';
-      const redirectUri = 'http://localhost:3000/callback';
+      const redirectUri = process.env.REDIRECT_URI;
       const authString = `${clientId}:${clientSecret}`;
       const base64AuthString = btoa(authString);
 
@@ -35,7 +35,7 @@ const ConnectSpotify = () => {
 
   const handleSpotifyLogin = () => {
     const clientId = 'c5c2ed390b3b4a1faf1895f8c269d5a5';
-    const redirectUri = 'http://localhost:3000/callback';
+    const redirectUri = process.env.REDIRECT_URI;
     const scopes = 'user-read-private user-read-email';
     const spotifyAuthUrl = `https://accounts.spotify.com/authorize?response_type=code&client_id=${clientId}&scope=${scopes}&redirect_uri=${redirectUri}`;
 
