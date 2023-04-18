@@ -86,7 +86,6 @@ const web3Handler = async () => {
   const loadContracts = async (signer) => {
 
     // Get deployed copies of contracts
-    const marketplaceContract = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer)
       try {
           const marketplaceContract = new ethers.Contract(MarketplaceAddress.address, MarketplaceAbi.abi, signer);
           const nftContract = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer);

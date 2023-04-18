@@ -7,7 +7,6 @@ import { ethers } from "ethers"
 import ExampleBadge from '../components/Badges/examplebadge'
 import { MarketplaceContext } from '../src/context/contracts';
 import Banner from '../components/Banners/artistBanner';
-import { render } from "react-dom";
 import AuthContext from '../src/context/auth';
 import { useRouter } from 'next/router';
 import { addIPFSProxy, loadMarketplaceItems } from "../components/loadMarketplaceItems";
@@ -15,9 +14,9 @@ import {Item} from "../interfaces/Item";
 
 
 
-const projectId = process.env["SECRET_INFURA_ID "];   // <---------- your Infura Project ID
+const projectId = process.env.SECRET_INFURA_ID;   // <---------- your Infura Project ID
 
-const projectSecret = process.env["SECRET_INFURA_KEY "];  // <---------- your Infura Secret
+const projectSecret = process.env.SECRET_INFURA_KEY;  // <---------- your Infura Secret
 // (for security concerns, consider saving these values in .env files)
 
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');

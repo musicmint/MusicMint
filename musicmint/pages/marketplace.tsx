@@ -119,9 +119,6 @@ export default function Home(clsssyear, artistname) {
                 </main>
             )
         }
-          <div className={styles.allCollectibles}>
-            {/*<ExampleBadge/><ExampleBadge/><ExampleBadge/><ExampleBadge/><ExampleBadge/>*/}
-          </div>
       </div>
       </div>
   
