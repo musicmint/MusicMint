@@ -8,6 +8,8 @@ import { MarketplaceContext } from '../src/context/contracts';
 import { PurchasedItem } from "../interfaces/PurchasedItem";
 import {addIPFSProxy, loadMarketplaceItems, loadPurchasedItems} from "../components/loadMarketplaceItems";
 import {ethers} from "ethers";
+import AuthContext from '../src/context/auth';
+import {useRouter} from 'next/router';
 
 // ADD PROPS FOR SPECIFIC ARTISTS!!!!!
 
@@ -15,6 +17,8 @@ export default function UserPage() {
 
     const { nft, marketplace, accountWallet } = useContext(MarketplaceContext);
     const [purchases, setPurchases] = useState<PurchasedItem[]>([]);
+    const { user, getUserInfo, isAuthorized} = useContext(AuthContext);
+    const router = useRouter()
 
     //here we get our imported loadPurchased items function, load the items, and set them
     // useEffect(() => {
@@ -24,6 +28,14 @@ export default function UserPage() {
     //     };
     //     fetchPurchasedItems();
     // }, []);
+
+    useEffect(() => {
+        console.log(user);
+        
+        if (user.is_artist) {      
+          router.push("/404")
+        }
+      }, [user])
 
     return (
 

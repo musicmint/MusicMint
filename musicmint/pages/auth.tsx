@@ -17,10 +17,9 @@ import { MarketplaceContext } from '../src/context/contracts';
 const AuthPage = () => {
     let [onLogin, setOnLogin] = useState(true)
     let [openTab, setOpenTab] = useState(0);
-    let { isAuthorized } = useContext(AuthContext)
+    let { isAuthorized, user, logoutUser} = useContext(AuthContext)
 
       //let's set up everything needed for blockchain upon boot up
-  const { user, logoutUser } = useContext(AuthContext)
   const [loading, setLoading] = useState(true)
   const [account, setAccount] = useState(null)
   const { marketplace, setMarketplace, nft, setNFT, accountWallet, setAccountWallet} = useContext(MarketplaceContext)
@@ -41,15 +40,20 @@ const AuthPage = () => {
 
 
     useEffect(() => {
-        if (isAuthorized) {
-            router.push('/profile')
-        }
-
         if (router.query.tab == "register") {
           switchTab()
         }
     }, [router.query])
 
+    useEffect(() => {
+        if (isAuthorized) {
+          if (user.email !== "" && !user.is_artist) {
+            router.push('/profile')
+          } else {
+            router.push('/userProfile')
+          }
+        }
+    }, [])
 
 // MetaMask Login/Connect
 const web3Handler = async () => {
