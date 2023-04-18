@@ -2,9 +2,6 @@ import axios from 'axios';
 import querystring from 'querystring';
 
 // Replace these values with your own
-const CLIENT_ID = "c5c2ed390b3b4a1faf1895f8c269d5a5";
-const CLIENT_SECRET = "6ada78b5f3b6433b901d4731841a670f";
-const REDIRECT_URI = "http://localhost:3000/api/callback";
 
 
 export const spotifyApi = axios.create({
@@ -21,9 +18,9 @@ export async function getAccessToken(code: string) {
       querystring.stringify({
         grant_type: 'authorization_code',
         code: code,
-        redirect_uri: REDIRECT_URI,
-        client_id: CLIENT_ID,
-        client_secret: CLIENT_SECRET,
+        redirect_uri: process.env.NEXT_PUBLIC_SPOTIFY_REDIRECT_URI,
+        client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
+        client_secret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
       }),
       {
         headers: {

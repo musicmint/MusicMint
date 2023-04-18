@@ -14,9 +14,9 @@ import {Item} from "../interfaces/Item";
 
 
 
-const projectId = process.env.SECRET_INFURA_ID;   // <---------- your Infura Project ID
+const projectId = process.env.NEXT_PUBLIC_SECRET_INFURA_ID;   // <---------- your Infura Project ID
 
-const projectSecret = process.env.SECRET_INFURA_KEY;  // <---------- your Infura Secret
+const projectSecret = process.env.NEXT_PUBLIC_SECRET_INFURA_KEY;  // <---------- your Infura Secret
 // (for security concerns, consider saving these values in .env files)
 
 const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');

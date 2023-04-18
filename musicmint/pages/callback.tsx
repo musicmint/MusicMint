@@ -23,9 +23,9 @@ const CallbackPage = () => {
       body: new URLSearchParams({
         grant_type: "authorization_code",
         code: code,
-        redirect_uri: process.env.REDIRECT_URI as string, // replace with redirect URI
-        client_id: "c5c2ed390b3b4a1faf1895f8c269d5a5", // replace with client ID
-        client_secret: "6ada78b5f3b6433b901d4731841a670f", // replace with client secret
+        redirect_uri: process.env.NEXT_PUBLIC_REDIRECT_URI as string, // replace with redirect URI
+        client_id: process.env.NEXT_PUBLIC_CLIENT_ID as string, // replace with client ID
+        client_secret: process.env.NEXT_PUBLIC_CLIENT_SECRET as string, // replace with client secret
       }),
     };
     fetch("https://accounts.spotify.com/api/token", requestOptions)
