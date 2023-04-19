@@ -20,13 +20,13 @@ export default function UserPage() {
     const router = useRouter()
 
     //here we get our imported loadPurchased items function, load the items, and set them
-    // useEffect(() => {
-    //     const fetchPurchasedItems = async () => {
-    //         const items = await loadPurchasedItems(nft, marketplace, accountWallet);
-    //         setPurchases(items);
-    //     };
-    //     fetchPurchasedItems();
-    // }, []);
+    useEffect(() => {
+        const fetchPurchasedItems = async () => {
+            const items = await loadPurchasedItems(nft, marketplace, accountWallet);
+            setPurchases(items);
+        };
+        fetchPurchasedItems();
+    }, []);
 
     useEffect(() => {
         console.log(user);
