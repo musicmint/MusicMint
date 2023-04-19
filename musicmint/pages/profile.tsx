@@ -76,7 +76,7 @@ export default function ArtistPage({ data, error}) {
   }, [user])
 
     useEffect(() => {
-        setDescription("Mr. Commodore")
+        setDescription(user.full_name)
     })
 
   useEffect(() => {
