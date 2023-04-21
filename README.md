@@ -1,3 +1,17 @@
+# Welcome to MusicMint Marketplace!
+A marketplace where artists can mint NFTs for their listerners to purchase.
+Artists get 100% of the profits.
+
+## Notes about site usage 
+1) When logging in, you must connect an Etherium wallet (we utilized MetaMask). You cannot see the marketplace until you do this.
+2) Our site is only dark mode compatible.
+
+
+
+
+![D6C8B7D9-FDAA-4CD7-88AC-557C66671584_1_105_c](https://user-images.githubusercontent.com/77807959/233724252-eba05981-e540-4fac-963f-d852eb2ad2ff.jpeg)
+
+
 # Frontend
 1) cd musicmint
 
